@@ -12,7 +12,7 @@ try:
     df = pd.read_csv(raw_csv_url, encoding='latin-1')
     
     # Create a sample DataFrame (replace this with your 'df' from the CSV)
-    data = {'values': [2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]}
+    data = {'values': df['Grupo de años'].values}
     df = pd.DataFrame(data)
 
     # Display the DataFrame using Streamlit
