@@ -14,16 +14,13 @@ try:
 
     # Add histogram data
     x1 = df['Grupo de años'].values
-    x2 = df['MarcaModelo'].values
-    x3 = df['Precio'].values
-
     # Group data together
-    hist_data = [x1, x2, x3]
+    hist_data = [x1]
 
-    group_labels = ['Group 1', 'Group 2', 'Group 3']
+    group_labels = ['Group 1']
 
     # Create distplot with custom bin_size
-    fig = ff.create_distplot(hist_data, group_labels, bin_size=[.1, .25, .5])
+    fig = ff.create_distplot(hist_data, group_labels)
 
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
