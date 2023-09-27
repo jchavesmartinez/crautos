@@ -31,4 +31,4 @@ fig = ff.create_distplot([data], ['Histogram'], bin_size=0.2)
 fig.update_layout(title='Histogram Example', xaxis_title='Values', yaxis_title='Frequency')
 
 # Display the Plotly chart in the Streamlit app
-st.plotly_chart(fig)
+#st.plotly_chart(fig)
