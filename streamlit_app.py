@@ -9,11 +9,10 @@ USERNAME = "ARIMAFINTECH"
 PASSWORD = "Jccm130199!"
 db = harperdb.HarperDB(url=URL, username=USERNAME, password=PASSWORD)
 
-SCHEMA= str('PRESUPUESTO_FAMILIAR')
-TABLE1= str('DIARIO')
+SCHEMA= str('CRAUTOS')
+TABLE1= str('carros')
 Diario=pd.DataFrame(db.sql("SELECT * FROM {0}.{1}".format(SCHEMA,TABLE1)))
 
-
-df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
+print(Diario)
 
 st.dataframe(Diario)
