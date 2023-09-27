@@ -6,6 +6,16 @@ import harperdb
 import plotly.express as px
 
 
+# Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
+raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
+
+# Read the CSV file into a Pandas DataFrame
+dfa = pd.read_csv(raw_csv_url, encoding='latin-1')
+
+st.dataframe(dfa)
+
+
+
 df = px.data.gapminder()
 
 fig = px.scatter(
@@ -28,10 +38,3 @@ with tab2:
     # Use the native Plotly theme.
     st.plotly_chart(fig, theme=None, use_container_width=True)
     
-# Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
-raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
-
-# Read the CSV file into a Pandas DataFrame
-df = pd.read_csv(raw_csv_url, encoding='latin-1')
-
-st.dataframe(df)
