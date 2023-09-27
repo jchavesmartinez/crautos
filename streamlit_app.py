@@ -22,7 +22,8 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 # Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
-raw_csv_url = 'https://raw.githubusercontent.com/username/repository/main/filename.csv'
+raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
 
 # Read the CSV file into a Pandas DataFrame
 df = pd.read_csv(raw_csv_url)
+st.dataframe(df)
