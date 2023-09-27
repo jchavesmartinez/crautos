@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
 import plotly.figure_factory as ff
+import plotly.express as px
+
 
 # Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
 raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
@@ -9,21 +11,18 @@ try:
     # Read the CSV file into a Pandas DataFrame
     df = pd.read_csv(raw_csv_url, encoding='latin-1')
     
+    # Create a sample DataFrame (replace this with your 'df' from the CSV)
+    data = {'values': [2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8]}
+    df = pd.DataFrame(data)
+
     # Display the DataFrame using Streamlit
     st.dataframe(df)
 
-    # Add histogram data
-    x1 = df['Grupo de años'].values
-    # Group data together
-    hist_data = [x1]
+    # Create a histogram using Plotly Express
+    fig = px.histogram(df, x='values', nbins=10, title='Histogram')
 
-    group_labels = ['Group 1']
-
-    # Create distplot with custom bin_size
-    fig = ff.create_distplot(hist_data, group_labels)
-
-    # Plot!
-    st.plotly_chart(fig, use_container_width=True)
+    # Display the histogram in the Streamlit app
+    st.plotly_chart(fig)
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
