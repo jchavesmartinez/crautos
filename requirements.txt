@@ -1,3 +1,4 @@
 pymongo==4.3.3
 dnspython==2.2.1
 harperdb==0.4.2
+streamlit==1.14.0
