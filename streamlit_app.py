@@ -34,4 +34,4 @@ raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MA
 # Read the CSV file into a Pandas DataFrame
 df = pd.read_csv(raw_csv_url, encoding='latin-1')
 
-print(df)
+st.dataframe(df)
