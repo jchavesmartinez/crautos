@@ -12,7 +12,7 @@ try:
     df = pd.read_csv(raw_csv_url, encoding='latin-1')
     
     # Create a sample DataFrame (replace this with your 'df' from the CSV)
-    data = {'values': df['MarcaModelo'].values}
+    data = {'values': df['Marca'].values}
     df = pd.DataFrame(data)
 
     # Create a histogram using Plotly Express
