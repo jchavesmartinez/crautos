@@ -15,9 +15,6 @@ try:
     data = {'values': df['Grupo de años'].values}
     df = pd.DataFrame(data)
 
-    # Display the DataFrame using Streamlit
-    st.dataframe(df)
-
     # Create a histogram using Plotly Express
     fig = px.histogram(df, x='values', nbins=10, title='Histogram')
 
