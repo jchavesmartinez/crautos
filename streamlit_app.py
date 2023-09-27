@@ -14,9 +14,9 @@ st.dataframe(df)
 
 
 # Add histogram data
-x1 = np.random.randn(200) - 2
-x2 = np.random.randn(200)
-x3 = np.random.randn(200) + 2
+x1 = df['Grupo de años']
+x2 = df['MarcaModelo']
+x3 = df['Precio']
 
 # Group data together
 hist_data = [x1, x2, x3]
