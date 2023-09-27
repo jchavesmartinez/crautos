@@ -3,16 +3,27 @@ import pandas as pd
 import numpy as np
 import harperdb
 
+import plotly.express as px
 
-URL = "https://prueba-arimafintech.harperdbcloud.com"
-USERNAME = "ARIMAFINTECH"
-PASSWORD = "Jccm130199!"
-db = harperdb.HarperDB(url=URL, username=USERNAME, password=PASSWORD)
 
-SCHEMA= str('CRAUTOS')
-TABLE1= str('carros')
-Diario=pd.DataFrame(db.sql("SELECT * FROM {0}.{1}".format(SCHEMA,TABLE1)))
+df = px.data.gapminder()
 
-print(Diario)
+fig = px.scatter(
+    df.query("year==2007"),
+    x="gdpPercap",
+    y="lifeExp",
+    size="pop",
+    color="continent",
+    hover_name="country",
+    log_x=True,
+    size_max=60,
+)
 
-st.dataframe(Diario)
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
