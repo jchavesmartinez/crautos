@@ -7,4 +7,4 @@ github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main
 # Use pandas to read the CSV file from the URL
 df = pd.read_csv(github_csv_url, encoding='latin-1')
 
-st.table(df)
+#st.table(df)
