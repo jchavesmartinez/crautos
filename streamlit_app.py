@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import harperdb
+#import harperdb
 
 
 URL = "https://prueba-arimafintech.harperdbcloud.com"
