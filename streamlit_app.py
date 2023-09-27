@@ -1,38 +1,16 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pandas as pd
-from pandas import json_normalize
-import scipy
+import harperdb
 
 
-path= "https://raw.githubusercontent.com/jchavesmartinez/StreamlitBudget/main/Budget.csv"
-Budget2023 = pd.read_csv(path, encoding='latin-1',index_col=0)
+URL = "https://prueba-arimafintech.harperdbcloud.com"
+USERNAME = "ARIMAFINTECH"
+PASSWORD = "Jccm130199!"
+db = harperdb.HarperDB(url=URL, username=USERNAME, password=PASSWORD)
 
-with st.expander("Presupuesto 2023"):
-    st.dataframe(Budget2023,use_container_width=True)
-    
-import plotly.express as px
-import streamlit as st
+SCHEMA= str('PRESUPUESTO_FAMILIAR')
+TABLE1= str('DIARIO')
+Diario=pd.DataFrame(db.sql("SELECT * FROM {0}.{1}".format(SCHEMA,TABLE1)))
 
-df = px.data.gapminder()
-
-fig = px.scatter(
-    df.query("year==2007"),
-    x="gdpPercap",
-    y="lifeExp",
-    size="pop",
-    color="continent",
-    hover_name="country",
-    log_x=True,
-    size_max=60,
-)
-
-tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
-with tab1:
-    # Use the Streamlit theme.
-    # This is the default. So you can also omit the theme argument.
-    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
-with tab2:
-    # Use the native Plotly theme.
-    st.plotly_chart(fig, theme=None, use_container_width=True)
+st.dataframe(Diario)
