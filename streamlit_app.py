@@ -3,6 +3,16 @@ import numpy as np
 import plotly.figure_factory as ff
 import pandas as pd
 
+
+
+# Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
+raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
+
+# Read the CSV file into a Pandas DataFrame
+df = pd.read_csv(raw_csv_url, encoding='latin-1')
+st.dataframe(df)
+
+
 # Add histogram data
 x1 = np.random.randn(200) - 2
 x2 = np.random.randn(200)
@@ -20,10 +30,3 @@ fig = ff.create_distplot(
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
 
-
-# Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
-raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
-
-# Read the CSV file into a Pandas DataFrame
-df = pd.read_csv(raw_csv_url, encoding='latin-1')
-st.dataframe(df)
