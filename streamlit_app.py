@@ -2,12 +2,24 @@ import streamlit as st
 import plotly.figure_factory as ff
 import numpy as np
 import pandas as pd
+import requests
 
 
+# GitHub CSV file URL
 github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
 
-# Use pandas to read the CSV file from the URL
-#df = pd.read_csv(github_csv_url, encoding='latin-1')
+# Function to fetch and load CSV data
+@st.cache
+def load_data(url):
+    response = requests.get(url)
+    data = pd.read_csv(response.text)
+    return data
+
+# Load CSV data
+data = load_data(github_csv_url)
+
+# Display the loaded data
+st.write(data)
 
 # Sample data (random values for demonstration)
 data = np.random.randn(1000)
