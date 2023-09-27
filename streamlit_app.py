@@ -21,6 +21,11 @@ try:
     # Create a histogram using Plotly Express
     fig = px.histogram(df, x='values', nbins=10, title='Histogram')
 
+    fig.update_layout(
+        plot_bgcolor='white',  # Background color of the plot area
+        paper_bgcolor='white'  # Background color of the entire figure
+    )
+
     # Display the histogram in the Streamlit app
     st.plotly_chart(fig)
 
