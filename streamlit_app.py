@@ -9,8 +9,9 @@ github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main
 df = pd.read_csv(github_csv_url, encoding='latin-1')
 
 data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6]
+group_labels = ['Group 1']
 
 fig = ff.create_distplot(
-        data,  bin_size=[.1, .25, .5])
+        data, group_labels, bin_size=[.1, .25, .5])
 
 st.plotly_chart(fig, use_container_width=True)
