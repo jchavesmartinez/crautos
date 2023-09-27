@@ -2,10 +2,10 @@ import pandas as pd
 import streamlit as st
 
 
-github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
+#github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
 
 # Use pandas to read the CSV file from the URL
-df = pd.read_csv(github_csv_url, encoding='latin-1')
+#df = pd.read_csv(github_csv_url, encoding='latin-1')
 
 import numpy as np
 import plotly.figure_factory as ff
