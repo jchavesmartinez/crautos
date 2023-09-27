@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import pandas as pd
 from pandas import json_normalize
-import plotly.figure_factory as ff
+import scipy
 
 
 path= "https://raw.githubusercontent.com/jchavesmartinez/StreamlitBudget/main/Budget.csv"
