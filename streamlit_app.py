@@ -1,7 +1,5 @@
 import pandas as pd
 import streamlit as st
-import scipy
-
 
 
 github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
