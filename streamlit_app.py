@@ -14,9 +14,9 @@ st.dataframe(df)
 
 
 # Add histogram data
-x1 = df['Grupo de años']
-x2 = df['MarcaModelo']
-x3 = df['Precio']
+x1 = df['Grupo de años'].values
+x2 = df['MarcaModelo'].values
+x3 = df['Precio'].values
 
 # Group data together
 hist_data = [x1, x2, x3]
