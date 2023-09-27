@@ -25,5 +25,5 @@ st.plotly_chart(fig, use_container_width=True)
 raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
 
 # Read the CSV file into a Pandas DataFrame
-df = pd.read_csv(raw_csv_url)
+df = pd.read_csv(raw_csv_url, encoding='latin-1')
 st.dataframe(df)
