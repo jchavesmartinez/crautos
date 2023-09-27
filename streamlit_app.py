@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import plotly.figure_factory as ff
+import pandas as pd
 
 # Add histogram data
 x1 = np.random.randn(200) - 2
@@ -18,3 +19,10 @@ fig = ff.create_distplot(
 
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
+
+
+# Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
+raw_csv_url = 'https://raw.githubusercontent.com/username/repository/main/filename.csv'
+
+# Read the CSV file into a Pandas DataFrame
+df = pd.read_csv(raw_csv_url)
