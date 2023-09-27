@@ -9,6 +9,8 @@ github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main
 df = pd.read_csv(github_csv_url, encoding='latin-1')
 
 data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6]
-fig = ff.histogram(data, nbins=5, title="Sample Histogram")
+
+fig = ff.create_distplot(
+        data,  bin_size=[.1, .25, .5])
 
 st.plotly_chart(fig, use_container_width=True)
