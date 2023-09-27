@@ -1,9 +1,5 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
-import scipy
-
-
 import plotly.figure_factory as ff
 
 # Add histogram data
@@ -22,11 +18,3 @@ fig = ff.create_distplot(
 
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
-
-# Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
-raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
-
-# Read the CSV file into a Pandas DataFrame
-dfa = pd.read_csv(raw_csv_url, encoding='latin-1')
-
-st.dataframe(dfa)
