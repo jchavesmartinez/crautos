@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import plotly.express as px
+import plotly.figure_factory as ff
 
 
 github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
@@ -9,6 +9,6 @@ github_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main
 df = pd.read_csv(github_csv_url, encoding='latin-1')
 
 data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6]
-fig = px.histogram(data, nbins=5, title="Sample Histogram")
+fig = ff.histogram(data, nbins=5, title="Sample Histogram")
 
 st.plotly_chart(fig, use_container_width=True)
