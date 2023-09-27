@@ -1,7 +1,0 @@
-plotly
-scipy
-numpy
-pandas
-pymongo
-dnspython
-harperdb
