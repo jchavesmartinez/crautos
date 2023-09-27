@@ -1,16 +1,15 @@
 import streamlit as st
-import plotly.express as px
-import pandas as pd
+import plotly.figure_factory as ff
+import numpy as np
 
-# Sample data
-data = {'Category': ['A', 'B', 'C', 'D'],
-        'Value': [10, 20, 15, 25]}
+# Sample data (random values for demonstration)
+data = np.random.randn(1000)
 
-# Create a DataFrame
-df = pd.DataFrame(data)
+# Create a histogram using Plotly's create_distplot
+fig = ff.create_distplot([data], ['Histogram'], bin_size=0.2)
 
-# Create a Plotly figure using Plotly Express
-fig = px.bar(df, x='Category', y='Value', title='Sample Bar Chart')
+# Set the layout for the chart
+fig.update_layout(title='Histogram Example', xaxis_title='Values', yaxis_title='Frequency')
 
 # Display the Plotly chart in the Streamlit app
 st.plotly_chart(fig)
