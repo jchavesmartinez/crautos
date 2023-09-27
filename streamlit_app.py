@@ -20,7 +20,7 @@ try:
     group_labels = ['Group 1']
 
     # Create distplot with custom bin_size
-    fig = ff.create_distplot(hist_data, group_labels)
+    fig = ff.create_distplot(x1, group_labels)
 
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
