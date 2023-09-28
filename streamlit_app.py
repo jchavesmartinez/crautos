@@ -26,9 +26,6 @@ try:
     # Load the data using the cached function
     df = load_data()
 
-    st.write(len(df['Marca'].drop_duplicates().values))
-
-    
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
     with tab1:
@@ -42,6 +39,7 @@ try:
 
             with colfiltros2:
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
+                modelofiltro = st.selectbox('Modelo',tuple(df['MarcaModelo'].drop_duplicates().values))
 
         col1, col2 = st.columns([1, 1])
 
