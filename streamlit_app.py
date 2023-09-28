@@ -47,7 +47,7 @@ try:
                 ('MarcaModelo','Precio'))
                         
             
-            data1 = {'values': df[{option}].values}
+            data1 = {'values': df[option].values}
             df1 = pd.DataFrame(data1)
 
             # Create a histogram using Plotly Express
@@ -71,7 +71,7 @@ try:
             
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
-            data2 = {'values': df[{option}].values}
+            data2 = {'values': df[option].values}
             df2 = pd.DataFrame(data2)
 
             # Create a histogram using Plotly Express
