@@ -55,9 +55,9 @@ try:
                 estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
 
-                df = df[df['Marca'] == marcafiltro] if marcafiltro != 'Sin filtro' else df['Marca'] = df['Marca']
-                #df = df[df['Marca'] == marcafiltro]
-                #df = df[df['Cilindrada'] == cilindradafiltro]
+                
+                df = df[df['Marca'] == marcafiltro]
+                df = df[df['Cilindrada'] == cilindradafiltro]
                 #df = df[df['Estado'] == estadofiltro]
                 #df = df[df['Transmision'] == transmisionfiltro]
                 
