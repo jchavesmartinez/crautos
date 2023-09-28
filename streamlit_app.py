@@ -38,6 +38,8 @@ try:
                 marcafiltro = st.selectbox('Marca',tuple(df['Marca'].drop_duplicates().values))
                 cilindradafiltro = st.selectbox('Cilindrada',tuple(df['Cilindrada'].drop_duplicates().values))
                 estilofiltro = st.selectbox('Estilo',tuple(df['Estilo'].drop_duplicates().values))
+                pasajerosfiltro = st.selectbox('Pasajeros',tuple(df['Pasajeros'].drop_duplicates().values))
+                estadofiltro = st.selectbox('Estado',tuple(df['Estado'].drop_duplicates().values))
 
             with colfiltros2:
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
