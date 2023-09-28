@@ -73,8 +73,7 @@ try:
                 genre = st.radio(
                     "Parabrisas",
                     ["Todo", "Si", "No"],
-                    index=None,
-)
+                    index=None,)
 
         col1, col2 = st.columns([1, 1])
 
