@@ -35,13 +35,10 @@ try:
             colfiltros1, colfiltros2 = st.columns([1, 1])
 
             with colfiltros1:
-
-                preciosfiltro = st.slider('Año del vehiculo', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
+                fechafiltro = st.slider('Precio', min(df['Precio']), max(df['Precio']), (min(df['Precio']), max(df['Precio'])))
 
             with colfiltros2:
-                fechafiltro = st.slider(
-                    'Select a range of values2',
-                    0.0, 100.0, (25.0, 75.0))
+                preciosfiltro = st.slider('Año del vehiculo', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
 
         col1, col2 = st.columns([1, 1])
 
