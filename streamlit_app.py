@@ -30,35 +30,35 @@ try:
 
         with col1:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
-            data = {'values': df['Marca'].values}
-            df = pd.DataFrame(data)
+            data1 = {'values': df['Marca'].values}
+            df1 = pd.DataFrame(data1)
 
             # Create a histogram using Plotly Express
-            fig = px.histogram(df, x='values', nbins=10, title='Histogram')
+            fig1 = px.histogram(df1, x='values', nbins=10, title='Histogram')
 
-            fig.update_layout(
+            fig1.update_layout(
                 plot_bgcolor='white',  # Background color of the plot area
                 paper_bgcolor='white'  # Background color of the entire figure
             )
 
             # Display the histogram in the Streamlit app
-            st.plotly_chart(fig)
+            st.plotly_chart(fig1)
 
         with col2:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
-            data = {'values': df['Marca'].values}
-            df = pd.DataFrame(data)
+            data2 = {'values': df['Marca'].values}
+            df2 = pd.DataFrame(data2)
 
             # Create a histogram using Plotly Express
-            fig = px.histogram(df, x='values', nbins=10, title='Histogram')
+            fig2 = px.histogram(df2, x='values', nbins=10, title='Histogram')
 
-            fig.update_layout(
+            fig2.update_layout(
                 plot_bgcolor='white',  # Background color of the plot area
                 paper_bgcolor='white'  # Background color of the entire figure
             )
 
             # Display the histogram in the Streamlit app
-            st.plotly_chart(fig)
+            st.plotly_chart(fig2)
 
     with tab2:
         st.text("Wenas")
