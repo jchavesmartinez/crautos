@@ -27,6 +27,7 @@ try:
     df = load_data()
 
     st.write(min(df['Precio']))
+    st.write(max(df['Precio']))
 
     
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
