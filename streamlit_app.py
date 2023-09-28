@@ -43,7 +43,7 @@ try:
             preciofiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
 
 
-            colfiltros3, colfiltros4, colfiltros5 = st.columns([1, 1,1])
+            colfiltros3, colfiltros4, colfiltros5 = st.columns([1, 1, 1])
 
             with colfiltros3:
 
@@ -58,15 +58,24 @@ try:
                 combustionfiltro = st.selectbox('Combustible',tuple(df['Combustible'].drop_duplicates().values))
                 extcolfiltro = st.selectbox('Color exterior',tuple(df['Color ext'].drop_duplicates().values))
                 placafiltro = st.selectbox('Placa',tuple(df['Placa'].drop_duplicates().values))
-
-            
+   
             with colfiltros5:
 
                 estilofiltro = st.selectbox('Estilo',tuple(df['Estilo'].drop_duplicates().values))
                 pasajerosfiltro = st.selectbox('Pasajeros',tuple(df['Pasajeros'].drop_duplicates().values))
                 intcolfiltro = st.selectbox('Color interior',tuple(df['Color int'].drop_duplicates().values))
                 puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
-            
+
+
+            colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12 = st.columns([1, 1, 1, 1, 1, 1 , 1])
+
+            with colfiltros6:
+                genre = st.radio(
+                    "Parabrisas",
+                    ["Todo", "Si", "No"],
+                    index=None,
+)
+
         col1, col2 = st.columns([1, 1])
 
         with col1:
