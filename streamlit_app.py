@@ -31,6 +31,11 @@ try:
     
     with tab1:
     
+        with st.expander("See explanation"):
+            st.write('WENAS')
+            st.image("https://static.streamlit.io/examples/dice.jpg")
+    
+    
         col1, col2 = st.columns([1, 1])
 
         with col1:
