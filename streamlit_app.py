@@ -58,7 +58,7 @@ try:
 
         with col2:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
-            data2 = {'values': df['Marca'].values}
+            data2 = {'values': df['Grupo de años'].values}
             df2 = pd.DataFrame(data2)
 
             # Create a histogram using Plotly Express
