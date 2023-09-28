@@ -5,12 +5,22 @@ import plotly.express as px
 
 
 # Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
-raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
+
 
 try:
-    # Read the CSV file into a Pandas DataFrame
-    df = pd.read_csv(raw_csv_url, encoding='latin-1')
-    
+
+    st.title('Portal de inversión carros Costa Rica')
+
+    @st.cache
+    def load_data():
+        # Load or compute your data here (e.g., from a CSV file)
+        raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
+        df = pd.read_csv(raw_csv_url, encoding='latin-1')
+        return df
+
+    # Load the data using the cached function
+    df = load_data()
+
     # Create a sample DataFrame (replace this with your 'df' from the CSV)
     data = {'values': df['Marca'].values}
     df = pd.DataFrame(data)
