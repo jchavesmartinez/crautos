@@ -31,7 +31,7 @@ try:
     
     with tab1:
     
-        with st.expander("See explanation"):
+        with st.expander("Menu de filtros"):
             st.write('WENAS')
             st.image("https://static.streamlit.io/examples/dice.jpg")
     
@@ -55,7 +55,6 @@ try:
             fig1.update_layout(width=1200, height=500)
             st.plotly_chart(fig1)
 
-
         with col2:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
             data2 = {'values': df['Grupo de años'].values}
@@ -75,7 +74,7 @@ try:
 
 
     with tab2:
-        st.text("Aca iran los slicers para filtrar")
+        st.text("Wenas")
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
