@@ -26,6 +26,8 @@ try:
     # Load the data using the cached function
     df = load_data()
 
+    st.write(min(df['Precio']))
+
     
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
