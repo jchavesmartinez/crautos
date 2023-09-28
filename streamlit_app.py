@@ -26,6 +26,8 @@ try:
     # Load the data using the cached function
     df = load_data()
 
+    st.write(min(df['Kilometraje']))
+
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
     with tab1:
@@ -51,7 +53,7 @@ try:
                 puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
                 intcolfiltro = st.selectbox('Color interior',tuple(df['Color int'].drop_duplicates().values))
 
-            kmfiltro = st.slider('Kilometraje', min(df['Kilometraje']), max(df['Kilometraje']), (min(df['Kilometraje']), max(df['Kilometraje'])))            
+            #kmfiltro = st.slider('Kilometraje', min(df['Kilometraje']), max(df['Kilometraje']), (min(df['Kilometraje']), max(df['Kilometraje'])))            
 
         col1, col2 = st.columns([1, 1])
 
