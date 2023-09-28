@@ -67,7 +67,7 @@ try:
             
             option2 = st.selectbox(
                 'WENAS',
-                ('Email1'))
+                ('Email1','Option2'))
             
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
