@@ -42,6 +42,7 @@ try:
 
             preciofiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
 
+            st.markdown('<hr>', unsafe_allow_html=True)
 
             colfiltros3, colfiltros4, colfiltros5 = st.columns([1, 1, 1])
 
