@@ -54,6 +54,8 @@ try:
                 cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
                 estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
+
+                df = df[df['Marca'] == marcafiltro]
             
             with colfiltros4:
 
@@ -138,8 +140,7 @@ try:
             option = st.selectbox(
                 'How would you like to be contacted?',
                 ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
-                        
-            
+                               
             data1 = {'values': df[option].values}
             df1 = pd.DataFrame(data1)
 
