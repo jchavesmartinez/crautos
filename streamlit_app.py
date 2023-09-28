@@ -53,7 +53,8 @@ try:
                 puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
                 intcolfiltro = st.selectbox('Color interior',tuple(df['Color int'].drop_duplicates().values))
 
-            #kmfiltro = st.slider('Kilometraje', min(df['Kilometraje']), max(df['Kilometraje']), (min(df['Kilometraje']), max(df['Kilometraje'])))            
+            preciofiltro = st.slider('Kilometros', float(min(df['Kilometraje'])/1000000), float(max(df['Kilometraje'])/1000000), (float(min(df['Kilometraje']))/1000000,float(max(df['Kilometraje']))/1000000), step=500000/1000000)
+                
 
         col1, col2 = st.columns([1, 1])
 
