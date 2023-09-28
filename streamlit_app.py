@@ -74,27 +74,35 @@ try:
 
             with colfiltros6:
                 genre = st.radio("Dirección hidráulica",["Todo", "Si", "No"])
+                genre = st.radio("Vidrios eléctricos",["Todo", "Si", "No"])
     
             with colfiltros7:
                 genre = st.radio("Vidrios tintados",["Todo", "Si", "No"])
+                genre = st.radio("Aros de lujo",["Todo", "Si", "No"])
 
             with colfiltros8:
                 genre = st.radio("Aire acondicionado",["Todo", "Si", "No"])
+                genre = st.radio("Tapicería de cuero",["Todo", "Si", "No"])
 
             with colfiltros9:
                 genre = st.radio("Disco compacto",["Todo", "Si", "No"])
+                genre = st.radio("Cassette",["Todo", "Si", "No"])
 
             with colfiltros10:
                 genre = st.radio("Radio con USB/AUX",["Todo", "Si", "No"])
+                genre = st.radio("Bolsa de aire",["Todo", "Si", "No"])
 
             with colfiltros11:
                 genre = st.radio("Revisión Técnica al día",["Todo", "Si", "No"])
+                genre = st.radio("Alarma",["Todo", "Si", "No"])
 
             with colfiltros12:
                 genre = st.radio("Cierre central",["Todo", "Si", "No"])
+                genre = st.radio("Espejos eléctricos",["Todo", "Si", "No"])
 
             with colfiltros13:
                 genre = st.radio("Asientos eléctricos",["Todo", "Si", "No"])
+                genre = st.radio("Control crucero",["Todo", "Si", "No"])
 
         col1, col2 = st.columns([1, 1])
 
