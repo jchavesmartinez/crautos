@@ -46,6 +46,8 @@ try:
                 modelofiltro = st.selectbox('Modelo',tuple(df['MarcaModelo'].drop_duplicates().values))
                 combustionfiltro = st.selectbox('Combustible',tuple(df['Combustible'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',tuple(df['Transmision'].drop_duplicates().values))
+                placafiltro = st.selectbox('Placa',tuple(df['Placa'].drop_duplicates().values))
+                puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
 
         col1, col2 = st.columns([1, 1])
 
