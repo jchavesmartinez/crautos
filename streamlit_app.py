@@ -47,6 +47,7 @@ try:
             )
 
             # Display the histogram in the Streamlit app
+            fig1.update_layout(width=1000, height=400)
             st.plotly_chart(fig1)
 
 
@@ -64,6 +65,7 @@ try:
             )
 
             # Display the histogram in the Streamlit app
+            fig2.update_layout(width=1000, height=400)
             st.plotly_chart(fig2)
 
 
