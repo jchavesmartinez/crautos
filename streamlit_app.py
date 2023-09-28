@@ -26,7 +26,7 @@ try:
     # Load the data using the cached function
     df = load_data()
 
-    st.write(min(df['Kilometraje']))
+    st.write(max(df['Kilometraje']))
 
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
