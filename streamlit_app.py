@@ -42,7 +42,7 @@ try:
 
             with colfiltros2:
                 fechafiltro = st.slider(
-                    'Select a range of values',
+                    'Select a range of values2',
                     0.0, 100.0, (25.0, 75.0))
 
         col1, col2 = st.columns([1, 1])
