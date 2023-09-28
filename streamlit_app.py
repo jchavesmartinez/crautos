@@ -44,7 +44,7 @@ try:
 
             option = st.selectbox(
                 'How would you like to be contacted?',
-                ('Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
+                ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
                         
             
             data1 = {'values': df[option].values}
@@ -67,7 +67,7 @@ try:
             
             option2 = st.selectbox(
                 'WENAS',
-                ('MarcaModelo','Precio'))
+                ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
             
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
