@@ -26,7 +26,7 @@ try:
     # Load the data using the cached function
     df = load_data()
 
-    #tupple(df['Marca'].values)
+    st.write(len(df['Marca'].drop_duplicates().values))
 
     
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
