@@ -40,6 +40,13 @@ try:
 
         with col1:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
+            
+
+            option = st.selectbox(
+                'How would you like to be contacted?',
+                ('Email', 'Home phone', 'Mobile phone'))
+                        
+            
             data1 = {'values': df['Marca'].values}
             df1 = pd.DataFrame(data1)
 
@@ -56,6 +63,13 @@ try:
             st.plotly_chart(fig1)
 
         with col2:
+            
+            
+            option2 = st.selectbox(
+                'How would you like to be contacted?',
+                ('Email', 'Home phone', 'Mobile phone'))
+            
+
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
             data2 = {'values': df['Grupo de años'].values}
             df2 = pd.DataFrame(data2)
