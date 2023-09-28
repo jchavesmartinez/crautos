@@ -38,7 +38,7 @@ try:
 
             with colfiltros1:
 
-                preciosfiltro = st.slider('How old are you?', 0, 130, 25)
+                preciosfiltro = st.slider('Año del vehiculo', min(df['Año']), max(df['Año']), 25)
 
             with colfiltros2:
                 fechafiltro = st.slider(
