@@ -32,8 +32,8 @@ try:
     with tab1:
     
         with st.expander("Menu de filtros"):
-            st.write('WENAS')
-            st.image("https://static.streamlit.io/examples/dice.jpg")
+            st.write('Aca iran los filtros')
+
     
     
         col1, col2 = st.columns([1, 1])
