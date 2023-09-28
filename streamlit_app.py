@@ -31,6 +31,8 @@ try:
     
     with tab1:
     
+        
+
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
 
@@ -48,7 +50,7 @@ try:
 
             with colfiltros3:
 
-                marcafiltro = st.selectbox('Marca',tuple(df['Marca'].drop_duplicates().values))
+                marcafiltro = st.selectbox('Marca',tuple(df['Marca'].drop_duplicates().values)+ ('Sin filtro'))
                 cilindradafiltro = st.selectbox('Cilindrada',tuple(df['Cilindrada'].drop_duplicates().values))
                 estadofiltro = st.selectbox('Estado',tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',tuple(df['Transmision'].drop_duplicates().values))
