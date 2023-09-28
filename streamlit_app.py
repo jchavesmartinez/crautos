@@ -45,9 +45,23 @@ try:
             st.plotly_chart(fig)
 
         with col2:
-            st.header("A dog")
-            st.image("https://static.streamlit.io/examples/dog.jpg")
+            # Create a sample DataFrame (replace this with your 'df' from the CSV)
+            data = {'values': df['Marca'].values}
+            df = pd.DataFrame(data)
 
+            # Create a histogram using Plotly Express
+            fig = px.histogram(df, x='values', nbins=10, title='Histogram')
+
+            fig.update_layout(
+                plot_bgcolor='white',  # Background color of the plot area
+                paper_bgcolor='white'  # Background color of the entire figure
+            )
+
+            # Display the histogram in the Streamlit app
+            st.plotly_chart(fig)
+
+    with tab2:
+        st.text("Wenas")
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
