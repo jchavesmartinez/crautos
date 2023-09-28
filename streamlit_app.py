@@ -73,22 +73,22 @@ try:
                 genre = st.radio("Parabrisas",["Todo", "Si", "No"])
     
             with colfiltros7:
-                genre = st.radio("Parabrisas",["Todo", "Si", "No"])
+                genre = st.radio("Parabrisas1",["Todo", "Si", "No"])
 
             with colfiltros8:
-                genre = st.radio("Parabrisas",["Todo", "Si", "No"])
+                genre = st.radio("Parabrisas2",["Todo", "Si", "No"])
 
             with colfiltros9:
-                genre = st.radio("Parabrisas",["Todo", "Si", "No"])
+                genre = st.radio("Parabrisas3",["Todo", "Si", "No"])
 
             with colfiltros10:
-                genre = st.radio("Parabrisas",["Todo", "Si", "No"])
+                genre = st.radio("Parabrisas4",["Todo", "Si", "No"])
 
             with colfiltros11:
-                genre = st.radio("Parabrisas",["Todo", "Si", "No"])
+                genre = st.radio("Parabrisas5",["Todo", "Si", "No"])
 
             with colfiltros12:
-                genre = st.radio("Parabrisas",["Todo", "Si", "No"])
+                genre = st.radio("Parabrisas6",["Todo", "Si", "No"])
 
         col1, col2 = st.columns([1, 1])
 
