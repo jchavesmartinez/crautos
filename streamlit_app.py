@@ -26,20 +26,28 @@ try:
     
     with tab1:
     
-        # Create a sample DataFrame (replace this with your 'df' from the CSV)
-        data = {'values': df['Marca'].values}
-        df = pd.DataFrame(data)
+        col1, col2, col3 = st.columns(3)
 
-        # Create a histogram using Plotly Express
-        fig = px.histogram(df, x='values', nbins=10, title='Histogram')
+        with col1:
+            # Create a sample DataFrame (replace this with your 'df' from the CSV)
+            data = {'values': df['Marca'].values}
+            df = pd.DataFrame(data)
 
-        fig.update_layout(
-            plot_bgcolor='white',  # Background color of the plot area
-            paper_bgcolor='white'  # Background color of the entire figure
-        )
+            # Create a histogram using Plotly Express
+            fig = px.histogram(df, x='values', nbins=10, title='Histogram')
 
-        # Display the histogram in the Streamlit app
-        st.plotly_chart(fig)
+            fig.update_layout(
+                plot_bgcolor='white',  # Background color of the plot area
+                paper_bgcolor='white'  # Background color of the entire figure
+            )
+
+            # Display the histogram in the Streamlit app
+            st.plotly_chart(fig)
+
+        with col2:
+            st.header("A dog")
+            st.image("https://static.streamlit.io/examples/dog.jpg")
+
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
