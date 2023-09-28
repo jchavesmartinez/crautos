@@ -73,8 +73,6 @@ try:
 
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12, colfiltros13 = st.columns([1, 1, 1, 1, 1, 1 , 1, 1])
 
-            on = st.toggle('Activate feature')
-
             with colfiltros6:
                 genre = st.radio("Dirección hidráulica",["Todo", "Si", "No"])
                 genre = st.radio("Vidrios eléctricos",["Todo", "Si", "No"])
