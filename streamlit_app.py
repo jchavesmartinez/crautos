@@ -44,10 +44,10 @@ try:
 
             option = st.selectbox(
                 'How would you like to be contacted?',
-                ('Email', 'Home phone', 'Mobile phone'))
+                ('MarcaModelo','Precio'))
                         
             
-            data1 = {'values': df['Marca'].values}
+            data1 = {'values': df[{option}].values}
             df1 = pd.DataFrame(data1)
 
             # Create a histogram using Plotly Express
@@ -67,11 +67,11 @@ try:
             
             option2 = st.selectbox(
                 'WENAS',
-                ('Email1','Option2'))
+                ('MarcaModelo','Precio'))
             
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
-            data2 = {'values': df['Grupo de años'].values}
+            data2 = {'values': df[{option}].values}
             df2 = pd.DataFrame(data2)
 
             # Create a histogram using Plotly Express
