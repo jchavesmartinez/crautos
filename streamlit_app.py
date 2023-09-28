@@ -32,7 +32,7 @@ try:
     with tab1:
     
         with st.expander("Menu de filtros"):
-            colfiltros1, colfiltros1 = st.columns([1, 1])
+            colfiltros1, colfiltros2 = st.columns([1, 1])
 
             with colfiltros1:
                 st.write('Aca iran los filtros')
