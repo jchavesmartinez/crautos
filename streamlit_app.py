@@ -75,7 +75,7 @@ try:
 
 
     with tab2:
-        st.text("Wenas")
+        st.text("Aca iran los slicers para filtrar")
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
