@@ -36,10 +36,14 @@ try:
             with colfiltros1:
                 fechafiltro = st.slider('Año', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
                 marcafiltro = st.selectbox('Marca',tuple(df['Marca'].drop_duplicates().values))
+                cilindradafiltro = st.selectbox('Cilindrada',tuple(df['Cilindrada'].drop_duplicates().values))
+                estilofiltro = st.selectbox('Estilo',tuple(df['Estilo'].drop_duplicates().values))
 
             with colfiltros2:
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
                 modelofiltro = st.selectbox('Modelo',tuple(df['MarcaModelo'].drop_duplicates().values))
+                combustionfiltro = st.selectbox('Combustible',tuple(df['Combustible'].drop_duplicates().values))
+                transmisionfiltro = st.selectbox('Transmision',tuple(df['Transmision'].drop_duplicates().values))
 
         col1, col2 = st.columns([1, 1])
 
