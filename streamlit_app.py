@@ -67,6 +67,8 @@ try:
                 puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
 
 
+            st.markdown('<hr>', unsafe_allow_html=True)
+
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12 = st.columns([1, 1, 1, 1, 1, 1 , 1])
 
             with colfiltros6:
