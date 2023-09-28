@@ -56,6 +56,11 @@ try:
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
 
                 df = df[df['Marca'] == marcafiltro]
+                df = df[df['Cilindrada'] == cilindradafiltro]
+                df = df[df['Estado'] == estadofiltro]
+                df = df[df['Transmision'] == transmisionfiltro]
+                
+                
                 st.write(len(df['Marca']))
             
             with colfiltros4:
