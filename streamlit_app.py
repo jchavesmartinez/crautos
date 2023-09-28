@@ -26,9 +26,6 @@ try:
     # Load the data using the cached function
     df = load_data()
 
-    st.write(min(df['Precio']))
-    st.write(max(df['Precio']))
-
     #tupple(df['Marca'].values)
 
     
