@@ -22,7 +22,7 @@ try:
     df = load_data()
 
     
-    tab1, tab2, tab3 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
+    tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
     with tab1:
     
