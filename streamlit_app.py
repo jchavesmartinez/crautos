@@ -42,7 +42,8 @@ try:
             )
 
             # Display the histogram in the Streamlit app
-            st.plotly_chart(fig1)
+            #st.plotly_chart(fig1)
+            st.text('Wemas')
 
         with col2:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
@@ -58,7 +59,8 @@ try:
             )
 
             # Display the histogram in the Streamlit app
-            st.plotly_chart(fig2)
+            #st.plotly_chart(fig2)
+            st.text('Wemas')
 
     with tab2:
         st.text("Wenas")
