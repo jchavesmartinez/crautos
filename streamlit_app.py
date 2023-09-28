@@ -51,23 +51,23 @@ try:
             with colfiltros3:
 
                 marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values) )
-                cilindradafiltro = st.selectbox('Cilindrada',tuple(df['Cilindrada'].drop_duplicates().values))
-                estadofiltro = st.selectbox('Estado',tuple(df['Estado'].drop_duplicates().values))
-                transmisionfiltro = st.selectbox('Transmision',tuple(df['Transmision'].drop_duplicates().values))
+                cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
+                estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
+                transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
             
             with colfiltros4:
 
-                modelofiltro = st.selectbox('Modelo',tuple(df['MarcaModelo'].drop_duplicates().values))
-                combustionfiltro = st.selectbox('Combustible',tuple(df['Combustible'].drop_duplicates().values))
-                extcolfiltro = st.selectbox('Color exterior',tuple(df['Color ext'].drop_duplicates().values))
-                placafiltro = st.selectbox('Placa',tuple(df['Placa'].drop_duplicates().values))
+                modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(df['MarcaModelo'].drop_duplicates().values))
+                combustionfiltro = st.selectbox('Combustible',('Sin filtro',)+tuple(df['Combustible'].drop_duplicates().values))
+                extcolfiltro = st.selectbox('Color exterior',('Sin filtro',)+tuple(df['Color ext'].drop_duplicates().values))
+                placafiltro = st.selectbox('Placa',('Sin filtro',)+tuple(df['Placa'].drop_duplicates().values))
    
             with colfiltros5:
 
-                estilofiltro = st.selectbox('Estilo',tuple(df['Estilo'].drop_duplicates().values))
-                pasajerosfiltro = st.selectbox('Pasajeros',tuple(df['Pasajeros'].drop_duplicates().values))
-                intcolfiltro = st.selectbox('Color interior',tuple(df['Color int'].drop_duplicates().values))
-                puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
+                estilofiltro = st.selectbox('Estilo',('Sin filtro',)+tuple(df['Estilo'].drop_duplicates().values))
+                pasajerosfiltro = st.selectbox('Pasajeros',('Sin filtro',)+tuple(df['Pasajeros'].drop_duplicates().values))
+                intcolfiltro = st.selectbox('Color interior',('Sin filtro',)+tuple(df['Color int'].drop_duplicates().values))
+                puertasfiltro = st.selectbox('Puertas',('Sin filtro',)+tuple(df['Puertas'].drop_duplicates().values))
 
         with st.expander("Extras"):
 
