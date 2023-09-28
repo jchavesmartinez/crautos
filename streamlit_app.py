@@ -50,7 +50,7 @@ try:
 
             with colfiltros3:
 
-                marcafiltro = st.selectbox('Marca',tuple(df['Marca'].drop_duplicates().values)+ ('Sin filtro',))
+                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values) )
                 cilindradafiltro = st.selectbox('Cilindrada',tuple(df['Cilindrada'].drop_duplicates().values))
                 estadofiltro = st.selectbox('Estado',tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',tuple(df['Transmision'].drop_duplicates().values))
