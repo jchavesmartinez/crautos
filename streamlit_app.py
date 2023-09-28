@@ -76,7 +76,7 @@ try:
                 genre = st.radio("Vidrios eléctricos",["Todo", "Si", "No"])
                 genre = st.radio("Volante ajustable",["Todo", "Si", "No"])
                 genre = st.radio("Luces de Xenón/Bixenón",["Todo", "Si", "No"])
-                genre = st.radio("Alarma",["Todo", "Si", "No"])
+                genre = st.radio("Sensores frontales",["Todo", "Si", "No"])
     
             with colfiltros7:
                 genre = st.radio("Vidrios tintados",["Todo", "Si", "No"])
@@ -125,7 +125,7 @@ try:
                 genre = st.radio("Control crucero",["Todo", "Si", "No"])
                 genre = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
-                genre = st.radio("Sensores frontales",["Todo", "Si", "No"])
+                
 
         col1, col2 = st.columns([1, 1])
 
