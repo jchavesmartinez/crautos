@@ -36,9 +36,7 @@ try:
 
             with colfiltros1:
 
-                preciosfiltro = st.slider(
-                    'Select a range of values',
-                    0.0, 100.0, (25.0, 75.0))
+                preciosfiltro = st.slider('How old are you?', 0, 130, 25)
 
             with colfiltros2:
                 fechafiltro = st.slider(
