@@ -70,7 +70,7 @@ try:
 
             st.markdown('<hr>', unsafe_allow_html=True)
 
-            colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12 = st.columns([1, 1, 1, 1, 1, 1 , 1])
+            colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12, colfiltros13 = st.columns([1, 1, 1, 1, 1, 1 , 1, 1])
 
             with colfiltros6:
                 genre = st.radio("Dirección hidráulica",["Todo", "Si", "No"])
@@ -92,6 +92,9 @@ try:
 
             with colfiltros12:
                 genre = st.radio("Cierre central",["Todo", "Si", "No"])
+
+            with colfiltros13:
+                genre = st.radio("Asientos eléctricos",["Todo", "Si", "No"])
 
         col1, col2 = st.columns([1, 1])
 
