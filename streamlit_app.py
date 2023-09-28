@@ -29,6 +29,8 @@ try:
     st.write(min(df['Precio']))
     st.write(max(df['Precio']))
 
+    #tupple(df['Marca'].values)
+
     
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
@@ -39,7 +41,7 @@ try:
 
             with colfiltros1:
                 fechafiltro = st.slider('Año', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
-                marcafiltro = st.selectbox('Marca',tupple(df['Año']))
+                marcafiltro = st.selectbox('Marca',tupple(df['Marca'].values))
 
             with colfiltros2:
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
