@@ -70,10 +70,7 @@ try:
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12 = st.columns([1, 1, 1, 1, 1, 1 , 1])
 
             with colfiltros6:
-                genre = st.radio(
-                    "Parabrisas",
-                    ["Todo", "Si", "No"],
-                    index=None,)
+                genre = st.radio("Parabrisas",["Todo", "Si", "No"])
 
         col1, col2 = st.columns([1, 1])
 
