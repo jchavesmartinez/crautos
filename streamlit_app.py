@@ -37,24 +37,26 @@ try:
 
             with colfiltros1:
                 fechafiltro = st.slider('Año', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
-                marcafiltro = st.selectbox('Marca',tuple(df['Marca'].drop_duplicates().values))
-                cilindradafiltro = st.selectbox('Cilindrada',tuple(df['Cilindrada'].drop_duplicates().values))
-                estilofiltro = st.selectbox('Estilo',tuple(df['Estilo'].drop_duplicates().values))
-                pasajerosfiltro = st.selectbox('Pasajeros',tuple(df['Pasajeros'].drop_duplicates().values))
-                estadofiltro = st.selectbox('Estado',tuple(df['Estado'].drop_duplicates().values))
-                extcolfiltro = st.selectbox('Color exterior',tuple(df['Color ext'].drop_duplicates().values))
-
+                
             with colfiltros2:
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
-                modelofiltro = st.selectbox('Modelo',tuple(df['MarcaModelo'].drop_duplicates().values))
-                combustionfiltro = st.selectbox('Combustible',tuple(df['Combustible'].drop_duplicates().values))
-                transmisionfiltro = st.selectbox('Transmision',tuple(df['Transmision'].drop_duplicates().values))
-                placafiltro = st.selectbox('Placa',tuple(df['Placa'].drop_duplicates().values))
-                puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
-                intcolfiltro = st.selectbox('Color interior',tuple(df['Color int'].drop_duplicates().values))
 
             preciofiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
                 
+            marcafiltro = st.selectbox('Marca',tuple(df['Marca'].drop_duplicates().values))
+            cilindradafiltro = st.selectbox('Cilindrada',tuple(df['Cilindrada'].drop_duplicates().values))
+            estilofiltro = st.selectbox('Estilo',tuple(df['Estilo'].drop_duplicates().values))
+            pasajerosfiltro = st.selectbox('Pasajeros',tuple(df['Pasajeros'].drop_duplicates().values))
+            estadofiltro = st.selectbox('Estado',tuple(df['Estado'].drop_duplicates().values))
+            extcolfiltro = st.selectbox('Color exterior',tuple(df['Color ext'].drop_duplicates().values))
+
+            modelofiltro = st.selectbox('Modelo',tuple(df['MarcaModelo'].drop_duplicates().values))
+            combustionfiltro = st.selectbox('Combustible',tuple(df['Combustible'].drop_duplicates().values))
+            transmisionfiltro = st.selectbox('Transmision',tuple(df['Transmision'].drop_duplicates().values))
+            placafiltro = st.selectbox('Placa',tuple(df['Placa'].drop_duplicates().values))
+            puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
+            intcolfiltro = st.selectbox('Color interior',tuple(df['Color int'].drop_duplicates().values))
+
 
         col1, col2 = st.columns([1, 1])
 
