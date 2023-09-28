@@ -9,7 +9,7 @@ import plotly.express as px
 # Use st.set_page_config to configure the layout
 st.set_page_config(
     layout="wide",  # Set the layout to "wide"
-    page_title="My Wide Screen Streamlit App",  # Set the title of the app
+    page_title="Portal de inversiones autos",  # Set the title of the app
 )
 
 try:
@@ -47,8 +47,8 @@ try:
             )
 
             # Display the histogram in the Streamlit app
-            #st.plotly_chart(fig1)
-            st.text('Wemas')
+            st.plotly_chart(fig1)
+
 
         with col2:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
@@ -64,8 +64,8 @@ try:
             )
 
             # Display the histogram in the Streamlit app
-            #st.plotly_chart(fig2)
-            st.text('Wemas')
+            st.plotly_chart(fig2)
+
 
     with tab2:
         st.text("Wenas")
