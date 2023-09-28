@@ -37,6 +37,8 @@ try:
             with colfiltros1:
                 st.write('Aca iran los filtros')
             
+            st.write('Aca iran los filtros')
+            
             with colfiltros2:
                 st.write('Aca iran los filtros')
 
