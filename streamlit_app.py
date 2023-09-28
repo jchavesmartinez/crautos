@@ -44,7 +44,7 @@ try:
 
             option = st.selectbox(
                 'How would you like to be contacted?',
-                ('MarcaModelo','Precio'))
+                ('MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa'))
                         
             
             data1 = {'values': df[option].values}
