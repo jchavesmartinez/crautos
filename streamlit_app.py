@@ -66,8 +66,8 @@ try:
             
             
             option2 = st.selectbox(
-                'How would you like to be contacted?',
-                ('Email', 'Home phone', 'Mobile phone'))
+                'WENAS',
+                ('Email1'))
             
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
