@@ -35,12 +35,15 @@ try:
             colfiltros1, colfiltros2 = st.columns([1, 1])
 
             with colfiltros1:
-                st.write('Aca iran los filtros')
-            
-            st.write('Aca iran los filtros')
-            
+
+                preciosfiltro = st.slider(
+                    'Select a range of values',
+                    0.0, 100.0, (25.0, 75.0))
+
             with colfiltros2:
-                st.write('Aca iran los filtros')
+                fechafiltro = st.slider(
+                    'Select a range of values',
+                    0.0, 100.0, (25.0, 75.0))
 
         col1, col2 = st.columns([1, 1])
 
