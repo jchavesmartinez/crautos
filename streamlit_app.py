@@ -67,9 +67,9 @@ try:
                 intcolfiltro = st.selectbox('Color interior',tuple(df['Color int'].drop_duplicates().values))
                 puertasfiltro = st.selectbox('Puertas',tuple(df['Puertas'].drop_duplicates().values))
 
-        with st.expander("Extras"):
+        st.markdown('<hr>', unsafe_allow_html=True)
 
-            st.markdown('<hr>', unsafe_allow_html=True)
+        with st.expander("Extras"):
 
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12, colfiltros13 = st.columns([1, 1, 1, 1, 1, 1 , 1, 1])
 
