@@ -31,7 +31,7 @@ try:
     
     with tab1:
     
-        col1, col2 = st.columns([2, 1])
+        col1, col2 = st.columns([1, 1])
 
         with col1:
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
