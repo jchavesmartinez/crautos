@@ -41,7 +41,7 @@ try:
                 fechafiltro = st.slider('Año', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
 
             with colfiltros2:
-                preciofiltro = st.slider('Precio', 0, 14200, (0,10))
+                preciofiltro = st.slider('Precio', 0, 1420000, (0,10))
 
         col1, col2 = st.columns([1, 1])
 
