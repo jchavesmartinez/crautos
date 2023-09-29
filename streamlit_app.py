@@ -70,7 +70,7 @@ try:
                 df = df[df['Marca'] == marcafiltro]
 
 
-                st.write(len(df['Marca']))
+                
 
             with colfiltros4:
 
@@ -89,6 +89,8 @@ try:
                     filters["Placa"] = placafiltro
                 
                 df = df[df['MarcaModelo'] == marcafiltro]
+
+                st.write(len(df['Marca']))
 
             with colfiltros5:
 
