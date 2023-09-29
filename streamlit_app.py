@@ -220,6 +220,8 @@ try:
 
         df = pd.DataFrame(data)
 
+        st.write(filtered_df)
+
         # Initialize session_state if not already done
         if 'selectboxes' not in st.session_state:
             st.session_state.selectboxes = []
