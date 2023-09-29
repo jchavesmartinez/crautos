@@ -72,9 +72,6 @@ try:
                 df = df[df['Estado'] == estadofiltro] if estadofiltro != 'Sin filtro' else df
                 df = df[df['Transmision'] == transmisionfiltro] if transmisionfiltro != 'Sin filtro' else df
 
-
-                
-
             with colfiltros4:
 
                 modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(df['MarcaModelo'].drop_duplicates().values))
@@ -92,9 +89,9 @@ try:
                     filters["Placa"] = placafiltro
                 
                 df = df[df['MarcaModelo'] == modelofiltro] if modelofiltro != 'Sin filtro' else df
-
-                st.write(df)
-                st.write(len(df['MarcaModelo']))
+                df = df[df['Combustible'] == combustionfiltro] if combustionfiltro != 'Sin filtro' else df
+                df = df[df['Color ext'] == extcolfiltro] if extcolfiltro != 'Sin filtro' else df
+                df = df[df['Placa'] == placafiltro] if placafiltro != 'Sin filtro' else df
 
             with colfiltros5:
 
@@ -112,6 +109,15 @@ try:
                 if puertasfiltro != "Sin filtro":
                     filters["Puertas"] = puertasfiltro
 
+
+                df = df[df['Estilo'] == estilofiltro] if estilofiltro != 'Sin filtro' else df
+                df = df[df['Pasajeros'] == pasajerosfiltro] if pasajerosfiltro != 'Sin filtro' else df
+                df = df[df['Color int'] == intcolfiltro] if intcolfiltro != 'Sin filtro' else df
+                df = df[df['Puertas'] == puertasfiltro] if puertasfiltro != 'Sin filtro' else df
+
+                st.write(df)
+                st.write(len(df['MarcaModelo']))
+
         with st.expander("Extras"):
 
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12, colfiltros13 = st.columns([1, 1, 1, 1, 1, 1 , 1, 1])
@@ -122,6 +128,8 @@ try:
                 genre = st.radio("Volante ajustable",["Todo", "Si", "No"])
                 genre = st.radio("Luces de Xenón/Bixenón",["Todo", "Si", "No"])
                 genre = st.radio("Sensores frontales",["Todo", "Si", "No"])
+
+                st.write(genre)
     
             with colfiltros7:
                 genre = st.radio("Vidrios tintados",["Todo", "Si", "No"])
