@@ -32,11 +32,7 @@ try:
     with tab1:
     
         filters = {}
-        filtered_df = df.copy()
-
-        for column, value in filters.items():
-            filtered_df = filtered_df[filtered_df[column] == value] 
-
+        
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
 
@@ -67,6 +63,7 @@ try:
                     filters["Estado"] = estadofiltro
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
+                
 
                 
                 st.write(len(filtered_df['Marca']))
@@ -144,9 +141,10 @@ try:
                 genre = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
 
-        
+        filtered_df = df.copy()
+        for column, value in filters.items():
+            filtered_df = filtered_df[filtered_df[column] == value]      
    
-
         col1, col2 = st.columns([1, 1])
 
         with col1:
