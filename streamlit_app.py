@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.figure_factory as ff
 import plotly.express as px
+import numpy as np
 
 
 # Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
