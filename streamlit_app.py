@@ -38,13 +38,6 @@ try:
         if 'selected_values' not in st.session_state:
             st.session_state.selected_values = []
 
-        # Get user input
-        selected_value = st.selectbox("Select a value", ["Option 1", "Option 2", "Option 3"])
-
-        # Store selected value in session state
-        if selected_value not in st.session_state.selected_values:
-            st.session_state.selected_values.append(selected_value)
-
         # Display selected values
         st.write("Selected values:", st.session_state.selected_values)
         
@@ -78,6 +71,19 @@ try:
                     filters["Estado"] = estadofiltro
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
+
+                # Store selected value in session state
+                if marcafiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values.append(marcafiltro)
+                # Store selected value in session state
+                if cilindradafiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values.append(cilindradafiltro)
+                # Store selected value in session state
+                if estadofiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values.append(estadofiltro)
+                # Store selected value in session state
+                if transmisionfiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values.append(transmisionfiltro)
 
             with colfiltros4:
 
