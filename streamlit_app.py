@@ -31,7 +31,7 @@ try:
     
     with tab1:
     
-        
+        filters = {}
 
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
@@ -55,11 +55,15 @@ try:
                 estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
 
-                
-                df = df[df['Marca'] == marcafiltro]
-                df = df[df['Cilindrada'] == cilindradafiltro]
-                #df = df[df['Estado'] == estadofiltro]
-                #df = df[df['Transmision'] == transmisionfiltro]
+                if marcafiltro != "Sin filtro":
+                    filters["Marca"] = marcafiltro
+                if cilindradafiltro != "Sin filtro":
+                    filters["Cilindrada"] = cilindradafiltro
+                if estadofiltro != "Sin filtro":
+                    filters["Estado"] = estadofiltro
+                if transmisionfiltro != "Sin filtro":
+                    filters["Transmision"] = transmisionfiltro
+
                 
                 st.write(len(df['Marca']))
             
@@ -135,7 +139,10 @@ try:
                 genre = st.radio("Control crucero",["Todo", "Si", "No"])
                 genre = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
-                
+
+        filtered_df = df.copy()
+        for column, value in filters.items():
+            filtered_df = filtered_df[filtered_df[column] == value]    
 
         col1, col2 = st.columns([1, 1])
 
@@ -147,7 +154,7 @@ try:
                 'How would you like to be contacted?',
                 ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
                                
-            data1 = {'values': df[option].values}
+            data1 = {'values': filtered_df[option].values}
             df1 = pd.DataFrame(data1)
 
             # Create a histogram using Plotly Express
@@ -171,7 +178,7 @@ try:
             
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
-            data2 = {'values': df[option2].values}
+            data2 = {'values': filtered_df[option2].values}
             df2 = pd.DataFrame(data2)
 
             # Create a histogram using Plotly Express
@@ -204,7 +211,7 @@ try:
         color_filter = st.sidebar.selectbox("Select Color", ["All"] + list(df["Color"].unique()))
 
         # Create a filter dictionary to store the selected filters
-        filters = {}
+        
 
         # Update the filter dictionary based on user selections
         if category_filter != "All":
@@ -213,9 +220,7 @@ try:
             filters["Color"] = color_filter
 
         # Apply filters to the DataFrame
-        filtered_df = df.copy()
-        for column, value in filters.items():
-            filtered_df = filtered_df[filtered_df[column] == value]
+
 
         # Display the filtered DataFrame
         st.write(filtered_df)
