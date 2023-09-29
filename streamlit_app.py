@@ -69,7 +69,7 @@ try:
                     filters["Transmision"] = transmisionfiltro
 
                 
-                st.write(len(df['Marca']))
+                st.write(len(filtered_df['Marca']))
             
             with colfiltros4:
 
