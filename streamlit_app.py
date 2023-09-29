@@ -67,7 +67,7 @@ try:
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
                 
-                df = df[df['Marca'] == marcafiltro] if modelofiltro != 'Sin filtro' else df
+                df = df[df['Marca'] == marcafiltro] if marcafiltro != 'Sin filtro' else df
 
 
                 
