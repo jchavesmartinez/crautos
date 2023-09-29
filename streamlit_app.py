@@ -77,13 +77,13 @@ try:
                     st.session_state.selected_values["Marca"] = marcafiltro
                 # Store selected value in session state
                 if cilindradafiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values["Marca"] = marcafiltro
+                    st.session_state.selected_values["Cilindrada"] = cilindradafiltro
                 # Store selected value in session state
                 if estadofiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values["Marca"] = marcafiltro
+                    st.session_state.selected_values["Estado"] = estadofiltro
                 # Store selected value in session state
                 if transmisionfiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values["Marca"] = marcafiltro
+                    st.session_state.selected_values["Transmision"] = transmisionfiltro
 
                 # Display selected values
                 st.write("Selected values:", st.session_state.selected_values)
