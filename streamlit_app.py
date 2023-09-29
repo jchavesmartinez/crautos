@@ -242,13 +242,35 @@ try:
         st.write(len(filtered_df))
 
     with tab2:
-        ##### Option using a callback #####
-        st.header(st.session_state.value)
 
-        def update_value():
-            st.session_state.value = "Bar"
+        # Sample DataFrame
+        data = {'Option 1': [1, 2, 3],
+                'Option 2': [4, 5, 6],
+                'Option 3': [7, 8, 9]}
 
-        st.button("Bar", on_click=update_value)
+        df = pd.DataFrame(data)
+
+        # Initialize session_state
+        if 'selected_value' not in st.session_state:
+            st.session_state.selected_value = None
+
+        # Function to handle selectbox changes and filter DataFrame
+        def handle_selectbox_change(new_value):
+            st.session_state.selected_value = new_value
+            st.write(f'Selected Value: {new_value}')
+
+            # Filter DataFrame based on the selected value
+            filtered_df = df[new_value]
+            st.write('Filtered DataFrame:')
+            st.write(filtered_df)
+
+        # Create a selectbox with on_change callback
+        selected_value = st.selectbox('Select a value', df.columns,
+                                    on_change=handle_selectbox_change)
+
+        # Display the currently selected value
+        st.write(f'Current Selected Value: {st.session_state.selected_value}')
+
 
 
 
