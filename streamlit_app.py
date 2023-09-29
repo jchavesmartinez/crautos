@@ -191,9 +191,9 @@ try:
 
         # Sample DataFrame
         data = {
-            'Category': ['A', 'A', 'B', 'B', 'C'],
-            'Product': ['P1', 'P2', 'P3', 'P4', 'P5'],
-            'Price': [100, 150, 200, 250, 300]
+            'Category': ['A', 'A', 'B', 'B', 'C', 'C'],
+            'Product': ['P1', 'P2', 'P3', 'P4', 'P5', 'P4'],
+            'Price': [100, 150, 200, 250, 300, 150]
         }
         df = pd.DataFrame(data)
 
