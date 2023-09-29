@@ -66,6 +66,8 @@ try:
                     filters["Estado"] = estadofiltro
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
+                
+                df = df[df['Marca'] == marcafiltro]
 
             with colfiltros4:
 
