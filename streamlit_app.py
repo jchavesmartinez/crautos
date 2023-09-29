@@ -88,7 +88,7 @@ try:
                 if placafiltro != "Sin filtro":
                     filters["Placa"] = placafiltro
                 
-                df = df[df['MarcaModelo'] == marcafiltro]
+                df = df[df['MarcaModelo'] == marcafiltro] if modelofiltro != 'Sin filtro' else df
 
                 st.write(len(df['Marca']))
 
