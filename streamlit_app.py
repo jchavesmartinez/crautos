@@ -36,7 +36,7 @@ try:
         @st.cache
         def filtrar_data(filters):
             for column, value in filters.items():
-                filtered_df = filtered_df[filtered_df[column] == value]
+                filtered_df = df[df[column] == value]
             return filtered_df
 
         with st.expander("Menu de filtros"):
