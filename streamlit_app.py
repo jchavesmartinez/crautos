@@ -212,7 +212,7 @@ try:
 
     with tab2:
 
-        Sample DataFrame
+
         data = {
             'Category1': ['A', 'B', 'C', 'A', 'B', 'C'],
             'Category2': ['X', 'Y', 'X', 'Y', 'X', 'Y'],
