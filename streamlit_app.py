@@ -191,25 +191,31 @@ try:
 
         # Sample DataFrame
         data = {
-            'Category': ['A', 'A', 'B', 'B', 'C', 'C'],
-            'Product': ['P1', 'P2', 'P3', 'P4', 'P5', 'P4'],
-            'Price': [100, 150, 200, 250, 300, 150]
+            "Category": ["A", "B", "C", "A", "B", "C"],
+            "Color": ["Red", "Green", "Blue", "Red", "Green", "Blue"],
+            "Value": [10, 20, 15, 30, 25, 40],
         }
+
         df = pd.DataFrame(data)
 
-        # Create three select boxes for filtering
-        selected_category = st.selectbox('Select Category', ['', 'A', 'B', 'C'])
-        selected_product = st.selectbox('Select Product', ['', 'P1', 'P2', 'P3', 'P4', 'P5'])
-        selected_price = st.selectbox('Select Price', ['', 100, 150, 200, 250, 300])
+        # Create select boxes for filtering
+        st.sidebar.header("Filter Data")
+        category_filter = st.sidebar.selectbox("Select Category", df["Category"].unique())
+        color_filter = st.sidebar.selectbox("Select Color", df["Color"].unique())
 
-        # Filter the DataFrame based on selected values
-        filtered_df = df
-        if selected_category:
-            filtered_df = filtered_df[filtered_df['Category'] == selected_category]
-        if selected_product:
-            filtered_df = filtered_df[filtered_df['Product'] == selected_product]
-        if selected_price:
-            filtered_df = filtered_df[filtered_df['Price'] == selected_price]
+        # Create a filter dictionary to store the selected filters
+        filters = {}
+
+        # Update the filter dictionary based on user selections
+        if category_filter:
+            filters["Category"] = category_filter
+        if color_filter:
+            filters["Color"] = color_filter
+
+        # Apply filters to the DataFrame
+        filtered_df = df.copy()
+        for column, value in filters.items():
+            filtered_df = filtered_df[filtered_df[column] == value]
 
         # Display the filtered DataFrame
         st.write(filtered_df)
