@@ -31,7 +31,7 @@ try:
     with tab1:
     
         filters = {}
-        filtered_df = df.copy()
+        #filtered_df = df.copy()
         
         @st.cache
         def filtrar_data(filters):
