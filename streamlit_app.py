@@ -228,11 +228,13 @@ try:
 
         df = pd.DataFrame(data)
 
-        # Function to filter DataFrame based on selected values
         def filter_dataframe(df, selections):
             filtered_df = df
-            for column, value in selections.items():
-                filtered_df = filtered_df[filtered_df[column] == value]
+            for column, values in selections.items():
+                if isinstance(values, list):
+                    filtered_df = filtered_df[filtered_df[column].isin(values)]
+                else:
+                    filtered_df = filtered_df[filtered_df[column] == values]
             return filtered_df
 
         # Create 10 select boxes
