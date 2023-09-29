@@ -61,11 +61,7 @@ try:
 
             with colfiltros3:
 
-                def actualizar_dic(selectbox_value,column_value):
-                    if selectbox_value not in st.session_state.selected_values:
-                        st.session_state.selected_values[column_value] = selectbox_value
-   
-                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values))
+                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values), on_click=)
                 cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
                 estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
@@ -79,7 +75,22 @@ try:
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
 
-                marcafiltro.on_click(lambda: actualizar_dic(marcafiltro, 'Marca')) 
+                # Store selected value in session state
+                if marcafiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values["Marca"] = marcafiltro
+                    st.rerun()
+                # Store selected value in session state
+                if cilindradafiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values["Cilindrada"] = cilindradafiltro
+                # Store selected value in session state
+                if estadofiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values["Estado"] = estadofiltro
+                # Store selected value in session state
+                if transmisionfiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values["Transmision"] = transmisionfiltro
+
+                # Display selected values
+                st.write("Selected values:", st.session_state.selected_values)
 
 
             with colfiltros4:
