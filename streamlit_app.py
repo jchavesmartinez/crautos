@@ -34,6 +34,9 @@ try:
         filters = {}
         filtered_df = df.copy()
 
+        for column, value in filters.items():
+            filtered_df = filtered_df[filtered_df[column] == value] 
+
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
 
@@ -142,8 +145,7 @@ try:
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
 
         
-        for column, value in filters.items():
-            filtered_df = filtered_df[filtered_df[column] == value]    
+   
 
         col1, col2 = st.columns([1, 1])
 
