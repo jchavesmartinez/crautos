@@ -65,7 +65,6 @@ try:
 
                 def dataframe_filter():
                     tiempo=time.time()
-                    return tiempo
                 
                 marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values), on_change=dataframe_filter())
                 cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
