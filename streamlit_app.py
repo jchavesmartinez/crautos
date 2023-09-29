@@ -38,8 +38,7 @@ try:
         if 'selected_values' not in st.session_state:
             st.session_state.selected_values = []
 
-        # Display selected values
-        st.write("Selected values:", st.session_state.selected_values)
+        
         
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
@@ -65,16 +64,28 @@ try:
                 
                 if marcafiltro != "Sin filtro":
                     filters["Marca"] = marcafiltro
-                    st.session_state.selected_values.append(marcafiltro)
                 if cilindradafiltro != "Sin filtro":
                     filters["Cilindrada"] = cilindradafiltro
-                    st.session_state.selected_values.append(cilindradafiltro)
                 if estadofiltro != "Sin filtro":
                     filters["Estado"] = estadofiltro
-                    st.session_state.selected_values.append(estadofiltro)
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
+
+                # Store selected value in session state
+                if marcafiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values.append(marcafiltro)
+                # Store selected value in session state
+                if cilindradafiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values.append(cilindradafiltro)
+                # Store selected value in session state
+                if estadofiltro not in st.session_state.selected_values:
+                    st.session_state.selected_values.append(estadofiltro)
+                # Store selected value in session state
+                if transmisionfiltro not in st.session_state.selected_values:
                     st.session_state.selected_values.append(transmisionfiltro)
+
+                # Display selected values
+                        st.write("Selected values:", st.session_state.selected_values)
 
 
             with colfiltros4:
