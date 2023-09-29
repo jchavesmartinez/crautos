@@ -191,7 +191,7 @@ try:
 
         # Sample DataFrame
         data = {
-            "Category": ["A", "B", "C", "A", "B", "C"],
+            "Category": ["B", "C", "C", "A", "A", "C"],
             "Color": ["Red", "Green", "Blue", "Red", "Green", "Blue"],
             "Value": [10, 20, 15, 30, 25, 40],
         }
