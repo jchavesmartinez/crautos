@@ -173,7 +173,7 @@ try:
                 'How would you like to be contacted?',
                 ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
                                
-            data1 = {'values': filtered_df[option].values}
+            data1 = {'values': df[option].values}
             df1 = pd.DataFrame(data1)
 
             # Create a histogram using Plotly Express
