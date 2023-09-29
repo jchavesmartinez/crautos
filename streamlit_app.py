@@ -78,7 +78,6 @@ try:
                 # Store selected value in session state
                 if marcafiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Marca"] = marcafiltro
-                    st.rerun()
                 # Store selected value in session state
                 if cilindradafiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Cilindrada"] = cilindradafiltro
