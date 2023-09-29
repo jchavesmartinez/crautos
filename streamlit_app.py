@@ -179,6 +179,8 @@ try:
                 genre = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
 
+        st.write(filters)
+        
         for column, value in filters.items():
             filtered_df = filtered_df[filtered_df[column] == value]      
    
