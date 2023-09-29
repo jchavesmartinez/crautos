@@ -69,6 +69,9 @@ try:
                 
                 df = df[df['Marca'] == marcafiltro]
 
+
+                st.write(len(df['Marca']))
+
             with colfiltros4:
 
                 modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(df['MarcaModelo'].drop_duplicates().values))
