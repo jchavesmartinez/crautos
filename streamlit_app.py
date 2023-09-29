@@ -81,6 +81,12 @@ try:
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
 
+                try:
+                    st.write(tiempo)
+                except:
+                    st.write('No existe')
+                
+                
                 # Store selected value in session state
                 if marcafiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Marca"] = marcafiltro
