@@ -70,7 +70,7 @@ try:
             
             with colfiltros4:
 
-                modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(df['MarcaModelo'].drop_duplicates().values))
+                modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(filtered_df['MarcaModelo'].drop_duplicates().values))
                 combustionfiltro = st.selectbox('Combustible',('Sin filtro',)+tuple(df['Combustible'].drop_duplicates().values))
                 extcolfiltro = st.selectbox('Color exterior',('Sin filtro',)+tuple(df['Color ext'].drop_duplicates().values))
                 placafiltro = st.selectbox('Placa',('Sin filtro',)+tuple(df['Placa'].drop_duplicates().values))
