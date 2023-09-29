@@ -26,7 +26,6 @@ try:
     # Load the data using the cached function
     df = load_data()
 
-
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
     with tab1:
@@ -65,7 +64,6 @@ try:
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
 
-            
             with colfiltros4:
 
                 modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(filtered_df['MarcaModelo'].drop_duplicates().values))
@@ -88,6 +86,15 @@ try:
                 pasajerosfiltro = st.selectbox('Pasajeros',('Sin filtro',)+tuple(df['Pasajeros'].drop_duplicates().values))
                 intcolfiltro = st.selectbox('Color interior',('Sin filtro',)+tuple(df['Color int'].drop_duplicates().values))
                 puertasfiltro = st.selectbox('Puertas',('Sin filtro',)+tuple(df['Puertas'].drop_duplicates().values))
+
+                if estilofiltro != "Sin filtro":
+                    filters["Estilo"] = estilofiltro
+                if pasajerosfiltro != "Sin filtro":
+                    filters["Pasajeros"] = pasajerosfiltro
+                if intcolfiltro != "Sin filtro":
+                    filters["Color int"] = intcolfiltro
+                if puertasfiltro != "Sin filtro":
+                    filters["Puertas"] = puertasfiltro
 
         with st.expander("Extras"):
 
