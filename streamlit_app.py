@@ -200,16 +200,16 @@ try:
 
         # Create select boxes for filtering
         st.sidebar.header("Filter Data")
-        category_filter = st.sidebar.selectbox("Select Category", df["Category"].unique())
-        color_filter = st.sidebar.selectbox("Select Color", df["Color"].unique())
+        category_filter = st.sidebar.selectbox("Select Category", ["All"] + list(df["Category"].unique()))
+        color_filter = st.sidebar.selectbox("Select Color", ["All"] + list(df["Color"].unique()))
 
         # Create a filter dictionary to store the selected filters
         filters = {}
 
         # Update the filter dictionary based on user selections
-        if category_filter:
+        if category_filter != "All":
             filters["Category"] = category_filter
-        if color_filter:
+        if color_filter != "All":
             filters["Color"] = color_filter
 
         # Apply filters to the DataFrame
