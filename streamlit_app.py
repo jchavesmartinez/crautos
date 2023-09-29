@@ -39,7 +39,7 @@ try:
         if 'selected_values' not in st.session_state:
             st.session_state.selected_values = {}
 
-        
+        st.write("Selected values:", st.session_state.selected_values)
         
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
