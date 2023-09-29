@@ -41,6 +41,8 @@ try:
 
         st.write("Selected values:", st.session_state.selected_values)
 
+        st.write(time.time())
+
         if 'value' not in st.session_state:
             st.session_state.value = ''
         
@@ -183,7 +185,7 @@ try:
                 genre = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
 
-        st.write(time.time())
+        
         
         for column, value in filters.items():
             filtered_df = filtered_df[filtered_df[column] == value]      
