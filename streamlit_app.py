@@ -31,7 +31,7 @@ try:
     with tab1:
     
         filters = {}
-        #filtered_df = df.copy()
+        filtered_df = df.copy()
         
         @st.cache
         def filtrar_data(filters):
@@ -39,9 +39,6 @@ try:
                 filtered_df = filtered_df[filtered_df[column] == value]
             return filtered_df
 
-
-        
-        
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
 
