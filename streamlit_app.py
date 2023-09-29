@@ -258,7 +258,7 @@ try:
 
         # Create a selectbox with on_change callback
         selected_value = st.selectbox('Select a value', ['Option 1', 'Option 2', 'Option 3'],
-                                    on_change=handle_selectbox_change('Jose'))
+                                    on_change=handle_selectbox_change(time.time()))
 
         # Display the selected value
         st.write(f'Current Selected Value: {st.session_state.selected_value}')
