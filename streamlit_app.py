@@ -203,7 +203,7 @@ try:
         selected_price = st.selectbox('Select Price', ['', 100, 150, 200, 250, 300])
 
         # Filter the DataFrame based on selected values
-        filtered_df = df.copy()
+        filtered_df = df
         if selected_category:
             filtered_df = filtered_df[filtered_df['Category'] == selected_category]
         if selected_product:
