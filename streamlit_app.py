@@ -87,6 +87,8 @@ try:
                     filters["Color ext"] = extcolfiltro
                 if placafiltro != "Sin filtro":
                     filters["Placa"] = placafiltro
+                
+                df = df[df['MarcaModelo'] == marcafiltro]
 
             with colfiltros5:
 
