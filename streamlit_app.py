@@ -32,6 +32,7 @@ try:
     with tab1:
     
         filters = {}
+        filtered_df = df.copy()
         
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
@@ -63,10 +64,7 @@ try:
                     filters["Estado"] = estadofiltro
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
-                
 
-                
-                st.write(len(filtered_df['Marca']))
             
             with colfiltros4:
 
@@ -74,7 +72,16 @@ try:
                 combustionfiltro = st.selectbox('Combustible',('Sin filtro',)+tuple(df['Combustible'].drop_duplicates().values))
                 extcolfiltro = st.selectbox('Color exterior',('Sin filtro',)+tuple(df['Color ext'].drop_duplicates().values))
                 placafiltro = st.selectbox('Placa',('Sin filtro',)+tuple(df['Placa'].drop_duplicates().values))
-   
+
+                if modelofiltro != "Sin filtro":
+                    filters["MarcaModelo"] = modelofiltro
+                if combustionfiltro != "Sin filtro":
+                    filters["Combustible"] = combustionfiltro
+                if extcolfiltro != "Sin filtro":
+                    filters["Color ext"] = extcolfiltro
+                if placafiltro != "Sin filtro":
+                    filters["Placa"] = placafiltro
+
             with colfiltros5:
 
                 estilofiltro = st.selectbox('Estilo',('Sin filtro',)+tuple(df['Estilo'].drop_duplicates().values))
@@ -141,7 +148,6 @@ try:
                 genre = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
 
-        filtered_df = df.copy()
         for column, value in filters.items():
             filtered_df = filtered_df[filtered_df[column] == value]      
    
