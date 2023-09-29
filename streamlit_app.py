@@ -220,28 +220,22 @@ try:
 
         df = pd.DataFrame(data)
 
-        # Create a cache for the filtered DataFrame
-        @st.cache
-        def filter_data(selected_options):
-            filtered_df = df[df['Category'].isin(selected_options)]
-            return filtered_df
+        # Initialize session_state if not already done
+        if 'selectboxes' not in st.session_state:
+            st.session_state.selectboxes = []
 
-        # Selectboxes
-        selectboxes = []
-        for i in range(10):
-            selected_option = st.selectbox(f'Selectbox {i+1}', df['Category'].unique())
-            selectboxes.append(selected_option)
-            
-            # Print the DataFrame before the selectbox
-            st.write(f'DataFrame before Selectbox {i+1}:')
-            st.write(df)
-            
-            # Filter the DataFrame based on the selected option
-            filtered_data = filter_data(selectboxes)
-            
-            # Print the filtered DataFrame
-            st.write(f'DataFrame after Selectbox {i+1}:')
-            st.write(filtered_data)
+        # Selectbox
+        selected_option = st.selectbox('Select Category', df['Category'].unique())
+
+        # Update the session_state.selectboxes
+        st.session_state.selectboxes.append(selected_option)
+
+        # Filter the DataFrame based on the selected options
+        filtered_df = df[df['Category'].isin(st.session_state.selectboxes)]
+
+        # Display the filtered DataFrame
+        st.write('Filtered DataFrame:')
+        st.write(filtered_df)
 
 
 except Exception as e:
