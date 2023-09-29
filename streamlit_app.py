@@ -37,6 +37,7 @@ try:
         def filtrar_data(filters):
             for column, value in filters.items():
                 filtered_df = df[df[column] == value]
+            st.write('wenas')
             return filtered_df
 
         with st.expander("Menu de filtros"):
