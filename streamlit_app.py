@@ -162,6 +162,8 @@ try:
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
 
         filtered_df=filtrar_data(filters)
+
+        st.write(filtered_df)
    
         col1, col2 = st.columns([1, 1])
 
