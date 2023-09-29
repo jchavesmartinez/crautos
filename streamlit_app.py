@@ -227,7 +227,6 @@ try:
 
         df = pd.DataFrame(data)
 
-
         # Function to filter DataFrame based on selected values
         def filter_dataframe(df, selections):
             filtered_df = df
