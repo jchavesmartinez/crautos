@@ -85,7 +85,7 @@ try:
                     st.session_state.selected_values.append(transmisionfiltro)
 
                 # Display selected values
-                        st.write("Selected values:", st.session_state.selected_values)
+                st.write("Selected values:", st.session_state.selected_values)
 
 
             with colfiltros4:
