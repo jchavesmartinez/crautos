@@ -212,28 +212,33 @@ try:
 
     with tab2:
 
-        # Sample DataFrame
+        Sample DataFrame
         data = {
-            'Category': ['A', 'B', 'C', 'A', 'B', 'C'],
-            'Value': [1, 2, 3, 4, 5, 6]
+            'Category1': ['A', 'B', 'C', 'A', 'B', 'C'],
+            'Category2': ['X', 'Y', 'X', 'Y', 'X', 'Y'],
+            'Category3': ['P', 'Q', 'P', 'Q', 'P', 'Q'],
+            'Value1': [1, 2, 3, 4, 5, 6],
+            'Value2': [10, 20, 30, 40, 50, 60],
+            'Value3': [100, 200, 300, 400, 500, 600]
         }
 
         df = pd.DataFrame(data)
 
-        st.write(filtered_df)
-
         # Initialize session_state if not already done
         if 'selectboxes' not in st.session_state:
-            st.session_state.selectboxes = []
+            st.session_state.selectboxes = {f'Category{i+1}': [] for i in range(3)}
 
-        # Selectbox
-        selected_option = st.selectbox('Select Category', df['Category'].unique())
+        # Selectboxes
+        for i in range(3):
+            selected_option = st.selectbox(f'Select Category{i+1}', df[f'Category{i+1}'].unique())
+            
+            # Update the session_state.selectboxes
+            st.session_state.selectboxes[f'Category{i+1}'].append(selected_option)
 
-        # Update the session_state.selectboxes
-        st.session_state.selectboxes.append(selected_option)
-
-        # Filter the DataFrame based on the selected options
-        filtered_df = df[df['Category'].isin(st.session_state.selectboxes)]
+        # Filter the DataFrame based on the selected options for each column
+        filtered_df = df.copy()
+        for i in range(3):
+            filtered_df = filtered_df[filtered_df[f'Category{i+1}'].isin(st.session_state.selectboxes[f'Category{i+1}'])]
 
         # Display the filtered DataFrame
         st.write('Filtered DataFrame:')
