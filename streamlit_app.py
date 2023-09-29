@@ -75,15 +75,12 @@ try:
                 # Store selected value in session state
                 if marcafiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Marca"] = marcafiltro
-                    st.rerun()
                 # Store selected value in session state
                 if cilindradafiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Cilindrada"] = cilindradafiltro
-                    st.rerun()
                 # Store selected value in session state
                 if estadofiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Estado"] = estadofiltro
-                    st.rerun()
                 # Store selected value in session state
                 if transmisionfiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Transmision"] = transmisionfiltro
@@ -240,8 +237,13 @@ try:
         st.write(len(filtered_df))
 
     with tab2:
+        ##### Option using a callback #####
+        st.header(st.session_state.value)
 
-        st.write('Jopse')
+        def update_value():
+            st.session_state.value = "Bar"
+
+        st.button("Bar", on_click=update_value)
 
 
 
