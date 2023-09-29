@@ -37,7 +37,7 @@ try:
 
         # Initialize session state
         if 'selected_values' not in st.session_state:
-            st.session_state.selected_values = []
+            st.session_state.selected_values = {}
 
         
         
@@ -74,16 +74,16 @@ try:
 
                 # Store selected value in session state
                 if marcafiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values.append(marcafiltro)
+                    st.session_state.filters["Marca"] = marcafiltro
                 # Store selected value in session state
                 if cilindradafiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values.append(cilindradafiltro)
+                    st.session_state.filters["Marca"] = marcafiltro
                 # Store selected value in session state
                 if estadofiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values.append(estadofiltro)
+                    st.session_state.filters["Marca"] = marcafiltro
                 # Store selected value in session state
                 if transmisionfiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values.append(transmisionfiltro)
+                    st.session_state.filters["Marca"] = marcafiltro
 
                 # Display selected values
                 st.write("Selected values:", st.session_state.selected_values)
