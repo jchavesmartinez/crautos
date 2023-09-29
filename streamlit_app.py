@@ -62,11 +62,8 @@ try:
             colfiltros3, colfiltros4, colfiltros5 = st.columns([1, 1, 1])
 
             with colfiltros3:
-
-                def dataframe_filter():
-                    tiempo=time.time()
                 
-                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values), on_change=dataframe_filter())
+                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values), on_change=st.session_state.selected_values["Marca"] = marcafiltro)
                 cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
                 estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
@@ -79,16 +76,11 @@ try:
                     filters["Estado"] = estadofiltro
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
-
-                try:
-                    st.write(tiempo)
-                except:
-                    st.write('No existe')
-                
+ 
                 
                 # Store selected value in session state
-                if marcafiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values["Marca"] = marcafiltro
+                #if marcafiltro not in st.session_state.selected_values:
+                #    st.session_state.selected_values["Marca"] = marcafiltro
                 # Store selected value in session state
                 if cilindradafiltro not in st.session_state.selected_values:
                     st.session_state.selected_values["Cilindrada"] = cilindradafiltro
