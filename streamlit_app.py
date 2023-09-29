@@ -3,6 +3,7 @@ import streamlit as st
 import plotly.figure_factory as ff
 import plotly.express as px
 import numpy as np
+import time
 
 
 # Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
@@ -179,7 +180,7 @@ try:
                 genre = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre = st.radio("Volante multifuncional",["Todo", "Si", "No"])
 
-        st.write(filters)
+        st.write(time.time())
         
         for column, value in filters.items():
             filtered_df = filtered_df[filtered_df[column] == value]      
