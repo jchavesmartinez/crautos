@@ -213,6 +213,7 @@ try:
     with tab2:
 
 
+        # Sample DataFrame
         data = {
             'Category1': ['A', 'B', 'C', 'A', 'B', 'C'],
             'Category2': ['X', 'Y', 'X', 'Y', 'X', 'Y'],
@@ -233,17 +234,16 @@ try:
             selected_option = st.selectbox(f'Select Category{i+1}', df[f'Category{i+1}'].unique())
             
             # Update the session_state.selectboxes
-            st.session_state.selectboxes[f'Category{i+1}'].append(selected_option)
+            st.session_state.selectboxes[f'Category{i+1}'] = selected_option
 
         # Filter the DataFrame based on the selected options for each column
         filtered_df = df.copy()
         for i in range(3):
-            filtered_df = filtered_df[filtered_df[f'Category{i+1}'].isin(st.session_state.selectboxes[f'Category{i+1}'])]
+            filtered_df = filtered_df[filtered_df[f'Category{i+1}'].isin([st.session_state.selectboxes[f'Category{i+1}']])]
 
         # Display the filtered DataFrame
         st.write('Filtered DataFrame:')
         st.write(filtered_df)
-
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
