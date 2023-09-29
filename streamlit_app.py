@@ -254,6 +254,7 @@ try:
         def handle_selectbox_change(new_value):
             st.session_state.selected_value = new_value
             st.write(f'Selected Value: {new_value}')
+            return new_value
 
         # Create a selectbox with on_change callback
         selected_value = st.selectbox('Select a value', ['Option 1', 'Option 2', 'Option 3'],
