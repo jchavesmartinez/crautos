@@ -91,6 +91,7 @@ try:
                 df = df[df['MarcaModelo'] == modelofiltro] if modelofiltro != 'Sin filtro' else df
 
                 st.write(df)
+                st.write(len(df['MarcaModelo']))
 
             with colfiltros5:
 
