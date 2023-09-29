@@ -54,11 +54,6 @@ try:
                 cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
                 estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
-
-                df=df[df['Marca'] == marcafiltro] if marcafiltro != 'Sin filtro' else df
-                df=df[df['Cilindrada'] == cilindradafiltro] if cilindradafiltro != 'Sin filtro' else df
-                df=df[df['Estado'] == estadofiltro] if estadofiltro != 'Sin filtro' else df
-                df=df[df['Transmision'] == transmisionfiltro] if transmisionfiltro != 'Sin filtro' else df
                 
                 if marcafiltro != "Sin filtro":
                     filters["Marca"] = marcafiltro
@@ -75,12 +70,6 @@ try:
                 combustionfiltro = st.selectbox('Combustible',('Sin filtro',)+tuple(df['Combustible'].drop_duplicates().values))
                 extcolfiltro = st.selectbox('Color exterior',('Sin filtro',)+tuple(df['Color ext'].drop_duplicates().values))
                 placafiltro = st.selectbox('Placa',('Sin filtro',)+tuple(df['Placa'].drop_duplicates().values))
-
-
-                df=df[df['MarcaModelo'] == modelofiltro] if modelofiltro != 'Sin filtro' else df
-                df=df[df['Combustible'] == combustionfiltro] if combustionfiltro != 'Sin filtro' else df
-                df=df[df['Color ext'] == extcolfiltro] if extcolfiltro != 'Sin filtro' else df
-                df=df[df['Placa'] == placafiltro] if placafiltro != 'Sin filtro' else df
 
                 if modelofiltro != "Sin filtro":
                     filters["MarcaModelo"] = modelofiltro
@@ -222,7 +211,25 @@ try:
 
     with tab2:
 
-        st.write("WENAS")
+        # Sample data for demonstration
+        data = {
+            'Category 1': ['Option 1.1', 'Option 1.2', 'Option 1.3'],
+            'Category 2': ['Option 2.1', 'Option 2.2', 'Option 2.3'],
+            # ... add more categories and options as needed
+        }
+
+        # Create 10 selectboxes
+        select_boxes = [st.selectbox(f'Selectbox {i + 1}', list(data.keys())) for i in range(10)]
+
+        # Display the selected values
+        st.write('Selected values:', [box_value for box_value in select_boxes])
+
+        # Update options based on the selected values
+        for i in range(1, 10):
+            select_boxes[i] = st.selectbox(f'Selectbox {i + 1}', data[select_boxes[i - 1]])
+
+        # Display the updated selected values
+        st.write('Updated selected values:', [box_value for box_value in select_boxes])
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
