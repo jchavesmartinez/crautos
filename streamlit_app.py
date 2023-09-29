@@ -188,7 +188,31 @@ try:
 
 
     with tab2:
-        st.text("Wenas")
+
+        # Sample DataFrame
+        data = {
+            'Category': ['A', 'A', 'B', 'B', 'C'],
+            'Product': ['P1', 'P2', 'P3', 'P4', 'P5'],
+            'Price': [100, 150, 200, 250, 300]
+        }
+        df = pd.DataFrame(data)
+
+        # Create three select boxes for filtering
+        selected_category = st.selectbox('Select Category', ['', 'A', 'B', 'C'])
+        selected_product = st.selectbox('Select Product', ['', 'P1', 'P2', 'P3', 'P4', 'P5'])
+        selected_price = st.selectbox('Select Price', ['', 100, 150, 200, 250, 300])
+
+        # Filter the DataFrame based on selected values
+        filtered_df = df.copy()
+        if selected_category:
+            filtered_df = filtered_df[filtered_df['Category'] == selected_category]
+        if selected_product:
+            filtered_df = filtered_df[filtered_df['Product'] == selected_product]
+        if selected_price:
+            filtered_df = filtered_df[filtered_df['Price'] == selected_price]
+
+        # Display the filtered DataFrame
+        st.write(filtered_df)
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
