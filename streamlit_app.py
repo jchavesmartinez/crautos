@@ -209,6 +209,7 @@ try:
             fig2.update_layout(width=760, height=500)
             st.plotly_chart(fig2)
 
+        st.write(len(filtered_df))
 
     with tab2:
 
