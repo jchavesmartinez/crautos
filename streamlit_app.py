@@ -212,49 +212,36 @@ try:
 
     with tab2:
 
-        # Create a sample DataFrame
+        # Sample DataFrame
         data = {
-            'Column1': np.random.choice(['A', 'B', 'C'], size=100),
-            'Column2': np.random.choice(['X', 'Y', 'Z'], size=100),
-            'Column3': np.random.choice(['Apple', 'Banana', 'Orange'], size=100),
-            'Column4': np.random.choice(['Red', 'Blue', 'Green'], size=100),
-            'Column5': np.random.choice(['Small', 'Medium', 'Large'], size=100),
-            'Column6': np.random.choice(['Dog', 'Cat', 'Fish'], size=100),
-            'Column7': np.random.choice(['Summer', 'Winter', 'Spring'], size=100),
-            'Column8': np.random.choice(['Yes', 'No'], size=100),
-            'Column9': np.random.choice(['Male', 'Female'], size=100),
-            'Column10': np.random.choice(['City', 'Suburb', 'Rural'], size=100),
+            'Category': ['A', 'B', 'C', 'A', 'B', 'C'],
+            'Value': [1, 2, 3, 4, 5, 6]
         }
 
         df = pd.DataFrame(data)
 
-        def filter_dataframe(df, selections):
-            filtered_df = df
-            for column, values in selections.items():
-                if isinstance(values, list):
-                    filtered_df = filtered_df[filtered_df[column].isin(values)]
-                else:
-                    filtered_df = filtered_df[filtered_df[column] == values]
+        # Create a cache for the filtered DataFrame
+        @st.cache
+        def filter_data(selected_options):
+            filtered_df = df[df['Category'].isin(selected_options)]
             return filtered_df
 
-        # Create 10 select boxes
-        selections = {}
-        for i in range(1, 11):
-            column_name = f'Column{i}'
-            selected_value = st.selectbox(f'Select {i}', df[column_name].unique(), key=column_name, on_change=lambda x: selections.update({column_name: x}))
-
-            # Filter DataFrame based on selections
-            df = filter_dataframe(df, selections)
-
-            # Update options for the next select box
-            if i < 10:
-                next_column_name = f'Column{i + 1}'
-                st.session_state[next_column_name] = df[next_column_name].unique()
-
-            st.write(f"Selected {column_name}: {selected_value}")
-
-        # Display the filtered DataFrame
-        st.write("Filtered DataFrame:", df)
+        # Selectboxes
+        selectboxes = []
+        for i in range(10):
+            selected_option = st.selectbox(f'Selectbox {i+1}', df['Category'].unique())
+            selectboxes.append(selected_option)
+            
+            # Print the DataFrame before the selectbox
+            st.write(f'DataFrame before Selectbox {i+1}:')
+            st.write(df)
+            
+            # Filter the DataFrame based on the selected option
+            filtered_data = filter_data(selectboxes)
+            
+            # Print the filtered DataFrame
+            st.write(f'DataFrame after Selectbox {i+1}:')
+            st.write(filtered_data)
 
 
 except Exception as e:
