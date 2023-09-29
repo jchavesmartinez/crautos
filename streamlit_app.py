@@ -37,7 +37,6 @@ try:
         def filtrar_data(filters):
             for column, value in filters.items():
                 filtered_df = df[df[column] == value]
-            st.write('wenas')
             return filtered_df
 
         with st.expander("Menu de filtros"):
@@ -57,10 +56,10 @@ try:
 
             with colfiltros3:
 
-                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(filtered_df['Marca'].drop_duplicates().values) )
-                cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(filtered_df['Cilindrada'].drop_duplicates().values))
-                estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(filtered_df['Estado'].drop_duplicates().values))
-                transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(filtered_df['Transmision'].drop_duplicates().values))
+                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values) )
+                cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
+                estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
+                transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
 
                 if marcafiltro != "Sin filtro":
                     filters["Marca"] = marcafiltro
@@ -73,7 +72,7 @@ try:
 
             with colfiltros4:
 
-                modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(filtered_df['MarcaModelo'].drop_duplicates().values))
+                modelofiltro = st.selectbox('Modelo',('Sin filtro',)+tuple(df['MarcaModelo'].drop_duplicates().values))
                 combustionfiltro = st.selectbox('Combustible',('Sin filtro',)+tuple(df['Combustible'].drop_duplicates().values))
                 extcolfiltro = st.selectbox('Color exterior',('Sin filtro',)+tuple(df['Color ext'].drop_duplicates().values))
                 placafiltro = st.selectbox('Placa',('Sin filtro',)+tuple(df['Placa'].drop_duplicates().values))
