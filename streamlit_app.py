@@ -196,34 +196,7 @@ try:
 
     with tab2:
 
-        # Sample DataFrame
-        data = {
-            "Category": ["B", "C", "C", "A", "A", "C"],
-            "Color": ["Red", "Green", "Blue", "Red", "Green", "Blue"],
-            "Value": [10, 20, 15, 30, 25, 40],
-        }
-
-        df = pd.DataFrame(data)
-
-        # Create select boxes for filtering
-        st.sidebar.header("Filter Data")
-        category_filter = st.sidebar.selectbox("Select Category", ["All"] + list(df["Category"].unique()))
-        color_filter = st.sidebar.selectbox("Select Color", ["All"] + list(df["Color"].unique()))
-
-        # Create a filter dictionary to store the selected filters
-        
-
-        # Update the filter dictionary based on user selections
-        if category_filter != "All":
-            filters["Category"] = category_filter
-        if color_filter != "All":
-            filters["Color"] = color_filter
-
-        # Apply filters to the DataFrame
-
-
-        # Display the filtered DataFrame
-        st.write(filtered_df)
+        st.write("WENAS")
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
