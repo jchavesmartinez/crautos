@@ -35,16 +35,6 @@ try:
         filters = {}
         filtered_df = df.copy()
 
-        # Initialize session state
-        if 'selected_values' not in st.session_state:
-            st.session_state.selected_values = {}
-
-        st.write("Selected values:", st.session_state.selected_values)
-
-        st.write(time.time())
-
-        if 'value' not in st.session_state:
-            st.session_state.value = ''
         
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
@@ -76,24 +66,6 @@ try:
                     filters["Estado"] = estadofiltro
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
- 
-                
-                # Store selected value in session state
-                #if marcafiltro not in st.session_state.selected_values:
-                #    st.session_state.selected_values["Marca"] = marcafiltro
-                # Store selected value in session state
-                if cilindradafiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values["Cilindrada"] = cilindradafiltro
-                # Store selected value in session state
-                if estadofiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values["Estado"] = estadofiltro
-                # Store selected value in session state
-                if transmisionfiltro not in st.session_state.selected_values:
-                    st.session_state.selected_values["Transmision"] = transmisionfiltro
-
-                # Display selected values
-                st.write("Selected values:", st.session_state.selected_values)
-
 
             with colfiltros4:
 
