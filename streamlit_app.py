@@ -33,6 +33,20 @@ try:
     
         filters = {}
         filtered_df = df.copy()
+
+        # Initialize session state
+        if 'selected_values' not in st.session_state:
+            st.session_state.selected_values = []
+
+        # Get user input
+        selected_value = st.selectbox("Select a value", ["Option 1", "Option 2", "Option 3"])
+
+        # Store selected value in session state
+        if selected_value not in st.session_state.selected_values:
+            st.session_state.selected_values.append(selected_value)
+
+        # Display selected values
+        st.write("Selected values:", st.session_state.selected_values)
         
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
@@ -212,20 +226,9 @@ try:
 
     with tab2:
 
+        st.write('Jopse')
 
-        # Initialize session state
-        if 'selected_values' not in st.session_state:
-            st.session_state.selected_values = []
 
-        # Get user input
-        selected_value = st.selectbox("Select a value", ["Option 1", "Option 2", "Option 3"])
-
-        # Store selected value in session state
-        if selected_value not in st.session_state.selected_values:
-            st.session_state.selected_values.append(selected_value)
-
-        # Display selected values
-        st.write("Selected values:", st.session_state.selected_values)
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
