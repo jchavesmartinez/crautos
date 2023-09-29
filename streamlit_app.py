@@ -59,7 +59,6 @@ try:
                 df=df[df['Cilindrada'] == cilindradafiltro] if cilindradafiltro != 'Sin filtro' else df
                 df=df[df['Estado'] == estadofiltro] if estadofiltro != 'Sin filtro' else df
                 df=df[df['Transmision'] == transmisionfiltro] if transmisionfiltro != 'Sin filtro' else df
-                st.write(len(df))
                 
                 if marcafiltro != "Sin filtro":
                     filters["Marca"] = marcafiltro
@@ -76,6 +75,12 @@ try:
                 combustionfiltro = st.selectbox('Combustible',('Sin filtro',)+tuple(df['Combustible'].drop_duplicates().values))
                 extcolfiltro = st.selectbox('Color exterior',('Sin filtro',)+tuple(df['Color ext'].drop_duplicates().values))
                 placafiltro = st.selectbox('Placa',('Sin filtro',)+tuple(df['Placa'].drop_duplicates().values))
+
+
+                df=df[df['MarcaModelo'] == modelofiltro] if modelofiltro != 'Sin filtro' else df
+                df=df[df['Combustible'] == combustionfiltro] if combustionfiltro != 'Sin filtro' else df
+                df=df[df['Color ext'] == extcolfiltro] if extcolfiltro != 'Sin filtro' else df
+                df=df[df['Placa'] == placafiltro] if placafiltro != 'Sin filtro' else df
 
                 if modelofiltro != "Sin filtro":
                     filters["MarcaModelo"] = modelofiltro
