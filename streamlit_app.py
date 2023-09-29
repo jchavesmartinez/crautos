@@ -63,7 +63,11 @@ try:
 
             with colfiltros3:
 
-                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values), on_change=st.write(time.time()))
+                def dataframe_filter():
+                    tiempo=time.time()
+                    return tiempo
+                
+                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values), on_change=dataframe_filter())
                 cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
                 estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
                 transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
@@ -243,33 +247,7 @@ try:
 
     with tab2:
 
-        # Sample DataFrame
-        data = {'Option 1': [1, 2, 3],
-                'Option 2': [4, 5, 6],
-                'Option 3': [7, 8, 9]}
-
-        df = pd.DataFrame(data)
-
-        # Initialize session_state
-        if 'selected_value' not in st.session_state:
-            st.session_state.selected_value = None
-
-        # Function to handle selectbox changes and filter DataFrame
-        def handle_selectbox_change(new_value):
-            st.session_state.selected_value = new_value
-            st.write(f'Selected Value: {new_value}')
-
-            # Filter DataFrame based on the selected value
-            filtered_df = df[new_value]
-            st.write('Filtered DataFrame:')
-            st.write(filtered_df)
-
-        # Create a selectbox with on_change callback
-        selected_value = st.selectbox('Select a value', df.columns,
-                                    on_change=handle_selectbox_change)
-
-        # Display the currently selected value
-        st.write(f'Current Selected Value: {st.session_state.selected_value}')
+        st.write('wenas')
 
 
 
