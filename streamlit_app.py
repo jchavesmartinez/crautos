@@ -40,6 +40,9 @@ try:
             st.session_state.selected_values = {}
 
         st.write("Selected values:", st.session_state.selected_values)
+
+        if 'value' not in st.session_state:
+            st.session_state.value = ''
         
         with st.expander("Menu de filtros"):
             colfiltros1, colfiltros2 = st.columns([1, 1])
