@@ -320,7 +320,7 @@ try:
             filtered_df = filtered_df[filtered_df[column] == value]      
 
 
-        col3, col4, col5, col6, col7 = st.columns(7)
+        col3, col4, col5, col6, col7 = st.columns(5)
         col3.metric("Temperature", "70 °F", "1.2 °F")
         col4.metric("Wind", "9 mph", "-8%")
         col5.metric("Humidity", "86%", "4%")
