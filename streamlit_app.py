@@ -37,7 +37,7 @@ try:
 
         
         with st.expander("Menu de filtros"):
-            colfiltros1 = st.columns([1])
+            colfiltros1, colfiltros2 = st.columns([1, 1])
 
             with colfiltros1:
                 fechafiltro = st.slider('Año', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
@@ -46,6 +46,7 @@ try:
                 st.write(df)
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
                 
+
             preciofiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
 
             st.markdown('<hr>', unsafe_allow_html=True)
