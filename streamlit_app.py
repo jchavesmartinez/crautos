@@ -322,7 +322,7 @@ try:
         st.markdown('<hr>', unsafe_allow_html=True)
         
         col3, col4, col5, col6, col7 = st.columns(5)
-        col3.metric("Temperature", "70 °F", "1.2 °F")
+        col3.metric("Carros totales", len(filtered_df['Marca']))
         col4.metric("Wind", "9 mph", "-8%")
         col5.metric("Humidity", "86%", "4%")
         col6.metric("Wind", "9 mph", "-8%")
