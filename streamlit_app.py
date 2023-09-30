@@ -299,7 +299,7 @@ try:
                 genre36 = st.radio("Control crucero",["Todo", "Si", "No"])
                 genre37 = st.radio("Halógenos",["Todo", "Si", "No"])
                 genre38 = st.radio("Volante multifuncional",["Todo", "Si", "No"])
-                genre35 = st.radio("Asientos eléctricos",["Todo", "Si", "No"])
+                genre39 = st.radio("Asientos eléctricos",["Todo", "Si", "No"])
 
                 if genre36 != "Sin filtro":
                     filters["Control crucero"] = genre36
