@@ -372,41 +372,7 @@ try:
 
     with tab2:
 
-        # Create a larger sample DataFrame
-        np.random.seed(42)
-
-        categories = np.random.choice(['A', 'B', 'C', 'D'], size=100)
-        subcategories = np.random.choice(['X', 'Y', 'Z'], size=100)
-        values = np.random.randint(1, 10, size=100)
-
-        df = pd.DataFrame({'Category': categories, 'Subcategory': subcategories, 'Value': values})
-
-        # Initialize selections
-        selected_category_first = st.selectbox('Select First Category', df['Category'].unique())
-
-        # Filter DataFrame based on the first selection
-        filtered_df_first = df[df['Category'] == selected_category_first]
-
-        # Display the second select box with filtered options
-        selected_subcategory_first = st.selectbox('Select First Subcategory', filtered_df_first['Subcategory'].unique())
-
-        # Filter DataFrame based on the second selection
-        filtered_df_second = filtered_df_first[filtered_df_first['Subcategory'] == selected_subcategory_first]
-
-        # Initialize selections for the second set of select boxes
-        selected_category_second = st.selectbox('Select Second Category', filtered_df_second['Category'].unique())
-
-        # Filter DataFrame based on the third selection
-        filtered_df_third = filtered_df_second[filtered_df_second['Category'] == selected_category_second]
-
-        # Display the fourth select box with filtered options
-        selected_subcategory_second = st.selectbox('Select Second Subcategory', filtered_df_third['Subcategory'].unique())
-
-        # Filter DataFrame based on the fourth selection
-        filtered_df_fourth = filtered_df_third[filtered_df_third['Subcategory'] == selected_subcategory_second]
-
-        # Display the filtered DataFrame
-        st.dataframe(filtered_df_fourth)
+        st.write('wenas')
 
 
 except Exception as e:
