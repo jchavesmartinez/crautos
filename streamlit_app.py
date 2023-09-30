@@ -397,7 +397,7 @@ try:
 
         # Update st.session_state.suma with the selected values
 
-        @st.cache_data
+        @st.cache
         def fetch_and_clean_data():
             st.session_state.suma.append(suma2)
             return suma
