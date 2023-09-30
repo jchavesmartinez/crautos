@@ -319,7 +319,8 @@ try:
         for column, value in filters.items():
             filtered_df = filtered_df[filtered_df[column] == value]      
 
-
+        st.markdown('<hr>', unsafe_allow_html=True)
+        
         col3, col4, col5, col6, col7 = st.columns(5)
         col3.metric("Temperature", "70 °F", "1.2 °F")
         col4.metric("Wind", "9 mph", "-8%")
