@@ -320,6 +320,8 @@ try:
             filtered_df = filtered_df[filtered_df[column] == value]      
    
         st.write(df)
+
+        print(filters)
         
         col1, col2 = st.columns([1, 1])
 
