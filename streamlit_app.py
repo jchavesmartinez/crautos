@@ -127,6 +127,17 @@ try:
                 genre4 = st.radio("Luces de Xenón/Bixenón",["Sin filtro", "Si", "No"])
                 genre5 = st.radio("Sensores frontales",["Sin filtro", "Si", "No"])
 
+                if genre1 != "Sin filtro":
+                    filters["Dirección hidráulica"] = genre1
+                if genre2 != "Sin filtro":
+                    filters["Vidrios eléctricos"] = genre2
+                if genre3 != "Sin filtro":
+                    filters["Volante ajustable"] = genre3
+                if genre4 != "Sin filtro":
+                    filters["Luces de Xenón/Bixenón"] = genre4
+                if genre5 != "Sin filtro":
+                    filters["Sensores frontales"] = genre5
+
                 df = df[df['Dirección hidráulica'] == genre1] if estilofiltro != 'Sin filtro' else df
                 df = df[df['Vidrios eléctricos'] == genre2] if pasajerosfiltro != 'Sin filtro' else df
                 df = df[df['Volante ajustable'] == genre3] if intcolfiltro != 'Sin filtro' else df
