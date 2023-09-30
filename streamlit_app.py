@@ -319,6 +319,14 @@ try:
         for column, value in filters.items():
             filtered_df = filtered_df[filtered_df[column] == value]      
 
+
+        col3, col4, col5, col6, col7 = st.columns(7)
+            col3.metric("Temperature", "70 °F", "1.2 °F")
+            col4.metric("Wind", "9 mph", "-8%")
+            col5.metric("Humidity", "86%", "4%")
+            col6.metric("Wind", "9 mph", "-8%")
+            col7.metric("Humidity", "86%", "4%")
+
         col1, col2 = st.columns([1, 1])
 
         with col1:
@@ -367,8 +375,6 @@ try:
             # Display the histogram in the Streamlit app
             fig2.update_layout(width=760, height=500)
             st.plotly_chart(fig2)
-
-        st.write(len(filtered_df))
 
     with tab2:
 
