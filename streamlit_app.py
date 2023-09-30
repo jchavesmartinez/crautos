@@ -321,11 +321,11 @@ try:
 
 
         col3, col4, col5, col6, col7 = st.columns(7)
-            col3.metric("Temperature", "70 °F", "1.2 °F")
-            col4.metric("Wind", "9 mph", "-8%")
-            col5.metric("Humidity", "86%", "4%")
-            col6.metric("Wind", "9 mph", "-8%")
-            col7.metric("Humidity", "86%", "4%")
+        col3.metric("Temperature", "70 °F", "1.2 °F")
+        col4.metric("Wind", "9 mph", "-8%")
+        col5.metric("Humidity", "86%", "4%")
+        col6.metric("Wind", "9 mph", "-8%")
+        col7.metric("Humidity", "86%", "4%")
 
         col1, col2 = st.columns([1, 1])
 
