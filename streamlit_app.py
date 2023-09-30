@@ -372,14 +372,14 @@ try:
 
     with tab2:
 
-        # Sample DataFrame
-        data = {
-            'Category': ['A', 'A', 'B', 'B', 'C', 'C'],
-            'Subcategory': ['X', 'Y', 'X', 'Y', 'X', 'Y'],
-            'Value': [1, 2, 3, 4, 5, 6]
-        }
+        # Create a larger sample DataFrame
+        np.random.seed(42)
 
-        df = pd.DataFrame(data)
+        categories = np.random.choice(['A', 'B', 'C', 'D'], size=100)
+        subcategories = np.random.choice(['X', 'Y', 'Z'], size=100)
+        values = np.random.randint(1, 10, size=100)
+
+        df = pd.DataFrame({'Category': categories, 'Subcategory': subcategories, 'Value': values})
 
         # Initialize selections
         selected_category_first = st.selectbox('Select First Category', df['Category'].unique())
