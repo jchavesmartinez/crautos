@@ -45,7 +45,7 @@ try:
             preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
             df=df[(df['Precio'] >= list(preciofiltro)[0] ) & (df['Precio'] < list(preciofiltro)[1])]
                 
-            kmfiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
+            preciofiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
             #df=df[(df['Kilometraje'] >= list(kmfiltro)[0] ) & (df['Kilometraje'] < list(kmfiltro)[1])]
 
             st.write(df)
