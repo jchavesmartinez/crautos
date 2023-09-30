@@ -41,6 +41,7 @@ try:
 
             with colfiltros1:
                 fechafiltro = st.slider('Año', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
+                st.write(fechafiltro)
                 
             with colfiltros2:
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
@@ -114,7 +115,6 @@ try:
                 df = df[df['Pasajeros'] == pasajerosfiltro] if pasajerosfiltro != 'Sin filtro' else df
                 df = df[df['Color int'] == intcolfiltro] if intcolfiltro != 'Sin filtro' else df
                 df = df[df['Puertas'] == puertasfiltro] if puertasfiltro != 'Sin filtro' else df
-
 
         with st.expander("Extras"):
 
@@ -318,11 +318,7 @@ try:
         
         for column, value in filters.items():
             filtered_df = filtered_df[filtered_df[column] == value]      
-   
-        st.write(df)
 
-        st.write(filters)
-        
         col1, col2 = st.columns([1, 1])
 
         with col1:
