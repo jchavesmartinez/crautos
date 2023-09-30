@@ -382,25 +382,29 @@ try:
             st.plotly_chart(fig2)
 
     with tab2:
-        # Function to calculate value
-        def calculate_value():
-            # Your calculation logic here
-            return 42  # Just a placeholder, replace with your actual calculation
+        # Check if 'suma' is not in st.session_state
 
-        # Function to get or create session state
-        def get_session_state():
-            if 'value' not in st.session_state:
-                st.session_state.value = calculate_value()
-            return st.session_state
+        # Check if 'suma' is not in st.session_state
+        if 'suma' not in st.session_state:
+            # Initialize st.session_state.suma with an empty list
+            st.session_state.suma = []
 
-        # Get or create session state
-        session_state = get_session_state()
+        # Display the current value of st.session_state.suma
+        st.write(st.session_state.suma)
 
-        # Your Streamlit app
-        st.title('My Streamlit App')
+        # Use st.selectbox to get user input for 'Suma'
+        suma2 = st.selectbox('Suma', ('Jose', 'Aline', 'Marvin'))
 
-        # Display the value calculated at the end of the page
-        st.write(f'The calculated value is: {session_state.value}')
+        # Update st.session_state.suma with the selected values
+        
+        st.session_state.suma.append(suma2)
+
+        st.experimental_rerun()
+        
+
+        # Display the updated value of st.session_state.suma
+        st.write(st.session_state.suma)
+        st.button("Reset", type="primary")
 
 
 
