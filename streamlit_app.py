@@ -63,13 +63,19 @@ try:
                 
                 if marcafiltro != "Sin filtro":
                     filters["Marca"] = marcafiltro
-                    st.write(filters)
+                    for column, value in filters.items():
+                        filtered_df = filtered_df[filtered_df[column] == value] 
+
                 if cilindradafiltro != "Sin filtro":
                     filters["Cilindrada"] = cilindradafiltro
-                    st.write(filters)
+                    for column, value in filters.items():
+                        filtered_df = filtered_df[filtered_df[column] == value] 
+
                 if estadofiltro != "Sin filtro":
                     filters["Estado"] = estadofiltro
-                    st.write(filters)
+                    for column, value in filters.items():
+                        filtered_df = filtered_df[filtered_df[column] == value] 
+                        
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
                 
