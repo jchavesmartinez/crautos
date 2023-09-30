@@ -393,7 +393,7 @@ try:
         suma2 = st.selectbox('Suma', (10, 11, 0, 1, 2, 3, 4))
 
         # Now you can update st.session_state.suma with the selected value
-        st.session_state.suma = suma2
+        st.session_state.suma = st.session_state.suma+suma2
 
         # Display the updated value of st.session_state.suma
         st.write(st.session_state.suma)
