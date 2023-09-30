@@ -1,9 +1,13 @@
 import streamlit as st
-from session_state import get
+
+class SessionState:
+    def __init__(self, **kwargs):
+        for key, val in kwargs.items():
+            setattr(self, key, val)
 
 # Function to initialize session state
 def init_session():
-    return get(cost=0.0)
+    return SessionState(cost=0.0)
 
 # Function to update the cost
 def update_cost(session, new_cost):
