@@ -385,12 +385,14 @@ try:
         # Check if 'suma' is not in st.session_state
 
         # Check if 'suma' is not in st.session_state
-        if 'suma' not in st.session_state:
+        #if 'suma' not in st.session_state:
             # Initialize st.session_state.suma with an empty list
-            st.session_state.suma = []
+            #st.session_state.suma = []
+        
+        suma=[]
 
         # Display the current value of st.session_state.suma
-        st.write(st.session_state.suma)
+        st.write(suma)
 
         # Use st.selectbox to get user input for 'Suma'
         suma2 = st.selectbox('Suma', ('Jose', 'Aline', 'Marvin'), on_change=st.write(time.time()))
@@ -399,8 +401,8 @@ try:
 
         @st.cache
         def fetch_and_clean_data():
-            st.session_state.suma.append(suma2)
-            return st.session_state.suma
+            suma.append(suma2)
+            return suma
         
         suma=fetch_and_clean_data()
         st.write(suma)
