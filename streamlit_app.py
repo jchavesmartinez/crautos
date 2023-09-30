@@ -75,7 +75,7 @@ try:
                     filters["Estado"] = estadofiltro
                     for column, value in filters.items():
                         filtered_df = filtered_df[filtered_df[column] == value] 
-                        
+
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
                 
@@ -93,6 +93,8 @@ try:
 
                 if modelofiltro != "Sin filtro":
                     filters["MarcaModelo"] = modelofiltro
+                    for column, value in filters.items():
+                        filtered_df = filtered_df[filtered_df[column] == value] 
                 if combustionfiltro != "Sin filtro":
                     filters["Combustible"] = combustionfiltro
                 if extcolfiltro != "Sin filtro":
