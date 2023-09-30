@@ -405,14 +405,6 @@ try:
         suma=fetch_and_clean_data()
         st.write(suma)
 
-        
-
-        #st.experimental_rerun()
-        
-
-        # Display the updated value of st.session_state.suma
-        st.write(st.session_state.suma)
-        st.button("Reset", type="primary")
 
 
 
