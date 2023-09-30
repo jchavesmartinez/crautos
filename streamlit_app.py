@@ -386,6 +386,8 @@ try:
 
         st.write('wenas')
 
+        st.write(session_state.suma)
+
         suma2 = st.selectbox('Suma',(10,11,0,1,2,3,4))
 
 
