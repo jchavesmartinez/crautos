@@ -121,12 +121,18 @@ try:
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12, colfiltros13 = st.columns([1, 1, 1, 1, 1, 1 , 1, 1])
 
             with colfiltros6:
-                genre1 = st.radio("Dirección hidráulica",["Todo", "Si", "No"])
-                genre2 = st.radio("Vidrios eléctricos",["Todo", "Si", "No"])
-                genre3 = st.radio("Volante ajustable",["Todo", "Si", "No"])
-                genre4 = st.radio("Luces de Xenón/Bixenón",["Todo", "Si", "No"])
-                genre5 = st.radio("Sensores frontales",["Todo", "Si", "No"])
-    
+                genre1 = st.radio("Dirección hidráulica",["Sin filtro", "Si", "No"])
+                genre2 = st.radio("Vidrios eléctricos",["Sin filtro", "Si", "No"])
+                genre3 = st.radio("Volante ajustable",["Sin filtro", "Si", "No"])
+                genre4 = st.radio("Luces de Xenón/Bixenón",["Sin filtro", "Si", "No"])
+                genre5 = st.radio("Sensores frontales",["Sin filtro", "Si", "No"])
+
+                df = df[df['Dirección hidráulica'] == genre1] if estilofiltro != 'Sin filtro' else df
+                df = df[df['Vidrios eléctricos'] == genre2] if pasajerosfiltro != 'Sin filtro' else df
+                df = df[df['Volante ajustable'] == genre3] if intcolfiltro != 'Sin filtro' else df
+                df = df[df['Luces de Xenón/Bixenón'] == genre4] if puertasfiltro != 'Sin filtro' else df
+                df = df[df['Sensores frontales'] == genre5] if puertasfiltro != 'Sin filtro' else df
+
             with colfiltros7:
                 genre5 = st.radio("Vidrios tintados",["Todo", "Si", "No"])
                 genre6 = st.radio("Aros de lujo",["Todo", "Si", "No"])
