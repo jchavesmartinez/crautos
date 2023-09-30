@@ -63,10 +63,13 @@ try:
                 
                 if marcafiltro != "Sin filtro":
                     filters["Marca"] = marcafiltro
+                    st.write(filters)
                 if cilindradafiltro != "Sin filtro":
                     filters["Cilindrada"] = cilindradafiltro
+                    st.write(filters)
                 if estadofiltro != "Sin filtro":
                     filters["Estado"] = estadofiltro
+                    st.write(filters)
                 if transmisionfiltro != "Sin filtro":
                     filters["Transmision"] = transmisionfiltro
                 
