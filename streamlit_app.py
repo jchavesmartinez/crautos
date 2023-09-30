@@ -28,9 +28,6 @@ try:
     # Load the data using the cached function
     df = load_data()
 
-    if 'suma' not in st.session_state:
-        st.session_state.suma = 'value'
-
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
     with tab1:
@@ -384,12 +381,22 @@ try:
             st.plotly_chart(fig2)
 
     with tab2:
+        # Check if 'suma' is not in st.session_state
+        if 'suma' not in st.session_state:
+            # Initialize st.session_state.suma with a default value
+            st.session_state.suma = 'default_value'
 
-        st.write('wenas')
+        # Display the current value of st.session_state.suma
+        st.write(st.session_state.suma)
 
-        st.write(session_state.suma)
+        # Use st.selectbox to get user input for 'Suma'
+        suma2 = st.selectbox('Suma', (10, 11, 0, 1, 2, 3, 4))
 
-        suma2 = st.selectbox('Suma',(10,11,0,1,2,3,4))
+        # Now you can update st.session_state.suma with the selected value
+        st.session_state.suma = suma2
+
+        # Display the updated value of st.session_state.suma
+        st.write(st.session_state.suma)
 
 
 
