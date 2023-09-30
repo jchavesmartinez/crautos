@@ -400,7 +400,7 @@ try:
         @st.cache
         def fetch_and_clean_data():
             st.session_state.suma.append(suma2)
-            return suma
+            return st.session_state.suma
         
         suma=fetch_and_clean_data()
         st.write(suma)
