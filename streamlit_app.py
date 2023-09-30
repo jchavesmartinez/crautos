@@ -384,7 +384,7 @@ try:
         # Check if 'suma' is not in st.session_state
         if 'suma' not in st.session_state:
             # Initialize st.session_state.suma with a default value
-            st.session_state.suma = 'default_value'
+            st.session_state.suma = 0
 
         # Display the current value of st.session_state.suma
         st.write(st.session_state.suma)
