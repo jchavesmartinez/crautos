@@ -126,8 +126,6 @@ try:
                 genre3 = st.radio("Volante ajustable",["Todo", "Si", "No"])
                 genre4 = st.radio("Luces de Xenón/Bixenón",["Todo", "Si", "No"])
                 genre5 = st.radio("Sensores frontales",["Todo", "Si", "No"])
-
-                st.write(genre)
     
             with colfiltros7:
                 genre5 = st.radio("Vidrios tintados",["Todo", "Si", "No"])
