@@ -28,6 +28,9 @@ try:
     # Load the data using the cached function
     df = load_data()
 
+    if 'suma' not in st.session_state:
+        st.session_state.suma = 'value'
+
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
     with tab1:
@@ -35,8 +38,6 @@ try:
         filters = {}
         filtered_df = df.copy()
 
-        if 'suma' not in st.session_state:
-            st.session_state.suma = 0
 
         
         with st.expander("Menu de filtros"):
