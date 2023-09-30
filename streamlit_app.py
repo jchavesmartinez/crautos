@@ -393,7 +393,7 @@ try:
         st.write(st.session_state.suma)
 
         # Use st.selectbox to get user input for 'Suma'
-        suma2 = st.selectbox('Suma', ('Jose', 'Aline', 'Marvin'))
+        suma2 = st.selectbox('Suma', ('Jose', 'Aline', 'Marvin'), on_change=st.experimental_rerun())
 
         # Update st.session_state.suma with the selected values
         
