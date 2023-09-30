@@ -382,32 +382,26 @@ try:
             st.plotly_chart(fig2)
 
     with tab2:
-        # Check if 'suma' is not in st.session_state
+        # Initialize a value
+        my_value = 0
 
-        # Check if 'suma' is not in st.session_state
-        if 'suma' not in st.session_state:
-            # Initialize st.session_state.suma with an empty list
-            st.session_state.suma = []
+        # Function to update the value
+        def update_value():
+            global my_value
+            my_value += 1
 
-        # Display the current value of st.session_state.suma
-        st.write(st.session_state.suma)
+        # Streamlit app
+        st.title("Update Value on Button Click")
 
-        # Use st.selectbox to get user input for 'Suma'
-        suma2 = st.selectbox('Suma', ('Todo','Jose', 'Aline', 'Marvin'), on_change=st.write(time.time()))
+        # Display the current value
+        st.write(f"Current Value: {my_value}")
 
-        suma23 = st.selectbox('Suma1', ('Todo','Jose', 'Aline', 'Marvin'), on_change=st.write(time.time()))
+        # Button to update the value
+        if st.button("Click me to update value"):
+            update_value()
 
-        # Update st.session_state.suma with the selected values
-
-        if suma2 != 'Todo':
-            st.session_state.suma.append(suma2)
-
-        #st.experimental_rerun()
-        
-
-        # Display the updated value of st.session_state.suma
-        st.write(st.session_state.suma)
-        st.button("Reset", type="primary")
+        # Display the updated value
+        st.write(f"Updated Value: {my_value}")
 
 
 
