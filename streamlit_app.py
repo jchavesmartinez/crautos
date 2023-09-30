@@ -399,7 +399,7 @@ try:
         
         st.session_state.suma.append(suma2)
 
-        st.experimental_rerun()
+        #st.experimental_rerun()
         
 
         # Display the updated value of st.session_state.suma
