@@ -35,6 +35,9 @@ try:
         filters = {}
         filtered_df = df.copy()
 
+        if 'suma' not in st.session_state:
+            st.session_state.suma = 0
+
         
         with st.expander("Menu de filtros"):
 
@@ -382,6 +385,10 @@ try:
     with tab2:
 
         st.write('wenas')
+
+        suma2 = st.selectbox('Suma',(10,11,0,1,2,3,4))
+
+
 
 
 except Exception as e:
