@@ -326,6 +326,8 @@ try:
         col5.metric("Humidity", "86%", "4%")
         col6.metric("Wind", "9 mph", "-8%")
         col7.metric("Humidity", "86%", "4%")
+    
+        st.markdown('<hr>', unsafe_allow_html=True)
 
         col1, col2 = st.columns([1, 1])
 
