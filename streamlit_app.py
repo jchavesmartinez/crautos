@@ -146,11 +146,11 @@ try:
 
             with colfiltros7:        
                 
-                genre6 = st.radio("Aros de lujo",["Todo", "Si", "No"])
-                genre7 = st.radio("Bluetooth",["Todo", "Si", "No"])
-                genre8 = st.radio("Control de radio en el volante",["Todo", "Si", "No"])
-                genre9 = st.radio("Asiento con memoria",["Todo", "Si", "No"])
-                genre10 = st.radio("Vidrios tintados",["Todo", "Si", "No"])
+                genre6 = st.radio("Aros de lujo",["Sin filtro", "Si", "No"])
+                genre7 = st.radio("Bluetooth",["Sin filtro", "Si", "No"])
+                genre8 = st.radio("Control de radio en el volante",["Sin filtro", "Si", "No"])
+                genre9 = st.radio("Asiento con memoria",["Sin filtro", "Si", "No"])
+                genre10 = st.radio("Vidrios tintados",["Sin filtro", "Si", "No"])
 
                 if genre6 != "Sin filtro":
                     filters["Aros de lujo"] = genre6
@@ -171,11 +171,11 @@ try:
 
             with colfiltros8:
                 
-                genre11 = st.radio("Tapicería de cuero",["Todo", "Si", "No"])
-                genre12 = st.radio("Aire acondicionado climatizado",["Todo", "Si", "No"])
-                genre13 = st.radio("Llave inteligente/botón de arranque",["Todo", "Si", "No"])
-                genre14 = st.radio("Sensor de lluvia",["Todo", "Si", "No"])
-                genre15 = st.radio("Aire acondicionado",["Todo", "Si", "No"])
+                genre11 = st.radio("Tapicería de cuero",["Sin filtro", "Si", "No"])
+                genre12 = st.radio("Aire acondicionado climatizado",["Sin filtro", "Si", "No"])
+                genre13 = st.radio("Llave inteligente/botón de arranque",["Sin filtro", "Si", "No"])
+                genre14 = st.radio("Sensor de lluvia",["Sin filtro", "Si", "No"])
+                genre15 = st.radio("Aire acondicionado",["Sin filtro", "Si", "No"])
 
                 if genre11 != "Sin filtro":
                     filters["Tapicería de cuero"] = genre11
@@ -196,11 +196,11 @@ try:
 
             with colfiltros9:
                 
-                genre16 = st.radio("Cassette",["Todo", "Si", "No"])
-                genre17 = st.radio("Frenos ABS",["Todo", "Si", "No"])
-                genre18 = st.radio("Control electrónico de estabilidad",["Todo", "Si", "No"])
-                genre19 = st.radio("Monitor de presión de llantas",["Todo", "Si", "No"])
-                genre20 = st.radio("Disco compacto",["Todo", "Si", "No"])
+                genre16 = st.radio("Cassette",["Sin filtro", "Si", "No"])
+                genre17 = st.radio("Frenos ABS",["Sin filtro", "Si", "No"])
+                genre18 = st.radio("Control electrónico de estabilidad",["Sin filtro", "Si", "No"])
+                genre19 = st.radio("Monitor de presión de llantas",["Sin filtro", "Si", "No"])
+                genre20 = st.radio("Disco compacto",["Sin filtro", "Si", "No"])
 
                 if genre16 != "Sin filtro":
                     filters["Cassette"] = genre16
@@ -221,11 +221,11 @@ try:
 
             with colfiltros10:
                 
-                genre21 = st.radio("Bolsa de aire",["Todo", "Si", "No"])
-                genre22 = st.radio("Sunroof/techo panorámico",["Todo", "Si", "No"])
-                genre23 = st.radio("Control de descenso",["Todo", "Si", "No"])
-                genre24 = st.radio("Computadora de viaje",["Todo", "Si", "No"])
-                genre25 = st.radio("Radio con USB/AUX",["Todo", "Si", "No"])
+                genre21 = st.radio("Bolsa de aire",["Sin filtro", "Si", "No"])
+                genre22 = st.radio("Sunroof/techo panorámico",["Sin filtro", "Si", "No"])
+                genre23 = st.radio("Control de descenso",["Sin filtro", "Si", "No"])
+                genre24 = st.radio("Computadora de viaje",["Sin filtro", "Si", "No"])
+                genre25 = st.radio("Radio con USB/AUX",["Sin filtro", "Si", "No"])
 
                 if genre21 != "Sin filtro":
                     filters["Bolsa de aire"] = genre21
@@ -246,11 +246,11 @@ try:
 
             with colfiltros11:
                 
-                genre26 = st.radio("Alarma",["Todo", "Si", "No"])
-                genre27 = st.radio("Cámara de retroceso",["Todo", "Si", "No"])
-                genre28 = st.radio("Caja de cambios dual",["Todo", "Si", "No"])
-                genre29 = st.radio("Retrovisores auto-retractibles",["Todo", "Si", "No"])
-                genre30 = st.radio("Revisión Técnica al día",["Todo", "Si", "No"])
+                genre26 = st.radio("Alarma",["Sin filtro", "Si", "No"])
+                genre27 = st.radio("Cámara de retroceso",["Sin filtro", "Si", "No"])
+                genre28 = st.radio("Caja de cambios dual",["Sin filtro", "Si", "No"])
+                genre29 = st.radio("Retrovisores auto-retractibles",["Sin filtro", "Si", "No"])
+                genre30 = st.radio("Revisión Técnica al día",["Sin filtro", "Si", "No"])
 
                 if genre26 != "Sin filtro":
                     filters["Alarma"] = genre26
@@ -271,11 +271,11 @@ try:
 
             with colfiltros12:
                 
-                genre31 = st.radio("Espejos eléctricos",["Todo", "Si", "No"])
-                genre32 = st.radio("Desempañador Trasero",["Todo", "Si", "No"])
-                genre33 = st.radio("Sensores de retroceso",["Todo", "Si", "No"])
-                genre34 = st.radio("Turbo",["Todo", "Si", "No"])
-                genre35 = st.radio("Cierre central",["Todo", "Si", "No"])
+                genre31 = st.radio("Espejos eléctricos",["Sin filtro", "Si", "No"])
+                genre32 = st.radio("Desempañador Trasero",["Sin filtro", "Si", "No"])
+                genre33 = st.radio("Sensores de retroceso",["Sin filtro", "Si", "No"])
+                genre34 = st.radio("Turbo",["Sin filtro", "Si", "No"])
+                genre35 = st.radio("Cierre central",["Sin filtro", "Si", "No"])
     
                 if genre31 != "Sin filtro":
                     filters["Espejos eléctricos"] = genre31
@@ -296,10 +296,10 @@ try:
 
             with colfiltros13:
                 
-                genre36 = st.radio("Control crucero",["Todo", "Si", "No"])
-                genre37 = st.radio("Halógenos",["Todo", "Si", "No"])
-                genre38 = st.radio("Volante multifuncional",["Todo", "Si", "No"])
-                genre39 = st.radio("Asientos eléctricos",["Todo", "Si", "No"])
+                genre36 = st.radio("Control crucero",["Sin filtro", "Si", "No"])
+                genre37 = st.radio("Halógenos",["Sin filtro", "Si", "No"])
+                genre38 = st.radio("Volante multifuncional",["Sin filtro", "Si", "No"])
+                genre39 = st.radio("Asientos eléctricos",["Sin filtro", "Si", "No"])
 
                 if genre36 != "Sin filtro":
                     filters["Control crucero"] = genre36
