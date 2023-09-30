@@ -384,16 +384,18 @@ try:
         # Check if 'suma' is not in st.session_state
         if 'suma' not in st.session_state:
             # Initialize st.session_state.suma with a default value
-            st.session_state.suma = 0
+            st.session_state.suma = []
 
         # Display the current value of st.session_state.suma
         st.write(st.session_state.suma)
 
         # Use st.selectbox to get user input for 'Suma'
-        suma2 = st.selectbox('Suma', (10, 11, 0, 1, 2, 3, 4))
+        suma2 = st.selectbox('Suma', ('Jose', 'Aline', 'Marvin'))
+        suma3 = st.selectbox('Suma', ('20', '30', '2'))
 
         # Now you can update st.session_state.suma with the selected value
-        st.session_state.suma = st.session_state.suma+suma2
+        st.session_state.suma = st.session_state.suma.append(suma2)
+        st.session_state.suma = st.session_state.suma.append(suma3)
 
         # Display the updated value of st.session_state.suma
         st.write(st.session_state.suma)
