@@ -382,26 +382,15 @@ try:
             st.plotly_chart(fig2)
 
     with tab2:
-        # Initialize a value
-        my_value = 0
+        st.title('Counter Example')
+        if 'count' not in st.session_state:
+            st.session_state.count = 0
 
-        # Function to update the value
-        def update_value():
-            global my_value
-            my_value += 1
+        increment = st.button('Increment')
+        if increment:
+            st.session_state.count += 1
 
-        # Streamlit app
-        st.title("Update Value on Button Click")
-
-        # Display the current value
-        st.write(f"Current Value: {my_value}")
-
-        # Button to update the value
-        if st.button("Click me to update value"):
-            update_value()
-
-        # Display the updated value
-        st.write(f"Updated Value: {my_value}")
+        st.write('Count = ', st.session_state.count)
 
 
 
