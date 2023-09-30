@@ -396,8 +396,16 @@ try:
         suma2 = st.selectbox('Suma', ('Jose', 'Aline', 'Marvin'), on_change=st.write(time.time()))
 
         # Update st.session_state.suma with the selected values
+
+        @st.cache_data
+        def fetch_and_clean_data():
+            st.session_state.suma.append(suma2)
+            return suma
         
-        st.session_state.suma.append(suma2)
+        suma=fetch_and_clean_data()
+        st.write(suma)
+
+        
 
         #st.experimental_rerun()
         
