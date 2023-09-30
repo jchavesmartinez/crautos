@@ -321,7 +321,7 @@ try:
    
         st.write(df)
 
-        print(filters)
+       st.write(filters)
         
         col1, col2 = st.columns([1, 1])
 
