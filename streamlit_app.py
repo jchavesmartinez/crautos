@@ -395,6 +395,8 @@ try:
         # Use st.selectbox to get user input for 'Suma'
         suma2 = st.selectbox('Suma', ('Todo','Jose', 'Aline', 'Marvin'), on_change=st.write(time.time()))
 
+        suma23 = st.selectbox('Suma1', ('Todo','Jose', 'Aline', 'Marvin'), on_change=st.write(time.time()))
+
         # Update st.session_state.suma with the selected values
 
         if suma2 != 'Todo':
