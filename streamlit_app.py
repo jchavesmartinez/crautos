@@ -398,7 +398,7 @@ try:
         # Update st.session_state.suma with the selected values
         
         st.session_state.suma.append(suma2)
-        runtime.exists()
+        st.button("Reset", type="primary")
 
         # Display the updated value of st.session_state.suma
         st.write(st.session_state.suma)
