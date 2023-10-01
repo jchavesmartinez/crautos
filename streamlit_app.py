@@ -343,8 +343,7 @@ try:
 
             # Display the histogram in the Streamlit app
             fig2.update_layout(width=760, height=500)
-            st.plotly_chart(fig2)
-
+            
             # Sample data
             np.random.seed(42)
             data = pd.DataFrame({
@@ -355,7 +354,13 @@ try:
 
             # Scatter plot using Plotly Express
             fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
-            st.plotly_chart(fig3)
+
+            if grafico1=='Histograma':
+                st.plotly_chart(fig2)
+            if grafico1=='Dispersión':
+                st.plotly_chart(fig3)
+
+                
 
     with tab2:
 
