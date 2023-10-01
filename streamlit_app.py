@@ -5,6 +5,7 @@ import plotly.express as px
 import numpy as np
 import time
 from streamlit import runtime
+from streamlit_dynamic_filters import DynamicFilters
 
 
 # Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
@@ -382,8 +383,8 @@ try:
             st.plotly_chart(fig2)
 
     with tab2:
+
         
-        from streamlit_dynamic_filters import DynamicFilters
 
         data = {
             'Region': ['North America', 'North America', 'North America', 'Europe', 'Europe', 'Asia', 'Asia'],
@@ -395,8 +396,8 @@ try:
 
         dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
 
-        with st.sidebar:
-            dynamic_filters.display_filters()
+        
+        dynamic_filters.display_filters()
 
         dynamic_filters.display_df()
 
