@@ -416,5 +416,10 @@ try:
 
         st.write(modelo)
 
+        modelo = df.groupby(['Marca', 'MarcaModelo','Grupo de años']).agg({'Año': 'sum', 'Precio': 'mean'}).reset_index()
+
+        st.write(modelo)
+
+
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
