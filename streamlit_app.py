@@ -273,7 +273,7 @@ try:
                 df = df[df['Volante multifuncional'] == genre38] if genre38 != 'Sin filtro' else df
                 df = df[df['Asientos eléctricos'] == genre39] if genre39 != 'Sin filtro' else df
                 
-        with st.expander('Estadisticas')
+        with st.expander('Estadisticas'):
 
             for column, value in filters.items():
                 df = filtered_df[filtered_df[column] == value]      
