@@ -318,6 +318,12 @@ try:
         with col2:
             
             
+            grafico1 = st.radio(
+                "Grafico a mostrar",
+                ["Histograma", "Dispersión"],
+                horizontal=True,
+            )
+            
             option2 = st.selectbox(
                 'WENAS',
                 ('MarcaModelo','Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
@@ -347,11 +353,8 @@ try:
                 'Category': np.random.choice(['A', 'B'], size=50)
             })
 
-            # Streamlit app
-            st.title('Scatter Plot in Plotly with Streamlit')
-
             # Scatter plot using Plotly Express
-            fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Scatter Plot with Category')
+            fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
             st.plotly_chart(fig3)
 
     with tab2:
