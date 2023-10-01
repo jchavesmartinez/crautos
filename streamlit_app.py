@@ -41,8 +41,14 @@ try:
         
         with st.expander("Menu de filtros"):
 
+            dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa'])
+            dynamic_filters.display_filters(location='columns', num_columns=2)
+
+
             fechafiltro = st.slider('Año PENDIENTE', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
             df=df[(df['Año'] >= list(fechafiltro)[0] ) & (df['Año'] < list(fechafiltro)[1])]
+
+            st.markdown('<hr>', unsafe_allow_html=True)
 
 
             preciofiltro = st.slider('Precio (Millones) PENDIENTE', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
@@ -51,11 +57,6 @@ try:
             kmfiltro = st.slider('Kilometros PENDIENTE', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
             df=df[(df['Kilometraje'] >= list(kmfiltro)[0] ) & (df['Kilometraje'] < list(kmfiltro)[1])]
 
-            st.markdown('<hr>', unsafe_allow_html=True)
-
-            
-            dynamic_filters = DynamicFilters(df, filters=['Cilindrada', 'Estado','Transmision'])
-            dynamic_filters.display_filters(location='columns', num_columns=2)
 
 
     with tab2:
