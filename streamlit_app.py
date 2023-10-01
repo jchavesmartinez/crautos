@@ -344,9 +344,7 @@ try:
                 option2 = st.selectbox(
                     'WENAS',
                     ('MarcaModelo','Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
-                
-            # HISTOGRAMA
-
+                    
                 # Create a sample DataFrame (replace this with your 'df' from the CSV)
                 data2 = {'values': df[option2].values}
                 df2 = pd.DataFrame(data2)
