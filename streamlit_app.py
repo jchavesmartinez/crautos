@@ -328,6 +328,7 @@ try:
                 'WENAS',
                 ('MarcaModelo','Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
             
+        # HISTOGRAMA
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
             data2 = {'values': df[option2].values}
@@ -340,6 +341,8 @@ try:
                 plot_bgcolor='white',  # Background color of the plot area
                 paper_bgcolor='white'  # Background color of the entire figure
             )
+
+        # DISPERSION
 
             # Display the histogram in the Streamlit app
             fig2.update_layout(width=760, height=500)
@@ -355,6 +358,8 @@ try:
             # Scatter plot using Plotly Express
             fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
 
+        # ESCOGER GRAFICO
+        
             if grafico1=='Histograma':
                 st.plotly_chart(fig2)
             if grafico1=='Dispersión':
