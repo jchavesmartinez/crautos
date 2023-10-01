@@ -51,7 +51,7 @@ try:
 
             try:
 
-                fechafiltro = st.slider('Año PENDIENTE', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
+                fechafiltro = st.slider('Año PENDIENTE', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])), step=1)
                 df=df[(df['Año'] >= list(fechafiltro)[0] ) & (df['Año'] < list(fechafiltro)[1])]
             
             except:
