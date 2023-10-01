@@ -285,7 +285,7 @@ try:
         col6.metric("Precio moda", int(df['Precio'].mode()))
         col7.metric("Mediana precio", int(df['Precio'].median()))
         col8.metric("Precio maximo", int(max(df['Precio'])))
-        col8.metric("Desviacion estandar relativa", int((df['Precio'].std()/df['Precio'].mean())*100))
+        col9.metric("Desviacion estandar relativa", int((df['Precio'].std()/df['Precio'].mean())*100))
     
         st.markdown('<hr>', unsafe_allow_html=True)
 
