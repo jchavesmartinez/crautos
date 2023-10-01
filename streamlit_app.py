@@ -44,6 +44,7 @@ try:
             dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa','Estilo','Pasajeros', 'Color int','Puertas'])
             dynamic_filters.display_filters(location='columns', num_columns=2)
 
+            dynamic_filters.display_df()
 
             st.markdown('<hr>', unsafe_allow_html=True)
 
