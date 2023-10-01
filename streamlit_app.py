@@ -280,7 +280,7 @@ try:
         
         col3, col4, col5, col6, col7 = st.columns(5)
         col3.metric("Carros totales", len(df['Marca']))
-        col4.metric("Wind", "9 mph", "-8%")
+        col4.metric("Precio min", min(df['Precio']))
         col5.metric("Humidity", "86%", "4%")
         col6.metric("Wind", "9 mph", "-8%")
         col7.metric("Humidity", "86%", "4%")
@@ -290,19 +290,7 @@ try:
     with tab2:
 
         st.write('wenas')
-        # data = {
-        #     'Region': ['North America', 'North America', 'North America', 'Europe', 'Europe', 'Asia', 'Asia'],
-        #     'Country': ['USA', 'USA', 'Canada', 'Germany', 'France', 'Japan', 'China'],
-        #     'City': ['New York', 'Los Angeles', 'Toronto', 'Berlin', 'Paris', 'Tokyo', 'Beijing']
-        #     }
 
-        # df = pd.DataFrame(data)
-
-        # dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
-
-        # dynamic_filters.display_filters(location='columns', num_columns=2)
-
-        # dynamic_filters.display_df()
 
 
 
