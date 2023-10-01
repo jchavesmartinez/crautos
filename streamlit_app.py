@@ -41,7 +41,7 @@ try:
         
         with st.expander("Menu de filtros"):
 
-            dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa'])
+            dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa','Estilo','Pasajeros', 'Color interior','Puertas'])
             dynamic_filters.display_filters(location='columns', num_columns=2)
 
 
