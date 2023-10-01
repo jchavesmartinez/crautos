@@ -323,14 +323,9 @@ try:
                 ["Histograma", "Dispersión"],
                 horizontal=True,
             )
-            
-
-
+                    
         # DISPERSION
-
-            # Display the histogram in the Streamlit app
-            fig2.update_layout(width=760, height=500)
-            
+        
             # Sample data
             np.random.seed(42)
             data = pd.DataFrame({
@@ -343,8 +338,9 @@ try:
             fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
 
         # ESCOGER GRAFICO
-
+        
             if grafico1=='Histograma':
+
                 option2 = st.selectbox(
                     'WENAS',
                     ('MarcaModelo','Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
@@ -362,6 +358,10 @@ try:
                     plot_bgcolor='white',  # Background color of the plot area
                     paper_bgcolor='white'  # Background color of the entire figure
                 )
+                
+                # Display the histogram in the Streamlit app
+                fig2.update_layout(width=760, height=500)
+
                 st.plotly_chart(fig2)
             if grafico1=='Dispersión':
                 st.plotly_chart(fig3)
