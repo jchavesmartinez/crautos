@@ -60,20 +60,20 @@ try:
 
     with tab2:
 
+        st.write('wenas')
+        # data = {
+        #     'Region': ['North America', 'North America', 'North America', 'Europe', 'Europe', 'Asia', 'Asia'],
+        #     'Country': ['USA', 'USA', 'Canada', 'Germany', 'France', 'Japan', 'China'],
+        #     'City': ['New York', 'Los Angeles', 'Toronto', 'Berlin', 'Paris', 'Tokyo', 'Beijing']
+        #     }
 
-        data = {
-            'Region': ['North America', 'North America', 'North America', 'Europe', 'Europe', 'Asia', 'Asia'],
-            'Country': ['USA', 'USA', 'Canada', 'Germany', 'France', 'Japan', 'China'],
-            'City': ['New York', 'Los Angeles', 'Toronto', 'Berlin', 'Paris', 'Tokyo', 'Beijing']
-            }
+        # df = pd.DataFrame(data)
 
-        df = pd.DataFrame(data)
+        # dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
 
-        dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
+        # dynamic_filters.display_filters(location='columns', num_columns=2)
 
-        dynamic_filters.display_filters(location='columns', num_columns=2)
-
-        dynamic_filters.display_df()
+        # dynamic_filters.display_df()
 
 
 
