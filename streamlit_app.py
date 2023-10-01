@@ -73,6 +73,7 @@ try:
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más el kilometraje')
 
+        st.write(len(df['Marca']))
         with st.expander("Extras"):
 
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12, colfiltros13 = st.columns([1, 1, 1, 1, 1, 1 , 1, 1])
