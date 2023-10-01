@@ -396,13 +396,15 @@ try:
 
         dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
 
+        dynamic_filters2 = DynamicFilters(df, filters=['Country', 'City'])
+
         col133, col122 = st.columns([1, 1])
 
         with col133:
             dynamic_filters.display_filters()
         
         with col122:
-            st.write('wenas')
+            dynamic_filters2.display_filters()
 
     
         dynamic_filters.display_df()
