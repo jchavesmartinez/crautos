@@ -282,7 +282,7 @@ try:
         col3.metric("Carros totales", len(df['Marca']))
         col4.metric("Precio min", int(min(df['Precio'])))
         col5.metric("Precio promedio", int(df['Precio'].mean()))
-        col6.metric("Precio moda", int(df['Precio'].mode()) )
+        col6.metric("Precio moda", "9 mph", "-8%")
         col7.metric("Humidity", "86%", "4%")
     
         st.markdown('<hr>', unsafe_allow_html=True)
