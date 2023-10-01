@@ -44,11 +44,11 @@ try:
             dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa','Estilo','Pasajeros', 'Color int','Puertas'])
             dynamic_filters.display_filters(location='columns', num_columns=2)
 
-            df= dynamic_filters.display_df()
+            dynamic_filters.display_df()
 
-            st.write(df)
+            st.write(dynamic_filters.filter_df())
 
-
+        
             st.markdown('<hr>', unsafe_allow_html=True)
 
 
