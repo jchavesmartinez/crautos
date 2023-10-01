@@ -31,6 +31,8 @@ try:
     # Load the data using the cached function
     df = load_data()
 
+    modelo=df.copy()
+
     tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
     
     with tab1:
@@ -350,8 +352,6 @@ try:
 
                     st.plotly_chart(fig4)
 
-
-
             with col2:
                 
                 
@@ -414,7 +414,7 @@ try:
                 
     with tab2:
 
-        st.write('wenas')
+        st.write(modelo)
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
