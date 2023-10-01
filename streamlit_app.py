@@ -324,10 +324,9 @@ try:
                 horizontal=True,
             )
 
-        st.markdown('<hr>', unsafe_allow_html=True)
+            st.markdown('<hr>', unsafe_allow_html=True)
 
-        # ESCOGER GRAFICO
-        
+
             if grafico1=='Histograma':
 
                 option2 = st.selectbox(
@@ -352,7 +351,7 @@ try:
                 fig2.update_layout(width=760, height=500)
 
                 st.plotly_chart(fig2)
-                
+
             if grafico1=='Dispersión':
 
                 # Sample data
