@@ -66,13 +66,13 @@ try:
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más el precio')
                 
-            try:
+            # try:
             
-                kmfiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
-                df=df[(df['Kilometraje'] >= list(kmfiltro)[0]) & (df['Kilometraje'] <= list(kmfiltro)[1])]
-                st.write(len(df['Marca']))
-            except:
-                st.write('Solo existe un elemento, no es posible filtrar más el kilometraje')
+            #     kmfiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
+            #     df=df[(df['Kilometraje'] >= list(kmfiltro)[0]) & (df['Kilometraje'] <= list(kmfiltro)[1])]
+            #     st.write(len(df['Marca']))
+            # except:
+            #     st.write('Solo existe un elemento, no es posible filtrar más el kilometraje')
 
         st.write(len(df['Marca']))
         with st.expander("Extras"):
