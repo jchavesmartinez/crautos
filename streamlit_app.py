@@ -55,7 +55,7 @@ try:
                 df=df[(df['Año'] >= list(fechafiltro)[0] ) & (df['Año'] < list(fechafiltro)[1])]
             
             except:
-                st.write('Solo existe un elemento, no es posible filtrar más')
+                st.write('Solo existe un elemento, no es posible filtrar más los años')
 
             try:
             
@@ -63,7 +63,7 @@ try:
                 df=df[(df['Precio'] >= list(preciofiltro)[0]*1000000 ) & (df['Precio'] < list(preciofiltro)[1]*1000000)]
     
             except:
-                st.write('Solo existe un elemento, no es posible filtrar más')
+                st.write('Solo existe un elemento, no es posible filtrar más el precio')
                 
             try:
             
@@ -71,7 +71,7 @@ try:
                 df=df[(df['Kilometraje'] >= list(kmfiltro)[0] ) & (df['Kilometraje'] < list(kmfiltro)[1])]
 
             except:
-                st.write('Solo existe un elemento, no es posible filtrar más')
+                st.write('Solo existe un elemento, no es posible filtrar más el kilometraje')
 
 
 
