@@ -396,7 +396,7 @@ try:
 
         dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
     
-        dynamic_filters.display_df(num_columns=2)
+        dynamic_filters.display_df()
 
 
 
