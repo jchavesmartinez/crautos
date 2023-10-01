@@ -59,16 +59,16 @@ try:
 
             try:
             
-            preciofiltro = st.slider('Precio (Millones) PENDIENTE', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
-            df=df[(df['Precio'] >= list(preciofiltro)[0]*1000000 ) & (df['Precio'] < list(preciofiltro)[1]*1000000)]
+                preciofiltro = st.slider('Precio (Millones) PENDIENTE', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
+                df=df[(df['Precio'] >= list(preciofiltro)[0]*1000000 ) & (df['Precio'] < list(preciofiltro)[1]*1000000)]
     
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más')
                 
             try:
             
-            kmfiltro = st.slider('Kilometros PENDIENTE', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
-            df=df[(df['Kilometraje'] >= list(kmfiltro)[0] ) & (df['Kilometraje'] < list(kmfiltro)[1])]
+                kmfiltro = st.slider('Kilometros PENDIENTE', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
+                df=df[(df['Kilometraje'] >= list(kmfiltro)[0] ) & (df['Kilometraje'] < list(kmfiltro)[1])]
 
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más')
