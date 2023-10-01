@@ -337,9 +337,9 @@ try:
                 })
 
                 # Scatter plot using Plotly Express
-                fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
+                fig4 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
 
-                st.plotly_chart(fig3)
+                st.plotly_chart(fig4)
 
 
 
