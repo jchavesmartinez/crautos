@@ -323,19 +323,8 @@ try:
                 ["Histograma", "Dispersión"],
                 horizontal=True,
             )
-                    
-        # DISPERSION
-        
-            # Sample data
-            np.random.seed(42)
-            data = pd.DataFrame({
-                'X': np.random.rand(50),
-                'Y': np.random.rand(50),
-                'Category': np.random.choice(['A', 'B'], size=50)
-            })
 
-            # Scatter plot using Plotly Express
-            fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
+        st.markdown('<hr>', unsafe_allow_html=True)
 
         # ESCOGER GRAFICO
         
@@ -344,7 +333,9 @@ try:
                 option2 = st.selectbox(
                     'WENAS',
                     ('MarcaModelo','Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
-                    
+
+                
+
                 # Create a sample DataFrame (replace this with your 'df' from the CSV)
                 data2 = {'values': df[option2].values}
                 df2 = pd.DataFrame(data2)
@@ -361,7 +352,20 @@ try:
                 fig2.update_layout(width=760, height=500)
 
                 st.plotly_chart(fig2)
+                
             if grafico1=='Dispersión':
+
+                # Sample data
+                np.random.seed(42)
+                data = pd.DataFrame({
+                    'X': np.random.rand(50),
+                    'Y': np.random.rand(50),
+                    'Category': np.random.choice(['A', 'B'], size=50)
+                })
+
+                # Scatter plot using Plotly Express
+                fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
+
                 st.plotly_chart(fig3)
 
                 
