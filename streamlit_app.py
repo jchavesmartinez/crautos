@@ -395,7 +395,7 @@ try:
         df = pd.DataFrame(data)
 
         dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
-    
+
         dynamic_filters.display_df()
 
 
