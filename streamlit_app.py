@@ -53,6 +53,10 @@ try:
 
             st.markdown('<hr>', unsafe_allow_html=True)
 
+            
+            dynamic_filters = DynamicFilters(df, filters=['Marca', 'Cilindrada', 'Estado','Transmision'])
+            
+            
             colfiltros3, colfiltros4, colfiltros5 = st.columns([1, 1, 1])
 
             with colfiltros3:
