@@ -41,15 +41,15 @@ try:
         
         with st.expander("Menu de filtros"):
 
-            dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa'])
+            dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision'])
             dynamic_filters.display_filters(location='columns', num_columns=2)
+
+
+            st.markdown('<hr>', unsafe_allow_html=True)
 
 
             fechafiltro = st.slider('Año PENDIENTE', min(df['Año']), max(df['Año']), (min(df['Año']), max(df['Año'])))
             df=df[(df['Año'] >= list(fechafiltro)[0] ) & (df['Año'] < list(fechafiltro)[1])]
-
-            st.markdown('<hr>', unsafe_allow_html=True)
-
 
             preciofiltro = st.slider('Precio (Millones) PENDIENTE', float(min(df['Precio'])/1000000), float(max(df['Precio'])/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio']))/1000000), step=500000/1000000)
             df=df[(df['Precio'] >= list(preciofiltro)[0]*1000000 ) & (df['Precio'] < list(preciofiltro)[1]*1000000)]
