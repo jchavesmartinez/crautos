@@ -396,15 +396,10 @@ try:
                     fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
 
                     st.plotly_chart(fig3)
-
                 
-
     with tab2:
 
         st.write('wenas')
-
-
-
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
