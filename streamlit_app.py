@@ -289,6 +289,56 @@ try:
     
         st.markdown('<hr>', unsafe_allow_html=True)
 
+
+        col1, col2 = st.columns([1, 1])
+
+        with col1:
+            # Create a sample DataFrame (replace this with your 'df' from the CSV)
+            
+
+            option = st.selectbox(
+                'How would you like to be contacted?',
+                ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
+                               
+            data1 = {'values': filtered_df[option].values}
+            df1 = pd.DataFrame(data1)
+
+            # Create a histogram using Plotly Express
+            fig1 = px.histogram(df1, x='values', nbins=10, title='Histogram')
+
+            fig1.update_layout(
+                plot_bgcolor='white',  # Background color of the plot area
+                paper_bgcolor='white'  # Background color of the entire figure
+            )
+
+            # Display the histogram in the Streamlit app
+            fig1.update_layout(width=760, height=500)
+            st.plotly_chart(fig1)
+
+        with col2:
+            
+            
+            option2 = st.selectbox(
+                'WENAS',
+                ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
+            
+
+            # Create a sample DataFrame (replace this with your 'df' from the CSV)
+            data2 = {'values': filtered_df[option2].values}
+            df2 = pd.DataFrame(data2)
+
+            # Create a histogram using Plotly Express
+            fig2 = px.histogram(df2, x='values', nbins=10, title='Histogram')
+
+            fig2.update_layout(
+                plot_bgcolor='white',  # Background color of the plot area
+                paper_bgcolor='white'  # Background color of the entire figure
+            )
+
+            # Display the histogram in the Streamlit app
+            fig2.update_layout(width=760, height=500)
+            st.plotly_chart(fig2)
+
     with tab2:
 
         st.write('wenas')
