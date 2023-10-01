@@ -25,6 +25,7 @@ try:
         # Load or compute your data here (e.g., from a CSV file)
         raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
         df = pd.read_csv(raw_csv_url, encoding='latin-1')
+        df['Kilometraje'] = df['Kilometraje'].fillna(1)
         return df
 
     # Load the data using the cached function
@@ -69,7 +70,7 @@ try:
             try:
             
                 kmfiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje'])), (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))), step=10000)
-                df=df[(df['Kilometraje'] >= 0) & (df['Kilometraje'] <= list(kmfiltro)[1])]
+                df=df[(df['Kilometraje'] >= list(kmfiltro)[0]) & (df['Kilometraje'] <= list(kmfiltro)[1])]
                 st.write(len(df['Marca']))
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más el kilometraje')
