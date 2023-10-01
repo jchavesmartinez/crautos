@@ -46,6 +46,8 @@ try:
 
             dynamic_filters.display_df()
 
+            st.write(dynamic_filters)
+
             st.markdown('<hr>', unsafe_allow_html=True)
 
 
