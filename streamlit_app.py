@@ -54,7 +54,7 @@ try:
             st.markdown('<hr>', unsafe_allow_html=True)
 
             
-            dynamic_filters = DynamicFilters(df, filters=['Marca', 'Cilindrada', 'Estado','Transmision'])
+            dynamic_filters = DynamicFilters(df, filters=['Cilindrada', 'Estado','Transmision'])
             dynamic_filters.display_filters(location='columns', num_columns=2)
 
 
