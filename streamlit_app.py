@@ -304,7 +304,7 @@ try:
             df1 = pd.DataFrame(data1)
 
             # Create a histogram using Plotly Express
-            fig1 = px.histogram(df1, x='values', nbins=10, title='Histogram '+str(option))
+            fig1 = px.histogram(df1, x='values', nbins=10, title='Histograma '+str(option))
 
             fig1.update_layout(
                 plot_bgcolor='white',  # Background color of the plot area
@@ -328,7 +328,7 @@ try:
             df2 = pd.DataFrame(data2)
 
             # Create a histogram using Plotly Express
-            fig2 = px.histogram(df2, x='values', nbins=10, title='Histogram '+str(option2))
+            fig2 = px.histogram(df2, x='values', nbins=10, title='Histograma '+str(option2))
 
             fig2.update_layout(
                 plot_bgcolor='white',  # Background color of the plot area
