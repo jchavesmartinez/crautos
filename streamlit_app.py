@@ -382,16 +382,23 @@ try:
             st.plotly_chart(fig2)
 
     with tab2:
-        st.title('Counter Example')
-        if 'count' not in st.session_state:
-            st.session_state.count = 0
+        
+        from streamlit_dynamic_filters import DynamicFilters
 
-        increment = st.button('Increment')
-        if increment:
-            st.session_state.count += 1
+        data = {
+            'Region': ['North America', 'North America', 'North America', 'Europe', 'Europe', 'Asia', 'Asia'],
+            'Country': ['USA', 'USA', 'Canada', 'Germany', 'France', 'Japan', 'China'],
+            'City': ['New York', 'Los Angeles', 'Toronto', 'Berlin', 'Paris', 'Tokyo', 'Beijing']
+            }
 
-        st.write('Count = ', st.session_state.count)
+        df = pd.DataFrame(data)
 
+        dynamic_filters = DynamicFilters(df, filters=['Region', 'Country', 'City'])
+
+        with st.sidebar:
+            dynamic_filters.display_filters()
+
+        dynamic_filters.display_df()
 
 
 
