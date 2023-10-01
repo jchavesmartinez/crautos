@@ -341,6 +341,11 @@ try:
                     # Scatter plot using Plotly Express
                     fig4 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
 
+                    fig4.update_layout(
+                        plot_bgcolor='white',  # Background color of the plot area
+                        paper_bgcolor='white'  # Background color of the entire figure
+                    )
+
                     st.plotly_chart(fig4)
 
 
@@ -394,6 +399,12 @@ try:
 
                     # Scatter plot using Plotly Express
                     fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Aun en desarrollo')
+
+
+                    fig3.update_layout(
+                        plot_bgcolor='white',  # Background color of the plot area
+                        paper_bgcolor='white'  # Background color of the entire figure
+                    )
 
                     st.plotly_chart(fig3)
                 
