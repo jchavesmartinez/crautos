@@ -38,7 +38,7 @@ try:
         filtered_df = df.copy()
 
 
-        
+        st.write(len(df['Marca']))
         with st.expander("Menu de filtros"):
 
             dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa','Estilo','Pasajeros', 'Color int','Puertas'])
