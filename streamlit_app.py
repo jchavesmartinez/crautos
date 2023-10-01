@@ -310,7 +310,7 @@ try:
                     ('Grupo de años','MarcaModelo','Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia'))
 
                 # Create a sample DataFrame (replace this with your 'df' from the CSV)
-                data1 = {'values': df[option2].values}
+                data1 = {'values': df[option1].values}
                 df1 = pd.DataFrame(data1)
 
                 # Create a histogram using Plotly Express
