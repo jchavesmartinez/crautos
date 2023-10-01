@@ -70,11 +70,9 @@ try:
             
                 kmfiltro = st.slider('Kilometros', int(min(df['Kilometraje'])), int(max(df['Kilometraje']))+1, (int(min(df['Kilometraje'])),int(max(df['Kilometraje']))+1), step=10000)
                 df=df[(df['Kilometraje'] >= list(kmfiltro)[0]) & (df['Kilometraje'] <= list(kmfiltro)[1])]
-                st.write(len(df['Marca']))
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más el kilometraje')
 
-        st.write(len(df['Marca']))
         with st.expander("Extras"):
 
             colfiltros6, colfiltros7, colfiltros8 , colfiltros9, colfiltros10, colfiltros11, colfiltros12, colfiltros13 = st.columns([1, 1, 1, 1, 1, 1 , 1, 1])
@@ -274,9 +272,7 @@ try:
                 df = df[df['Halógenos'] == genre37] if genre37 != 'Sin filtro' else df
                 df = df[df['Volante multifuncional'] == genre38] if genre38 != 'Sin filtro' else df
                 df = df[df['Asientos eléctricos'] == genre39] if genre39 != 'Sin filtro' else df
-        
-        st.write(len(df['Marca']))
-        
+                
         for column, value in filters.items():
             df = filtered_df[filtered_df[column] == value]      
 
@@ -302,7 +298,7 @@ try:
 
             option = st.selectbox(
                 'How would you like to be contacted?',
-                ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
+                ('Grupo de años','Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia'))
                                
             data1 = {'values': df[option].values}
             df1 = pd.DataFrame(data1)
@@ -324,7 +320,7 @@ try:
             
             option2 = st.selectbox(
                 'WENAS',
-                ('Marca','MarcaModelo','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
+                ('MarcaModelo','Marca','Precio','Cilindrada','Estilo','Pasajeros','Combustible','Transmision','Estado','Kilometraje','Placa','Color ext','Color int','Puertas','Provincia','Grupo de años'))
             
 
             # Create a sample DataFrame (replace this with your 'df' from the CSV)
