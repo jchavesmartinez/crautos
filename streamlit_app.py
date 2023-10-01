@@ -274,12 +274,12 @@ try:
                 df = df[df['Asientos eléctricos'] == genre39] if genre39 != 'Sin filtro' else df
         
         for column, value in filters.items():
-            filtered_df = filtered_df[filtered_df[column] == value]      
+            df = filtered_df[filtered_df[column] == value]      
 
         st.markdown('<hr>', unsafe_allow_html=True)
         
         col3, col4, col5, col6, col7 = st.columns(5)
-        col3.metric("Carros totales", len(filtered_df['Marca']))
+        col3.metric("Carros totales", len(df['Marca']))
         col4.metric("Wind", "9 mph", "-8%")
         col5.metric("Humidity", "86%", "4%")
         col6.metric("Wind", "9 mph", "-8%")
