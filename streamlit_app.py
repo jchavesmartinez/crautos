@@ -339,6 +339,21 @@ try:
             fig2.update_layout(width=760, height=500)
             st.plotly_chart(fig2)
 
+            # Sample data
+            np.random.seed(42)
+            data = pd.DataFrame({
+                'X': np.random.rand(50),
+                'Y': np.random.rand(50),
+                'Category': np.random.choice(['A', 'B'], size=50)
+            })
+
+            # Streamlit app
+            st.title('Scatter Plot in Plotly with Streamlit')
+
+            # Scatter plot using Plotly Express
+            fig3 = px.scatter(data, x='X', y='Y', color='Category', title='Scatter Plot with Category')
+            st.plotly_chart(fig3)
+
     with tab2:
 
         st.write('wenas')
