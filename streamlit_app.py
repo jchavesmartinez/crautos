@@ -54,7 +54,7 @@ try:
 
                 fechafiltro = st.slider('Año PENDIENTE', min(df['Año']), max(df['Año'])+1, (min(df['Año']), max(df['Año'])+1))
                 df=df[(df['Año'] >= list(fechafiltro)[0] ) & (df['Año'] <= list(fechafiltro)[1])]
-            
+                st.write(len(df['Marca']))
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más los años')
 
