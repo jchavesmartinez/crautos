@@ -295,7 +295,7 @@ try:
         with col1:
 
             grafico1 = st.radio(
-                "Grafico a mostrar",
+                "Grafico a mostrar ",
                 ["Histograma", "Dispersión"],
                 horizontal=True,
             )
