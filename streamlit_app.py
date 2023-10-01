@@ -62,24 +62,24 @@ try:
 
             with colfiltros3:
                 
-                marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values))
-                cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
-                estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
-                transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
+                # marcafiltro = st.selectbox('Marca',('Sin filtro',)+tuple(df['Marca'].drop_duplicates().values))
+                # cilindradafiltro = st.selectbox('Cilindrada',('Sin filtro',)+tuple(df['Cilindrada'].drop_duplicates().values))
+                # estadofiltro = st.selectbox('Estado',('Sin filtro',)+tuple(df['Estado'].drop_duplicates().values))
+                # transmisionfiltro = st.selectbox('Transmision',('Sin filtro',)+tuple(df['Transmision'].drop_duplicates().values))
                 
-                if marcafiltro != "Sin filtro":
-                    filters["Marca"] = marcafiltro
-                if cilindradafiltro != "Sin filtro":
-                    filters["Cilindrada"] = cilindradafiltro
-                if estadofiltro != "Sin filtro":
-                    filters["Estado"] = estadofiltro
-                if transmisionfiltro != "Sin filtro":
-                    filters["Transmision"] = transmisionfiltro
+                # if marcafiltro != "Sin filtro":
+                #     filters["Marca"] = marcafiltro
+                # if cilindradafiltro != "Sin filtro":
+                #     filters["Cilindrada"] = cilindradafiltro
+                # if estadofiltro != "Sin filtro":
+                #     filters["Estado"] = estadofiltro
+                # if transmisionfiltro != "Sin filtro":
+                #     filters["Transmision"] = transmisionfiltro
                 
-                df = df[df['Marca'] == marcafiltro] if marcafiltro != 'Sin filtro' else df
-                df = df[df['Cilindrada'] == cilindradafiltro] if cilindradafiltro != 'Sin filtro' else df
-                df = df[df['Estado'] == estadofiltro] if estadofiltro != 'Sin filtro' else df
-                df = df[df['Transmision'] == transmisionfiltro] if transmisionfiltro != 'Sin filtro' else df
+                # df = df[df['Marca'] == marcafiltro] if marcafiltro != 'Sin filtro' else df
+                # df = df[df['Cilindrada'] == cilindradafiltro] if cilindradafiltro != 'Sin filtro' else df
+                # df = df[df['Estado'] == estadofiltro] if estadofiltro != 'Sin filtro' else df
+                # df = df[df['Transmision'] == transmisionfiltro] if transmisionfiltro != 'Sin filtro' else df
 
             with colfiltros4:
 
