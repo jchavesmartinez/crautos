@@ -47,7 +47,6 @@ try:
 
 
             df=dynamic_filters.filter_df()
-            st.write(len(df['Marca']))
 
             st.markdown('<hr>', unsafe_allow_html=True)
 
@@ -55,7 +54,7 @@ try:
 
                 fechafiltro = st.slider('Año', min(df['Año']), max(df['Año'])+1, (min(df['Año']), max(df['Año'])+1))
                 df=df[(df['Año'] >= list(fechafiltro)[0] ) & (df['Año'] <= list(fechafiltro)[1])]
-                st.write(len(df['Marca']))
+
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más los años')
 
@@ -63,7 +62,7 @@ try:
             
                 preciofiltro = st.slider('Precio (Millones)', float(min(df['Precio'])/1000000), float((max(df['Precio'])+1)/1000000), (float(min(df['Precio']))/1000000,float(max(df['Precio'])+1)/1000000), step=500000/1000000)
                 df=df[(df['Precio'] >= list(preciofiltro)[0]*1000000 ) & (df['Precio'] <= list(preciofiltro)[1]*1000000)]
-                st.write(len(df['Marca']))
+
             except:
                 st.write('Solo existe un elemento, no es posible filtrar más el precio')
                 
