@@ -417,6 +417,8 @@ try:
         st.write(modelo)
 
         modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean', 'Precio': ['mean', 'count','median','std']}).reset_index()
+        modelo.columns = ['Marca', 'MarcaModelo', 'Grupo de años', 'Año_mean', 'Precio_mean', 'Precio_count', 'Precio_median','Precio_std']
+        modelo['Precio_relativestd']=modelo['Precio_std']/modelo['Precio_mean']*100
 
         st.write(modelo)
 
