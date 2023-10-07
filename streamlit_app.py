@@ -422,7 +422,8 @@ try:
         modelo.columns = ['Marca', 'MarcaModelo', 'Grupo de años', 'Año_mean', 'Precio_mean', 'Precio_count', 'Precio_median','Precio_std']
         modelo['Precio_relativestd']=modelo['Precio_std']/modelo['Precio_mean']*100
         modelo = modelo[modelo['Precio_count'] >= 3]
-        modelo["grupo_id"]=str(modelo["Marca"])+str(modelo["MarcaModelo"])+str(modelo["Grupo de años"])
+        modelo["grupo_id"] = modelo["Marca"].astype(str) + modelo["MarcaModelo"].astype(str) + modelo["Grupo de años"].astype(str)
+
 
         st.write(modelo)
 
