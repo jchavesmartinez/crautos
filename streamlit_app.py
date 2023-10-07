@@ -415,7 +415,7 @@ try:
     with tab2:
 
         modelo_completo=modelo
-        modelo_completo["grupo_id"]=str(modelo_completo["Marca"])+str(modelo_completo["MarcaModelo"])+str(modelo_completo["Grupo de años"])
+        modelo_completo["grupo_id"] = modelo_completo["Marca"].astype(str) + modelo_completo["MarcaModelo"].astype(str) + modelo_completo["Grupo de años"].astype(str)
         st.write(modelo_completo)
 
         modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean', 'Precio': ['mean', 'count','median','std']}).reset_index()
