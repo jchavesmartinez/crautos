@@ -417,6 +417,7 @@ try:
         modelo_completo=modelo
         modelo_completo["grupo_id"] = modelo_completo["Marca"].astype(str) + modelo_completo["MarcaModelo"].astype(str) + modelo_completo["Grupo de años"].astype(str)
         st.write(modelo_completo)
+        st.write(len(modelo_completo))
 
         modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean', 'Precio': ['mean', 'count','median','std']}).reset_index()
         modelo.columns = ['Marca', 'MarcaModelo', 'Grupo de años', 'Año_mean', 'Precio_mean', 'Precio_count', 'Precio_median','Precio_std']
@@ -425,7 +426,7 @@ try:
         modelo["grupo_id"] = modelo["Marca"].astype(str) + modelo["MarcaModelo"].astype(str) + modelo["Grupo de años"].astype(str)
 
 
-        st.write(modelo)
+        st.write(len(modelo))
 
 
 except Exception as e:
