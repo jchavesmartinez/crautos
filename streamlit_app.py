@@ -428,7 +428,11 @@ try:
         st.write(modelo)
         st.write(len(modelo))
 
-        modelo = pd.merge(modelo_completo, modelo, on='grupo_id')
+                # Assuming df1 and df2 are your two DataFrames, and 'common_column' is the column you want to use for merging.
+        modelo = pd.merge(modelo_completo, modelo, on='grupo_id', suffixes=('_modelo_completo', '_modelo'))
+
+        # Drop duplicate columns
+        modelo = modelo.loc[:, ~modelo.columns.duplicated()]
         st.write(modelo)
         st.write(len(modelo))
 
