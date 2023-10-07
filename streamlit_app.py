@@ -425,7 +425,7 @@ try:
         modelo = modelo[modelo['Precio_count'] >= 3]
         modelo["grupo_id"] = modelo["Marca"].astype(str) + modelo["MarcaModelo"].astype(str) + modelo["Grupo de años"].astype(str)
 
-
+        st.write(modelo)
         st.write(len(modelo))
 
 
