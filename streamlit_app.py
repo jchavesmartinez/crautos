@@ -416,7 +416,7 @@ try:
 
         st.write(modelo)
 
-        modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean', 'Precio': ['mean', 'count']}).reset_index()
+        modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean', 'Precio': ['mean', 'count', 'mode','median']}).reset_index()
 
         st.write(modelo)
 
