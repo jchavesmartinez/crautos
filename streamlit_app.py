@@ -428,6 +428,11 @@ try:
         st.write(modelo)
         st.write(len(modelo))
 
+        modelo = pd.merge(modelo_completo, modelo, on='grupo_id')
+        st.write(modelo)
+        st.write(len(modelo))
+
+
 
 except Exception as e:
     st.error(f"An error occurred: {str(e)}")
