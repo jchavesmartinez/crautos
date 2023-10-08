@@ -534,7 +534,7 @@ try:
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
         modelo['factor_año'] = 100 - (2023-modelo['Año'])
-        modelo['factor_km'] = modelo['KM_median']*100
+        modelo['factor_km'] = modelo['km_margen_median']
 
 
         columns_to_count_indices = list(range(3, 42))
