@@ -486,7 +486,7 @@ try:
                 factor_mean= 999
 
             median_porcentual = 100 - row['precio_margen_median%']
-            if valor > 100:
+            if median_porcentual > 100:
                 factor_median= valor
             elif 60 <= median_porcentual <= 100:
                 factor_median= valor
