@@ -419,8 +419,8 @@ try:
         st.write(modelo_completo)
         st.write(len(modelo_completo))
 
-        modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean','Kilometraje':'mean', 'Precio': ['mean', 'count','median','std']}).reset_index()
-        modelo.columns = ['Marca', 'MarcaModelo', 'Grupo de años', 'Año_mean','KM_mean', 'Precio_mean', 'Precio_count', 'Precio_median','Precio_std']
+        modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean','Kilometraje':['mean','median'], 'Precio': ['mean', 'count','median','std']}).reset_index()
+        modelo.columns = ['Marca', 'MarcaModelo', 'Grupo de años', 'Año_mean','KM_mean', 'Precio_mean', 'Precio_median', 'Precio_count', 'Precio_median','Precio_std']
         modelo['Precio_relativestd']=modelo['Precio_std']/modelo['Precio_mean']*100
         modelo = modelo[modelo['Precio_count'] >= 5]
         modelo["grupo_id"] = modelo["Marca"].astype(str) + modelo["MarcaModelo"].astype(str) + modelo["Grupo de años"].astype(str)
