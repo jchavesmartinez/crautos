@@ -471,35 +471,35 @@ try:
                 return None 
 
         def asignar_nota_precio(row):
-            valor = 100 - row['precio_margen_median%']
-            if valor > 100:
-                factor_median= valor
-            elif 60 <= valor <= 100:
-                factor_median= valor
-            elif 30 <= valor < 60:
-                factor_median= valor
-            elif 15 <= valor < 30:
-                factor_median= valor
-            elif 5 <= valor < 15:
-                factor_median= valor
-            else:
-                factor_median= 999
-
-            valor = 100 - row['precio_margen_mean%']
-            if valor > 100:
-                factor_mean= valor
-            elif 60 <= valor <= 100:
-                factor_mean= valor
-            elif 30 <= valor < 60:
-                factor_mean= valor
-            elif 15 <= valor < 30:
-                factor_mean= valor
-            elif 5 <= valor < 15:
-                factor_mean= valor
+            mean_porcentual = 100 - row['precio_margen_median%']
+            if mean_porcentual > 100:
+                factor_mean= mean_porcentual
+            elif 60 <= mean_porcentual <= 100:
+                factor_mean= mean_porcentual
+            elif 30 <= mean_porcentual < 60:
+                factor_mean= mean_porcentual
+            elif 15 <= mean_porcentual < 30:
+                factor_mean= mean_porcentual
+            elif 5 <= mean_porcentual < 15:
+                factor_mean= mean_porcentual
             else:
                 factor_mean= 999
 
-                return factor_mean+factor_median
+            # median_porcentual = 100 - row['precio_margen_mean%']
+            # if valor > 100:
+            #     factor_mean= valor
+            # elif 60 <= median_porcentual <= 100:
+            #     factor_mean= valor
+            # elif 30 <= median_porcentual < 60:
+            #     factor_mean= valor
+            # elif 15 <= median_porcentual < 30:
+            #     factor_mean= valor
+            # elif 5 <= median_porcentual < 15:
+            #     factor_mean= valor
+            # else:
+            #     factor_mean= 999
+
+            return factor_mean+factor_median
 
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
