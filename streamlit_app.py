@@ -442,8 +442,8 @@ try:
         modelo['precio_margen_mean']=modelo['Precio_mean']-modelo['Precio']
         modelo['precio_margen_median']=modelo['Precio_median']-modelo['Precio']
 
-        #modelo = modelo[modelo['precio_margen_mean'] >= 500000]
-        #modelo = modelo[modelo['precio_margen_median'] >= 500000]
+        modelo = modelo[modelo['precio_margen_mean'] >= 500000]
+        modelo = modelo[modelo['precio_margen_median'] >= 500000]
 
         modelo['km_margen_mean']=modelo['Kilometraje']/modelo['KM_mean']*100
         modelo['km_margen_median']=modelo['Kilometraje']/modelo['KM_median']*100
@@ -544,7 +544,7 @@ try:
 
         modelo['nota_final'] = (modelo['factor_marca']*0.35)+(modelo['factor_precio']*0.25)+(modelo['factor_año']*0.3)+(modelo['factor_km']*0.15)+(modelo['factor_extras']*0.05)
 
-        modelo = modelo[modelo['nota_final'] > 95]
+        modelo = modelo[modelo['nota_final'] > 90]
 
         st.write(modelo)
         st.write(len(modelo))
