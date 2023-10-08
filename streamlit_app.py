@@ -445,6 +445,11 @@ try:
         modelo = modelo[modelo['precio_margen_mean'] >= 500000]
         modelo = modelo[modelo['precio_margen_median'] >= 500000]
 
+        modelo['km_margen_mean']=modelo['Kilometraje']/modelo['KM_mean']
+        modelo['km_margen_median']=modelo['Kilometraje']/modelo['KM_mean']
+
+        #modelo = modelo[modelo['km_margen_mean'] >= 500000]
+        #modelo = modelo[modelo['km_margen_median'] >= 500000]
 
         st.write(modelo)
         st.write(len(modelo))
