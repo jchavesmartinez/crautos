@@ -540,6 +540,7 @@ try:
         columns_to_count_indices = list(range(3, 42))
         # Add a new column 'yes_count' to store the count of 'yes' values across specified columns
         modelo['yes_count'] = modelo.iloc[:, columns_to_count_indices].apply(lambda row: row.eq('Si').sum(), axis=1)
+        modelo['yes_count']=modelo['yes_count']/39*100
 
         st.write(modelo)
         st.write(len(modelo))
