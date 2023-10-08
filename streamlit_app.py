@@ -526,7 +526,7 @@ try:
 
             nota_relativestd= 100-row['Precio_relativestd']
 
-            nota_precio=(factor_mean*10%)+(factor_mean_dinero*10%)+(factor_median*20%)+(factor_median_dinero*20%)+(nota_relativestd*40%)
+            nota_precio=(factor_mean*0.1)+(factor_mean_dinero*0.1)+(factor_median*0.2)+(factor_median_dinero*0.2)+(nota_relativestd*0.4)
 
             return nota_precio
 
