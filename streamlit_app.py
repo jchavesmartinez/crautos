@@ -537,6 +537,12 @@ try:
         modelo['factor_km'] = modelo['KM_median']*100
 
 
+        #columns_to_count_indices = [0, 1, 2]
+
+        # Add a new column 'yes_count' to store the count of 'yes' values across specified columns
+        #df['yes_count'] = df.iloc[:, columns_to_count_indices].apply(lambda row: row.eq('yes').sum(), axis=1)
+
+        st.write(modelo.iloc[:, 2])
 
 
         st.write(modelo)
