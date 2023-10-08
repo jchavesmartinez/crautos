@@ -487,15 +487,15 @@ try:
 
             median_porcentual = 100 - row['precio_margen_median%']
             if median_porcentual > 100:
-                factor_median= valor
+                factor_median= median_porcentual
             elif 60 <= median_porcentual <= 100:
-                factor_median= valor
+                factor_median= median_porcentual
             elif 30 <= median_porcentual < 60:
-                factor_median= valor
+                factor_median= median_porcentual
             elif 15 <= median_porcentual < 30:
-                factor_median= valor
+                factor_median= median_porcentual
             elif 5 <= median_porcentual < 15:
-                factor_median= valor
+                factor_median= median_porcentual
             else:
                 factor_median= 999
 
