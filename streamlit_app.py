@@ -499,7 +499,35 @@ try:
             else:
                 factor_median= 999
 
-            return factor_median
+            mean_dinero = row['precio_margen_mean']
+            if mean_dinero > 2000000:
+                factor_mean_dinero= mean_dinero
+            elif 1000000 <= mean_dinero <= 2000000:
+                factor_mean_dinero= mean_dinero
+            elif 700000 <= mean_dinero < 1000000:
+                factor_mean_dinero= mean_dinero
+            elif 300000 <= mean_dinero < 700000:
+                factor_mean_dinero= mean_dinero
+            elif 0 <= mean_dinero < 300000:
+                factor_mean_dinero= mean_dinero
+            else:
+                factor_mean_dinero= 0
+
+            median_dinero = row['precio_margen_median']
+            if median_dinero > 2000000:
+                factor_median_dinero= median_dinero
+            elif 1000000 <= median_dinero <= 2000000:
+                factor_median_dinero= median_dinero
+            elif 700000 <= median_dinero < 1000000:
+                factor_median_dinero= median_dinero
+            elif 350000 <= median_dinero < 700000:
+                factor_median_dinero= median_dinero
+            elif 0 <= median_dinero < 350000:
+                factor_median_dinero= median_dinero
+            else:
+                factor_median_dinero= 0
+
+            return factor_mean
 
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
