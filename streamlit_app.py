@@ -530,12 +530,12 @@ try:
 
             return nota_precio
 
-            
-
-
-
+        
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
+        modelo['factor_año'] = 100 - (2023-modelo['Año'])
+
+
 
 
         st.write(modelo)
