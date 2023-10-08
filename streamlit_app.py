@@ -524,7 +524,15 @@ try:
             else:
                 factor_median_dinero= 0
 
-            return factor_median_dinero
+            nota_relativestd= 100-row['Precio_relativestd']
+
+            nota_precio=(factor_mean*10%)+(factor_mean_dinero*10%)+(factor_median*20%)+(factor_median_dinero*20%)+(nota_relativestd*40%)
+
+            return nota_precio
+
+            
+
+
 
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
