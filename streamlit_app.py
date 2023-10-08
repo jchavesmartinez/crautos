@@ -524,7 +524,7 @@ try:
             else:
                 factor_median_dinero= 0
 
-            return factor_mean
+            return factor_median
 
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
