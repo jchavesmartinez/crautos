@@ -482,52 +482,49 @@ try:
                 factor_mean= 60
             elif 95 <= mean_porcentual < 100:
                 factor_mean= 40
-            else:
-                factor_mean= 999
+
 
             median_porcentual = row['precio_margen_median%']
-            if median_porcentual > 100:
-                factor_median= median_porcentual
-            elif 60 <= median_porcentual <= 100:
-                factor_median= median_porcentual
-            elif 30 <= median_porcentual < 60:
-                factor_median= median_porcentual
-            elif 15 <= median_porcentual < 30:
-                factor_median= median_porcentual
-            elif 5 <= median_porcentual < 15:
-                factor_median= median_porcentual
-            else:
-                factor_median= 999
+            if median_porcentual < 60:
+                factor_median= 100
+            elif 60 <= median_porcentual <= 75:
+                factor_median= 90
+            elif 75 <= median_porcentual < 85:
+                factor_median= 80
+            elif 85 <= median_porcentual < 95:
+                factor_median= 60
+            elif 95 <= median_porcentual < 100:
+                factor_median= 40
 
             mean_dinero = row['precio_margen_mean']
             if mean_dinero > 2000000:
-                factor_mean_dinero= mean_dinero
+                factor_mean_dinero= 100
             elif 1000000 <= mean_dinero <= 2000000:
-                factor_mean_dinero= mean_dinero
+                factor_mean_dinero= 90
             elif 700000 <= mean_dinero < 1000000:
-                factor_mean_dinero= mean_dinero
+                factor_mean_dinero= 80
             elif 300000 <= mean_dinero < 700000:
-                factor_mean_dinero= mean_dinero
+                factor_mean_dinero= 60
             elif 0 <= mean_dinero < 300000:
-                factor_mean_dinero= mean_dinero
+                factor_mean_dinero= 40
             else:
                 factor_mean_dinero= 0
 
             median_dinero = row['precio_margen_median']
             if median_dinero > 2000000:
-                factor_median_dinero= median_dinero
+                factor_median_dinero= 100
             elif 1000000 <= median_dinero <= 2000000:
-                factor_median_dinero= median_dinero
+                factor_median_dinero= 90
             elif 700000 <= median_dinero < 1000000:
-                factor_median_dinero= median_dinero
+                factor_median_dinero= 80
             elif 350000 <= median_dinero < 700000:
-                factor_median_dinero= median_dinero
+                factor_median_dinero= 60
             elif 0 <= median_dinero < 350000:
-                factor_median_dinero= median_dinero
+                factor_median_dinero= 40
             else:
                 factor_median_dinero= 0
 
-            return factor_mean
+            return factor_mean+factor_median+factor_mean_dinero+factor_median_dinero
 
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
