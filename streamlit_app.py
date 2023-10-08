@@ -483,7 +483,7 @@ try:
             elif 5 <= valor < 15:
                 factor_median= valor
             else:
-                factor_median= valor
+                factor_median= 999
 
             valor = 100 - row['precio_margen_mean%']
             if valor > 100:
@@ -497,7 +497,7 @@ try:
             elif 5 <= valor < 15:
                 factor_mean= valor
             else:
-                factor_mean= valor
+                factor_mean= 999
 
                 return factor_mean+factor_median
 
