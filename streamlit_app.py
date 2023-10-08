@@ -436,6 +436,10 @@ try:
         st.write(modelo)
         st.write(len(modelo))
 
+        modelo['precio_margen_mean']=modelo['Precio']/modelo['Precio_mean']
+
+
+
 
 
 except Exception as e:
