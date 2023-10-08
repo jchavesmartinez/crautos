@@ -544,7 +544,7 @@ try:
 
         modelo['nota_final'] = (modelo['factor_marca']*0.35)+(modelo['factor_precio']*0.25)+(modelo['factor_año']*0.3)+(modelo['factor_km']*0.15)+(modelo['factor_extras']*0.05)
 
-        modelo = modelo[modelo['nota_final'] > 90]
+        modelo = modelo[modelo['nota_final'] > 85]
 
         st.write(modelo)
         st.write(len(modelo))
