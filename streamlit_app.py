@@ -499,7 +499,7 @@ try:
             # else:
             #     factor_mean= 999
 
-            return factor_mean+factor_median
+            return factor_mean
 
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
