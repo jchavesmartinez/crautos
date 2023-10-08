@@ -471,7 +471,7 @@ try:
                 return None 
 
         def asignar_nota_precio(row):
-            mean_porcentual = 100 - row['precio_margen_median%']
+            mean_porcentual = 100 - row['precio_margen_mean%']
             if mean_porcentual > 100:
                 factor_mean= mean_porcentual
             elif 60 <= mean_porcentual <= 100:
@@ -485,21 +485,21 @@ try:
             else:
                 factor_mean= 999
 
-            # median_porcentual = 100 - row['precio_margen_mean%']
-            # if valor > 100:
-            #     factor_mean= valor
-            # elif 60 <= median_porcentual <= 100:
-            #     factor_mean= valor
-            # elif 30 <= median_porcentual < 60:
-            #     factor_mean= valor
-            # elif 15 <= median_porcentual < 30:
-            #     factor_mean= valor
-            # elif 5 <= median_porcentual < 15:
-            #     factor_mean= valor
-            # else:
-            #     factor_mean= 999
+            median_porcentual = 100 - row['precio_margen_median%']
+            if valor > 100:
+                factor_median= valor
+            elif 60 <= median_porcentual <= 100:
+                factor_median= valor
+            elif 30 <= median_porcentual < 60:
+                factor_median= valor
+            elif 15 <= median_porcentual < 30:
+                factor_median= valor
+            elif 5 <= median_porcentual < 15:
+                factor_median= valor
+            else:
+                factor_median= 999
 
-            return factor_mean
+            return factor_median
 
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
