@@ -485,7 +485,7 @@ try:
             else:
                 return None
 
-        modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota)
+        modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota_marca)
         modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
 
 
