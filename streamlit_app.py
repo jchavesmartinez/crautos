@@ -450,7 +450,10 @@ try:
 
         modelo = modelo[modelo['km_margen_mean'] <= 80]
         modelo = modelo[modelo['km_margen_median'] <= 80]
-        #modelo = modelo[modelo['km_margen_mean'] > 0.001]
+        modelo = modelo[modelo['km_margen_mean'] > 0.1]
+
+        modelo['precio_margen_mean%']=modelo['Precio']/modelo['Precio_mean']
+        modelo['precio_margen_median%']=modelo['Precio']/modelo['Precio_median']
 
         st.write(modelo)
         st.write(len(modelo))
