@@ -450,7 +450,7 @@ try:
 
         modelo = modelo[modelo['km_margen_mean'] <= 0.8]
         modelo = modelo[modelo['km_margen_median'] <= 0.8]
-        modelo = modelo[modelo['km_margen_mean'] > 0.1]
+        modelo = modelo[modelo['km_margen_mean'] > 0.001]
 
         st.write(modelo)
         st.write(len(modelo))
