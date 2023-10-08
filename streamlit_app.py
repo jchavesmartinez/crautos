@@ -455,6 +455,24 @@ try:
         modelo['precio_margen_mean%']=modelo['Precio']/modelo['Precio_mean']*100
         modelo['precio_margen_median%']=modelo['Precio']/modelo['Precio_median']*100
 
+
+        def asignar_nota(valor):
+            if valor > 100:
+                return 100
+            elif 60 <= valor <= 100:
+                return 90
+            elif 30 <= valor < 60:
+                return 80
+            elif 15 <= valor < 30:
+                return 60
+            elif 5 <= valor < 15:
+                return 40
+            else:
+                return None 
+
+        modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota)
+
+
         st.write(modelo)
         st.write(len(modelo))
 
