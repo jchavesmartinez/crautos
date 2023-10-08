@@ -456,7 +456,7 @@ try:
         modelo['precio_margen_median%']=modelo['Precio']/modelo['Precio_median']*100
 
 
-        def asignar_nota(valor):
+        def asignar_nota_marca(valor):
             if valor > 100:
                 return 100
             elif 60 <= valor <= 100:
@@ -470,7 +470,23 @@ try:
             else:
                 return None 
 
+        def asignar_nota_precio(row):
+            valor = 100 - mean(row['precio_margen_mean%'] + row['precio_margen_median%'])
+            if valor > 100:
+                return 100
+            elif 60 <= valor <= 100:
+                return 90
+            elif 30 <= valor < 60:
+                return 80
+            elif 15 <= valor < 30:
+                return 60
+            elif 5 <= valor < 15:
+                return 40
+            else:
+                return None
+
         modelo['factor_marca']=modelo['Precio_count'].apply(asignar_nota)
+        modelo['factor_precio'] = modelo.apply(asignar_nota_precio, axis=1)
 
 
         st.write(modelo)
