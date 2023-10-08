@@ -434,6 +434,8 @@ try:
         # Drop duplicate columns
         modelo = modelo.loc[:, ~modelo.columns.duplicated()]
         modelo['precio_margen_mean']=modelo['Precio']/modelo['Precio_mean']
+        modelo['precio_margen_median']=modelo['Precio']/modelo['Precio_median']
+        modelo['precio_margen_mode']=modelo['Precio']/modelo['Precio_mode']
 
 
         st.write(modelo)
