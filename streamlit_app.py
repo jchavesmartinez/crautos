@@ -442,8 +442,8 @@ try:
         modelo['precio_margen_mean']=modelo['Precio_mean']-modelo['Precio']
         modelo['precio_margen_median']=modelo['Precio_median']-modelo['Precio']
 
-        #modelo = modelo[modelo['precio_margen_mean'] < 1]
-        #modelo = modelo[modelo['precio_margen_median'] < 1]
+        modelo = modelo[modelo['precio_margen_mean'] >= 500000]
+        modelo = modelo[modelo['precio_margen_median'] >= 500000]
 
 
         st.write(modelo)
