@@ -473,15 +473,15 @@ try:
         def asignar_nota_precio(row):
             valor = 100 - row[['precio_margen_mean%', 'precio_margen_median%']].mean()
             if valor > 100:
-                return 100
+                return valor
             elif 60 <= valor <= 100:
-                return 90
+                return valor
             elif 30 <= valor < 60:
-                return 80
+                return valor
             elif 15 <= valor < 30:
-                return 60
+                return valor
             elif 5 <= valor < 15:
-                return 40
+                return valor
             else:
                 return None
 
