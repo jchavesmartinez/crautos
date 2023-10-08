@@ -471,21 +471,21 @@ try:
                 return None 
 
         def asignar_nota_precio(row):
-            mean_porcentual = 100 - row['precio_margen_mean%']
-            if mean_porcentual > 100:
-                factor_mean= mean_porcentual
-            elif 60 <= mean_porcentual <= 100:
-                factor_mean= mean_porcentual
-            elif 30 <= mean_porcentual < 60:
-                factor_mean= mean_porcentual
-            elif 15 <= mean_porcentual < 30:
-                factor_mean= mean_porcentual
-            elif 5 <= mean_porcentual < 15:
-                factor_mean= mean_porcentual
+            mean_porcentual = row['precio_margen_mean%']
+            if mean_porcentual < 60:
+                factor_mean= 100
+            elif 60 <= mean_porcentual <= 75:
+                factor_mean= 90
+            elif 75 <= mean_porcentual < 85:
+                factor_mean= 80
+            elif 85 <= mean_porcentual < 95:
+                factor_mean= 60
+            elif 95 <= mean_porcentual < 100:
+                factor_mean= 40
             else:
                 factor_mean= 999
 
-            median_porcentual = 100 - row['precio_margen_median%']
+            median_porcentual = row['precio_margen_median%']
             if median_porcentual > 100:
                 factor_median= median_porcentual
             elif 60 <= median_porcentual <= 100:
