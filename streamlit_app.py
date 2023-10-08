@@ -442,14 +442,14 @@ try:
         modelo['precio_margen_mean']=modelo['Precio_mean']-modelo['Precio']
         modelo['precio_margen_median']=modelo['Precio_median']-modelo['Precio']
 
-        modelo = modelo[modelo['precio_margen_mean'] >= 500000]
-        modelo = modelo[modelo['precio_margen_median'] >= 500000]
+        #modelo = modelo[modelo['precio_margen_mean'] >= 500000]
+        #modelo = modelo[modelo['precio_margen_median'] >= 500000]
 
         modelo['km_margen_mean']=modelo['Kilometraje']/modelo['KM_mean']*100
         modelo['km_margen_median']=modelo['Kilometraje']/modelo['KM_median']*100
 
-        modelo = modelo[modelo['km_margen_mean'] <= 80]
-        modelo = modelo[modelo['km_margen_median'] <= 80]
+        #modelo = modelo[modelo['km_margen_mean'] <= 80]
+        #modelo = modelo[modelo['km_margen_median'] <= 80]
         modelo = modelo[modelo['km_margen_mean'] > 0.1]
 
         modelo['precio_margen_mean%']=modelo['Precio']/modelo['Precio_mean']*100
