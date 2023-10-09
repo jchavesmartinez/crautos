@@ -543,6 +543,9 @@ try:
 
         modelo = modelo[modelo['Precio'] <= 10000000]
 
+        #columns_to_drop = [1, 3]  # Columns 'B' and 'D' by index
+        modelo = modelo.drop(modelo.columns[columns_to_count_indices], axis=1)
+
         st.write(modelo)
         st.write(len(modelo))
 
