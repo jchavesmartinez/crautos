@@ -550,7 +550,11 @@ try:
                                         'km_margen_mean','km_margen_median','precio_margen_mean%','precio_margen_median%'])
 
         modelo = modelo[['Marca_modelo', 'MarcaModelo_modelo','Combustible','Transmision','Estilo','Cilindrada','Año', 'Precio','Precio_median','Kilometraje','KM_median','Precio_count','nota_final','factor_marca','factor_precio','factor_año','factor_km','factor_extras','Comentarios','Pagina Web']]
-        st.dataframe(modelo)
+        st.dataframe(modelo,column_config={
+                    "Pagina Web": st.column_config.LinkColumn("App URL"),
+                },
+                hide_index=True,
+            )
 
 
 
