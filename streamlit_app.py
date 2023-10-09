@@ -532,7 +532,7 @@ try:
         modelo['factor_km'] = 100-modelo['km_margen_median']
 
 
-        columns_to_count_indices = list(range(3, 42))
+        columns_to_count_indices = list(range(3, 41))
         # Add a new column 'yes_count' to store the count of 'yes' values across specified columns
         modelo['factor_extras'] = modelo.iloc[:, columns_to_count_indices].apply(lambda row: row.eq('Si').sum(), axis=1)
         modelo['factor_extras']=modelo['factor_extras']/len(columns_to_count_indices)*100
