@@ -541,6 +541,8 @@ try:
 
         modelo = modelo[modelo['nota_final'] > 80]
 
+        modelo = modelo[modelo['Precio'] <= 10000000]
+
         st.write(modelo)
         st.write(len(modelo))
 
