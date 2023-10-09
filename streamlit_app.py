@@ -6,7 +6,6 @@ import numpy as np
 import time
 from streamlit import runtime
 from streamlit_dynamic_filters import DynamicFilters
-import random
 
 
 # Replace 'raw_csv_url' with the URL of the raw CSV file on GitHub
@@ -551,36 +550,7 @@ try:
                                         'km_margen_mean','km_margen_median','precio_margen_mean%','precio_margen_median%'])
 
         modelo = modelo[['Marca_modelo', 'MarcaModelo_modelo','Combustible','Transmision','Estilo','Cilindrada','Año', 'Precio','Precio_median','Kilometraje','KM_median','Precio_count','nota_final','factor_marca','factor_precio','factor_año','factor_km','factor_extras','Comentarios','Pagina Web']]
-        # st.dataframe(modelo,column_config={
-        #             "Pagina Web": st.column_config.LinkColumn("App URL"),
-        #         },
-        #         hide_index=True,
-        #     )
-
-        df = pd.DataFrame(
-            {
-                "name": ["Roadmap", "Extras", "Issues"],
-                "url": ["https://roadmap.streamlit.app", "https://extras.streamlit.app", "https://issues.streamlit.app"],
-                "stars": [random.randint(0, 1000) for _ in range(3)],
-                "views_history": [[random.randint(0, 5000) for _ in range(30)] for _ in range(3)],
-            }
-        )
-        st.dataframe(
-            df,
-            column_config={
-                "name": "App name",
-                "stars": st.column_config.NumberColumn(
-                    "Github Stars",
-                    help="Number of stars on GitHub",
-                    format="%d ⭐",
-                ),
-                "url": st.column_config.LinkColumn("App URL"),
-                "views_history": st.column_config.LineChartColumn(
-                    "Views (past 30 days)", y_min=0, y_max=5000
-                ),
-            },
-            hide_index=True,
-        )
+        st.dataframe(modelo)
 
 
 
