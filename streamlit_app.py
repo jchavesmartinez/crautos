@@ -545,7 +545,7 @@ try:
 
         #columns_to_drop = [1, 3]  # Columns 'B' and 'D' by index
         modelo = modelo.drop(modelo.columns[columns_to_count_indices], axis=1)
-        modelo = modelo.drop(columns=['Color ext', 'Color int','Puertas','Libre impuestos','Negociable','Recibe','Provincia','Traspaso'])
+        modelo = modelo.drop(columns=['Color ext', 'Color int','Puertas','Libre impuestos','Negociable','Recibe','Provincia','Traspaso','Vehiculo_ID'])
 
         st.write(modelo)
         st.write(len(modelo))
