@@ -549,7 +549,7 @@ try:
                                         'Extraccion Dia','Grupo de años_modelo_completo','grupo_id','Visuales por Dia','Año_mean','Grupo de años_modelo','Estado','KM_mean','Precio_mean','Precio_std','precio_margen_mean','precio_margen_median','Precio_relativestd',
                                         'km_margen_mean','km_margen_median','precio_margen_mean%','precio_margen_median%'])
 
-        modelo = modelo[['Marca_modelo', 'MarcaModelo_modelo', 'column2']]
+        modelo = modelo[['Marca_modelo', 'MarcaModelo_modelo', 'Precio']]
 
         st.write(modelo)
         st.write(len(modelo))
