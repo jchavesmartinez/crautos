@@ -20,7 +20,7 @@ try:
 
     st.title('Portal de inversión carros Costa Rica')
 
-    @st.cache
+    #@st.cache
     def load_data():
         # Load or compute your data here (e.g., from a CSV file)
         raw_csv_url = 'https://raw.githubusercontent.com/jchavesmartinez/crautos/main/MASTERDATA%20-%20LIMPIA.csv'
