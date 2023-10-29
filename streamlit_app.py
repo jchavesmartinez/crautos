@@ -33,7 +33,7 @@ try:
 
     modelo=df.copy()
 
-    tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
+    #tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
  
     filters = {}
     filtered_df = df.copy()
