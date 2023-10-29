@@ -33,13 +33,10 @@ try:
 
     modelo=df.copy()
 
-    #tab1, tab2 = st.tabs(["Metricas del mercado", "Potenciales inversiones"])
- 
     filters = {}
     filtered_df = df.copy()
 
 
-    
     with st.expander("Menu de filtros"):
 
         dynamic_filters = DynamicFilters(df, filters=['Marca','Cilindrada', 'Estado','Transmision','MarcaModelo','Combustible', 'Color ext','Placa','Estilo','Pasajeros', 'Color int','Puertas'])
