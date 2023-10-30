@@ -411,6 +411,7 @@ try:
 
 
         precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
+        precio_descuento=precio_descuento/100
 
         modelo_completo=modelo
         modelo_completo["grupo_id"] = modelo_completo["Marca"].astype(str) + modelo_completo["MarcaModelo"].astype(str) + modelo_completo["Grupo de años"].astype(str)
@@ -429,8 +430,8 @@ try:
         modelo['precio_margen_mean']=modelo['Precio']/modelo['Precio_mean']
         modelo['precio_margen_median']=modelo['Precio']/modelo['Precio_median']
 
-        modelo = modelo[modelo['precio_margen_mean'] < precio_descuento/100]
-        modelo = modelo[modelo['precio_margen_median'] < precio_descuento/100]
+        modelo = modelo[modelo['precio_margen_mean'] < 1-precio_descuento]
+        modelo = modelo[modelo['precio_margen_median'] < 1-precio_descuento]
 
         modelo['precio_margen_mean']=modelo['Precio_mean']-modelo['Precio']
         modelo['precio_margen_median']=modelo['Precio_median']-modelo['Precio']
