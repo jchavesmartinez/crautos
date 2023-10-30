@@ -421,6 +421,7 @@ try:
         with col2_a:
 
             muestra_tamaño = st.number_input('Tamaño minimo de la muestra',0,10000000000,5)
+            nota_final_minima = st.number_input('Nota final minima',0,100,80)
 
         with col3_a:
             precio_minimo = st.number_input('Precio piso',0,10000000000,700000)
@@ -552,7 +553,7 @@ try:
 
         modelo['nota_final'] = (modelo['factor_marca']*0.35)+(modelo['factor_precio']*0.25)+(modelo['factor_año']*0.3)+(modelo['factor_km']*0.15)+(modelo['factor_extras']*0.05)
 
-        modelo = modelo[modelo['nota_final'] > 80]
+        modelo = modelo[modelo['nota_final'] > nota_final_minima]
 
         modelo = modelo[modelo['Precio'] <= precio_maximo]
 
