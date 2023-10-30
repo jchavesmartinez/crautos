@@ -418,8 +418,7 @@ try:
 
         with col2_a:
 
-            precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
-            precio_descuento=precio_descuento/100
+            muestra_tamaño = st.slider('Tamaño minimo de muestra', 0, 10000, 5)
 
         with col3_a:
 
@@ -432,7 +431,7 @@ try:
         modelo = df.groupby(['Marca', 'MarcaModelo', 'Grupo de años']).agg({'Año': 'mean','Kilometraje':['mean','median'], 'Precio': ['mean', 'count','median','std']}).reset_index()
         modelo.columns = ['Marca', 'MarcaModelo', 'Grupo de años', 'Año_mean','KM_mean','KM_median', 'Precio_mean', 'Precio_count', 'Precio_median','Precio_std']
         modelo['Precio_relativestd']=modelo['Precio_std']/modelo['Precio_mean']*100
-        modelo = modelo[modelo['Precio_count'] >= 5]
+        modelo = modelo[modelo['Precio_count'] >= muestra_tamaño]
         modelo["grupo_id"] = modelo["Marca"].astype(str) + modelo["MarcaModelo"].astype(str) + modelo["Grupo de años"].astype(str)
 
                 # Assuming df1 and df2 are your two DataFrames, and 'common_column' is the column you want to use for merging.
