@@ -415,6 +415,8 @@ try:
 
             precio_descuento = st.number_input('% Descuento sobre el precio',0,100,10)
             precio_descuento=precio_descuento/100
+            km_descuento = st.number_input('% Descuento sobre el kilometraje',0,100,10)
+            km_descuento=km_descuento
 
         with col2_a:
 
@@ -454,8 +456,8 @@ try:
         modelo['km_margen_mean']=modelo['Kilometraje']/modelo['KM_mean']*100
         modelo['km_margen_median']=modelo['Kilometraje']/modelo['KM_median']*100
 
-        modelo = modelo[modelo['km_margen_mean'] < 80]
-        modelo = modelo[modelo['km_margen_median'] < 80]
+        modelo = modelo[modelo['km_margen_mean'] < km_descuento]
+        modelo = modelo[modelo['km_margen_median'] < km_descuento]
         modelo = modelo[modelo['km_margen_mean'] > 0.1]
 
         modelo['precio_margen_mean%']=modelo['Precio']/modelo['Precio_mean']*100
