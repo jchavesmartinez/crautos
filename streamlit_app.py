@@ -409,9 +409,22 @@ try:
             
     with st.expander("Potenciales Inversiones"):
 
+        col1_a, col2_a, col3_a = st.columns(3)
 
-        precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
-        precio_descuento=precio_descuento/100
+        with col1_a:
+
+            precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
+            precio_descuento=precio_descuento/100
+
+        with col2_a:
+
+            precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
+            precio_descuento=precio_descuento/100
+
+        with col3_a:
+
+            precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
+            precio_descuento=precio_descuento/100
 
         modelo_completo=modelo
         modelo_completo["grupo_id"] = modelo_completo["Marca"].astype(str) + modelo_completo["MarcaModelo"].astype(str) + modelo_completo["Grupo de años"].astype(str)
