@@ -457,8 +457,8 @@ try:
         modelo['km_margen_mean']=modelo['Kilometraje']/modelo['KM_mean']*100
         modelo['km_margen_median']=modelo['Kilometraje']/modelo['KM_median']*100
 
-        modelo = modelo[modelo['km_margen_mean'] < km_descuento]
-        modelo = modelo[modelo['km_margen_median'] < km_descuento]
+        modelo = modelo[modelo['km_margen_mean'] < 100-km_descuento]
+        modelo = modelo[modelo['km_margen_median'] < 100-km_descuento]
         modelo = modelo[modelo['km_margen_mean'] > 0.1]
 
         modelo['precio_margen_mean%']=modelo['Precio']/modelo['Precio_mean']*100
