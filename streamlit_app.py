@@ -418,10 +418,10 @@ try:
 
         with col2_a:
 
-            muestra_tamaño = st.number_input('Tamaño minimo de la muestra',)
+            muestra_tamaño = st.number_input('Tamaño minimo de la muestra',0,10000000000,5)
 
         with col3_a:
-            precio_minimo = st.number_input('Precio piso',)
+            precio_minimo = st.number_input('Precio piso',0,10000000000,700000)
 
 
         modelo_completo=modelo
