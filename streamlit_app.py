@@ -422,7 +422,7 @@ try:
 
         with col3_a:
 
-            precio_minimo = st.slider('Precio minimo', 0, 100, 10)
+            precio_minimo = st.slider('Precio minimo', min(modelo['Precio']), max(modelo['Precio']), 700000)
 
 
         modelo_completo=modelo
@@ -448,8 +448,8 @@ try:
         modelo['precio_margen_mean']=modelo['Precio_mean']-modelo['Precio']
         modelo['precio_margen_median']=modelo['Precio_median']-modelo['Precio']
 
-        modelo = modelo[modelo['precio_margen_mean'] >= 700000]
-        modelo = modelo[modelo['precio_margen_median'] >= 700000]
+        modelo = modelo[modelo['precio_margen_mean'] >= precio_minimo]
+        modelo = modelo[modelo['precio_margen_median'] >= precio_minimo]
 
         modelo['km_margen_mean']=modelo['Kilometraje']/modelo['KM_mean']*100
         modelo['km_margen_median']=modelo['Kilometraje']/modelo['KM_median']*100
