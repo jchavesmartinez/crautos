@@ -422,7 +422,7 @@ try:
 
         with col3_a:
 
-            precio_minimo = st.slider('Precio minimo', 0, 100000000, 700000)
+            precio_minimo = st.slider('Precio minimo', 0, 30000000, 700000)
 
 
         modelo_completo=modelo
