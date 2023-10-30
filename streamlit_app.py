@@ -422,8 +422,8 @@ try:
 
         with col3_a:
 
-            precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
-            precio_descuento=precio_descuento/100
+            precio_minimo = st.slider('Precio minimo', 0, 100, 10)
+
 
         modelo_completo=modelo
         modelo_completo["grupo_id"] = modelo_completo["Marca"].astype(str) + modelo_completo["MarcaModelo"].astype(str) + modelo_completo["Grupo de años"].astype(str)
