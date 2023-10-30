@@ -429,8 +429,8 @@ try:
         modelo['precio_margen_mean']=modelo['Precio']/modelo['Precio_mean']
         modelo['precio_margen_median']=modelo['Precio']/modelo['Precio_median']
 
-        modelo = modelo[modelo['precio_margen_mean'] < 0.90]
-        modelo = modelo[modelo['precio_margen_median'] < 0.90]
+        modelo = modelo[modelo['precio_margen_mean'] < precio_descuento/100]
+        modelo = modelo[modelo['precio_margen_median'] < precio_descuento/100]
 
         modelo['precio_margen_mean']=modelo['Precio_mean']-modelo['Precio']
         modelo['precio_margen_median']=modelo['Precio_median']-modelo['Precio']
