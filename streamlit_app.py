@@ -422,6 +422,7 @@ try:
 
         with col3_a:
             precio_minimo = st.number_input('Precio piso',0,10000000000,700000)
+            precio_maximo = st.number_input('Precio techo',0,10000000000,10000000)
 
 
         modelo_completo=modelo
@@ -551,7 +552,7 @@ try:
 
         modelo = modelo[modelo['nota_final'] > 80]
 
-        modelo = modelo[modelo['Precio'] <= 10000000]
+        modelo = modelo[modelo['Precio'] <= precio_maximo]
 
         #columns_to_drop = [1, 3]  # Columns 'B' and 'D' by index
         modelo = modelo.drop(modelo.columns[columns_to_count_indices], axis=1)
