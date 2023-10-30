@@ -413,16 +413,15 @@ try:
 
         with col1_a:
 
-            precio_descuento = st.slider('% Descuento sobre el precio', 0, 100, 10)
+            precio_descuento = st.number_input('% Descuento sobre el precio',0,100,10)
             precio_descuento=precio_descuento/100
 
         with col2_a:
 
-            muestra_tamaño = st.slider('Tamaño minimo de muestra', 0, 10000, 5)
+            muestra_tamaño = st.number_input('Tamaño minimo de la muestra',)
 
         with col3_a:
-
-            precio_minimo = st.slider('Precio minimo', 0, 30000000, 700000)
+            precio_minimo = st.number_input('Precio piso',)
 
 
         modelo_completo=modelo
