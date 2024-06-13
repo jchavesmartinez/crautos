@@ -31,6 +31,8 @@ try:
     # Load the data using the cached function
     df = load_data()
 
+    st.write(df)
+
     modelo=df.copy()
 
     filters = {}
