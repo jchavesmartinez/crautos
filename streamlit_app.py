@@ -277,7 +277,7 @@ try:
         for column, value in filters.items():
             df = filtered_df[filtered_df[column] == value]
 
-        st.wirte(filters)      
+        st.write(filters)      
 
 
         
