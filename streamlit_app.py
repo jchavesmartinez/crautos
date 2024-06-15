@@ -275,7 +275,9 @@ try:
     with st.expander('Estadisticas'):
 
         for column, value in filters.items():
-            df = filtered_df[filtered_df[column] == value]      
+            df = filtered_df[filtered_df[column] == value]
+
+        st.wirte(filters)      
 
 
         
